@@ -15,6 +15,7 @@ namespace VisualProgrammingProject
         public Form1()
         {
             InitializeComponent();
+            Console.WriteLine("Hello World");
         }
     }
 }
