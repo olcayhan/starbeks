@@ -124,7 +124,7 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "İçecek";
+            this.columnHeader3.Text = "Coffees";
             this.columnHeader3.Width = 150;
             // 
             // columnHeader4

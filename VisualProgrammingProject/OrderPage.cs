@@ -104,6 +104,7 @@ namespace VisualProgrammingProject
                     item.SubItems.Add((orderpiece * cfeprice).ToString("C"));
                     LstVwOrder.Items.Add(item);
                 }
+                NumericPiece.Value = 0;
                 txtTotal.Text = Total.ToString("C");
 
             }
