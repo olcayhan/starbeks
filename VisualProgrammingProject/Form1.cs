@@ -16,5 +16,11 @@ namespace VisualProgrammingProject
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            OrderPage form = new OrderPage();
+            form.Show();
+        }
     }
 }
