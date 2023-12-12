@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.BtnAdd = new System.Windows.Forms.Button();
+            this.btndelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumericPiece)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,11 +176,22 @@
             this.BtnAdd.UseVisualStyleBackColor = true;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
+            // btndelete
+            // 
+            this.btndelete.Location = new System.Drawing.Point(377, 362);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(105, 23);
+            this.btndelete.TabIndex = 9;
+            this.btndelete.Text = "Reduce By One";
+            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+            // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 433);
+            this.Controls.Add(this.btndelete);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label1);
@@ -214,5 +226,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button BtnAdd;
+        private System.Windows.Forms.Button btndelete;
     }
 }

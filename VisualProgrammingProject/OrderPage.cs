@@ -52,6 +52,28 @@ namespace VisualProgrammingProject
                 LstVwMenu.Items.Add(item);
             }
         }
+        private void OrderUpdate()
+        {
+            LstVwOrder.Items.Clear();
+
+            double Total = 0;
+
+            foreach (var Cfe in OrderDetailing)
+            {
+                string orderdet = Cfe.Key;
+                int orderpiece = Cfe.Value;
+                double cfeprice = CoffeePrice[orderdet];
+                Total += orderpiece * cfeprice;
+
+                ListViewItem item = new ListViewItem(orderdet);
+                item.SubItems.Add(orderpiece.ToString());
+                item.SubItems.Add((orderpiece * cfeprice).ToString("C"));
+                LstVwOrder.Items.Add(item);
+            }
+            NumericPiece.Value = 0;
+            txtTotal.Text = Total.ToString("C");
+
+        }
         private void btnHot_Click(object sender, EventArgs e)
         {
             MenuUpdate("Hot Coffee");
@@ -88,30 +110,33 @@ namespace VisualProgrammingProject
                     OrderDetailing.Add(ChooseCfe, piece);
                 }
 
-                LstVwOrder.Items.Clear();
-
-                double Total = 0;
-                
-                foreach (var Cfe in OrderDetailing) 
-                {
-                    string orderdet = Cfe.Key;
-                    int orderpiece = Cfe.Value;
-                    double cfeprice = CoffeePrice[orderdet];
-                    Total += orderpiece*cfeprice;
-
-                    ListViewItem item = new ListViewItem(orderdet);
-                    item.SubItems.Add(orderpiece.ToString());
-                    item.SubItems.Add((orderpiece * cfeprice).ToString("C"));
-                    LstVwOrder.Items.Add(item);
-                }
-                NumericPiece.Value = 0;
-                txtTotal.Text = Total.ToString("C");
-
+                OrderUpdate();
             }
             else
             {
                 MessageBox.Show("Please Choose a Coffee");
             }
+        }
+
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in LstVwOrder.SelectedItems)
+            {
+                if(LstVwOrder.SelectedItems.Count > 0)
+                {
+                    string selectCfe = item.Text;
+                    if(OrderDetailing.ContainsKey((selectCfe)))
+                    {
+                        OrderDetailing[selectCfe]--;
+
+                        if (OrderDetailing[selectCfe]==0)
+                        {
+                            OrderDetailing.Remove(selectCfe);
+                        }
+                    }
+                }
+            }
+            OrderUpdate();
         }
     }
 }
