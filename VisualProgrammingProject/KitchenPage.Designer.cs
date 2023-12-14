@@ -1,6 +1,6 @@
 ﻿namespace VisualProgrammingProject
 {
-    partial class Form
+    partial class KitchenPage
     {
         /// <summary>
         /// Required designer variable.

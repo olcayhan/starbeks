@@ -19,8 +19,8 @@ namespace VisualProgrammingProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Form KitchenPage = new Form();
-            KitchenPage.ShowDialog();
+            KitchenPage kitchenForm = new KitchenPage();
+            kitchenForm.Show();
         }    
     }
 }

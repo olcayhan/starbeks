@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VisualProgrammingProject
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class KitchenPage : System.Windows.Forms.Form
     {
-        public Form()
+        public KitchenPage()
         {
             InitializeComponent();
         }
