@@ -43,11 +43,10 @@ namespace VisualProgrammingProject
             LstVwMenu.Items.Clear();
 
             foreach (var Cfe in CoffeeType[cofetype])
-            {
-                string coffeename = Cfe;
-                double price = CoffeePrice[coffeename];
+            {                
+                double price = CoffeePrice[Cfe];
 
-                ListViewItem item = new ListViewItem(coffeename);
+                ListViewItem item = new ListViewItem(Cfe);
                 item.SubItems.Add(price.ToString("C"));
                 LstVwMenu.Items.Add(item);
             }
@@ -120,23 +119,23 @@ namespace VisualProgrammingProject
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in LstVwOrder.SelectedItems)
+            foreach (ListViewItem selectedItem in LstVwOrder.SelectedItems)
             {
-                if(LstVwOrder.SelectedItems.Count > 0)
-                {
-                    string selectCfe = item.Text;
-                    if(OrderDetailing.ContainsKey((selectCfe)))
-                    {
-                        OrderDetailing[selectCfe]--;
+                string selectCfe = selectedItem.Text;
 
-                        if (OrderDetailing[selectCfe]==0)
-                        {
-                            OrderDetailing.Remove(selectCfe);
-                        }
+                if (OrderDetailing.ContainsKey(selectCfe))
+                {
+                    OrderDetailing[selectCfe]--;
+
+                    if (OrderDetailing[selectCfe] == 0)
+                    {
+                        OrderDetailing.Remove(selectCfe);
                     }
                 }
             }
+
             OrderUpdate();
         }
+
     }
 }
