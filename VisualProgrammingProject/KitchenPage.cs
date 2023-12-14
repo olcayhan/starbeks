@@ -25,23 +25,22 @@ namespace VisualProgrammingProject
                 items.SubItems[3].Text = status;
             }
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnQueue_Click(object sender, EventArgs e)
         {
             changeStatus("In Queue");
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void btnPrepare_Click(object sender, EventArgs e)
         {
             changeStatus("Preparing");
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void btnReady_Click(object sender, EventArgs e)
         {
             changeStatus("Ready");
         }
 
-        private void button4_Click_1(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             ListViewItem item = new ListViewItem(txtName.Text);
             item.SubItems.Add(txtAmount.Text);
