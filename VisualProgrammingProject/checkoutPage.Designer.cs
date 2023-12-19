@@ -54,14 +54,14 @@
             this.lblSprNo.AutoSize = true;
             this.lblSprNo.Location = new System.Drawing.Point(124, 39);
             this.lblSprNo.Name = "lblSprNo";
-            this.lblSprNo.Size = new System.Drawing.Size(44, 16);
+            this.lblSprNo.Size = new System.Drawing.Size(63, 16);
             this.lblSprNo.TabIndex = 1;
-            this.lblSprNo.Text = "label2";
+            this.lblSprNo.Text = "00000001";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(323, 106);
+            this.label3.Location = new System.Drawing.Point(353, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 16);
             this.label3.TabIndex = 2;
@@ -96,7 +96,7 @@
             // 
             // btnOde
             // 
-            this.btnOde.Location = new System.Drawing.Point(629, 396);
+            this.btnOde.Location = new System.Drawing.Point(533, 393);
             this.btnOde.Name = "btnOde";
             this.btnOde.Size = new System.Drawing.Size(113, 23);
             this.btnOde.TabIndex = 4;
@@ -117,6 +117,7 @@
             // 
             this.txtPrice.Location = new System.Drawing.Point(356, 389);
             this.txtPrice.Name = "txtPrice";
+            this.txtPrice.ReadOnly = true;
             this.txtPrice.Size = new System.Drawing.Size(100, 22);
             this.txtPrice.TabIndex = 6;
             // 
@@ -134,6 +135,7 @@
             this.Controls.Add(this.label1);
             this.Name = "checkoutPage";
             this.Text = "checkoutPage";
+            this.Load += new System.EventHandler(this.checkoutPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
