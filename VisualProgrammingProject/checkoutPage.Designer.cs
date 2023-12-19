@@ -43,27 +43,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 39);
+            this.label1.Location = new System.Drawing.Point(23, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sipariş No:";
             // 
             // lblSprNo
             // 
             this.lblSprNo.AutoSize = true;
-            this.lblSprNo.Location = new System.Drawing.Point(124, 39);
+            this.lblSprNo.Location = new System.Drawing.Point(93, 32);
+            this.lblSprNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSprNo.Name = "lblSprNo";
-            this.lblSprNo.Size = new System.Drawing.Size(63, 16);
+            this.lblSprNo.Size = new System.Drawing.Size(55, 13);
             this.lblSprNo.TabIndex = 1;
             this.lblSprNo.Text = "00000001";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(353, 106);
+            this.label3.Location = new System.Drawing.Point(265, 86);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 16);
+            this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Fatura";
             // 
@@ -74,9 +77,10 @@
             this.columnHeader2,
             this.columnHeader3});
             this.lstviewFatura.HideSelection = false;
-            this.lstviewFatura.Location = new System.Drawing.Point(218, 125);
+            this.lstviewFatura.Location = new System.Drawing.Point(164, 102);
+            this.lstviewFatura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lstviewFatura.Name = "lstviewFatura";
-            this.lstviewFatura.Size = new System.Drawing.Size(310, 237);
+            this.lstviewFatura.Size = new System.Drawing.Size(255, 193);
             this.lstviewFatura.TabIndex = 3;
             this.lstviewFatura.UseCompatibleStateImageBehavior = false;
             this.lstviewFatura.View = System.Windows.Forms.View.Details;
@@ -84,7 +88,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "İçecek";
-            this.columnHeader1.Width = 171;
+            this.columnHeader1.Width = 122;
             // 
             // columnHeader2
             // 
@@ -96,9 +100,10 @@
             // 
             // btnOde
             // 
-            this.btnOde.Location = new System.Drawing.Point(533, 393);
+            this.btnOde.Location = new System.Drawing.Point(400, 319);
+            this.btnOde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOde.Name = "btnOde";
-            this.btnOde.Size = new System.Drawing.Size(113, 23);
+            this.btnOde.Size = new System.Drawing.Size(85, 19);
             this.btnOde.TabIndex = 4;
             this.btnOde.Text = "Hesabı Öde";
             this.btnOde.UseVisualStyleBackColor = true;
@@ -107,25 +112,27 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(287, 396);
+            this.label4.Location = new System.Drawing.Point(215, 322);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 16);
+            this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Toplam:";
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(356, 389);
+            this.txtPrice.Location = new System.Drawing.Point(267, 316);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
-            this.txtPrice.Size = new System.Drawing.Size(100, 22);
+            this.txtPrice.Size = new System.Drawing.Size(76, 20);
             this.txtPrice.TabIndex = 6;
             // 
             // checkoutPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnOde);
@@ -133,6 +140,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblSprNo);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "checkoutPage";
             this.Text = "checkoutPage";
             this.Load += new System.EventHandler(this.checkoutPage_Load);
