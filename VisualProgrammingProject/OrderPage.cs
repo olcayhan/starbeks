@@ -137,5 +137,9 @@ namespace VisualProgrammingProject
             OrderUpdate();
         }
 
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            LstVwOrder.Items.Clear();
+        }
     }
 }
