@@ -27,17 +27,45 @@ namespace VisualProgrammingProject
         }
         private void btnQueue_Click(object sender, EventArgs e)
         {
-            changeStatus("In Queue");
+            
+            if (liViewKitchen.SelectedItems.Count > 0)
+            {
+                changeStatus("In Queue");
+                liViewKitchen.SelectedItems[0].BackColor = Color.IndianRed;
+            }
+            else
+            {
+                MessageBox.Show("Please select a row.");
+            }
         }
 
         private void btnPrepare_Click(object sender, EventArgs e)
         {
-            changeStatus("Preparing");
+            
+            if (liViewKitchen.SelectedItems.Count > 0)
+            {
+                changeStatus("Preparing");
+                liViewKitchen.SelectedItems[0].BackColor = Color.LightYellow;
+            }
+            else
+            {
+                MessageBox.Show("Please select a row.");
+            }
         }
 
         private void btnReady_Click(object sender, EventArgs e)
         {
-            changeStatus("Ready");
+           
+            if (liViewKitchen.SelectedItems.Count > 0)
+            {
+                changeStatus("Ready");
+                liViewKitchen.SelectedItems[0].BackColor = Color.LightSeaGreen;
+
+            }
+            else
+            {
+                MessageBox.Show("Please select a row.");
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -46,6 +74,7 @@ namespace VisualProgrammingProject
             item.SubItems.Add(txtAmount.Text);
             item.SubItems.Add(txtDrink.Text);
             item.SubItems.Add("In Queue");
+            item.BackColor = Color.IndianRed;
 
             liViewKitchen.Items.Add(item);
         }
