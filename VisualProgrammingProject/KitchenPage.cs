@@ -24,8 +24,7 @@ namespace VisualProgrammingProject
             foreach (ListViewItem items in liViewKitchen.SelectedItems)
             {
                 items.SubItems[4].Text = status;
-                items.SubItems[5].Text = DateTime.Now.ToString();
-                
+                items.SubItems[5].Text = DateTime.Now.ToString();             
             }
         }
         private void btnQueue_Click(object sender, EventArgs e)
