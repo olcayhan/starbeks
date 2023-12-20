@@ -31,7 +31,7 @@ namespace VisualProgrammingProject
             if (liViewKitchen.SelectedItems.Count > 0)
             {
                 changeStatus("In Queue");
-                liViewKitchen.SelectedItems[0].BackColor = Color.Red;
+                liViewKitchen.SelectedItems[0].BackColor = Color.IndianRed;
             }
             else
             {
@@ -45,7 +45,7 @@ namespace VisualProgrammingProject
             if (liViewKitchen.SelectedItems.Count > 0)
             {
                 changeStatus("Preparing");
-                liViewKitchen.SelectedItems[0].BackColor = Color.Yellow;
+                liViewKitchen.SelectedItems[0].BackColor = Color.LightYellow;
             }
             else
             {
@@ -59,6 +59,8 @@ namespace VisualProgrammingProject
             if (liViewKitchen.SelectedItems.Count > 0)
             {
                 changeStatus("Ready");
+                liViewKitchen.SelectedItems[0].BackColor = Color.LightSeaGreen;
+
             }
             else
             {
@@ -72,6 +74,7 @@ namespace VisualProgrammingProject
             item.SubItems.Add(txtAmount.Text);
             item.SubItems.Add(txtDrink.Text);
             item.SubItems.Add("In Queue");
+            item.BackColor = Color.IndianRed;
 
             liViewKitchen.Items.Add(item);
         }
