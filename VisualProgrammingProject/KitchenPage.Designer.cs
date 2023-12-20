@@ -207,6 +207,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.liViewKitchen.FullRowSelect = true;
             this.liViewKitchen.HideSelection = false;
             this.liViewKitchen.Location = new System.Drawing.Point(361, 98);
             this.liViewKitchen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -237,7 +238,7 @@
             this.columnHeader4.Text = "Situtaion";
             this.columnHeader4.Width = 143;
             // 
-            // Form
+            // KitchenPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -257,7 +258,7 @@
             this.Controls.Add(this.lblDrink);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblName);
-            this.Name = "Form";
+            this.Name = "KitchenPage";
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -27,17 +27,43 @@ namespace VisualProgrammingProject
         }
         private void btnQueue_Click(object sender, EventArgs e)
         {
-            changeStatus("In Queue");
+            
+            if (liViewKitchen.SelectedItems.Count > 0)
+            {
+                changeStatus("In Queue");
+                liViewKitchen.SelectedItems[0].BackColor = Color.Red;
+            }
+            else
+            {
+                MessageBox.Show("Please select a row.");
+            }
         }
 
         private void btnPrepare_Click(object sender, EventArgs e)
         {
-            changeStatus("Preparing");
+            
+            if (liViewKitchen.SelectedItems.Count > 0)
+            {
+                changeStatus("Preparing");
+                liViewKitchen.SelectedItems[0].BackColor = Color.Yellow;
+            }
+            else
+            {
+                MessageBox.Show("Please select a row.");
+            }
         }
 
         private void btnReady_Click(object sender, EventArgs e)
         {
-            changeStatus("Ready");
+           
+            if (liViewKitchen.SelectedItems.Count > 0)
+            {
+                changeStatus("Ready");
+            }
+            else
+            {
+                MessageBox.Show("Please select a row.");
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
