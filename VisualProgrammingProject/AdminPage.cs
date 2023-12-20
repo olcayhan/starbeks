@@ -32,5 +32,7 @@ namespace VisualProgrammingProject
 
             liviewProducts.Items.Add(item);
         }
+
+        
     }
 }
