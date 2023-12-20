@@ -22,9 +22,11 @@ namespace VisualProgrammingProject
             KitchenPage kitchenForm = new KitchenPage();
             OrderPage orderForm = new OrderPage();
             checkoutPage checkoutForm = new checkoutPage();
+            AdminPage adminForm = new AdminPage();
             kitchenForm.Show();
             orderForm.Show();
             checkoutForm.Show();
+            adminForm.Show();
         }    
     }
 }
