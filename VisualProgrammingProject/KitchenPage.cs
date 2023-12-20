@@ -12,6 +12,7 @@ namespace VisualProgrammingProject
 {
     public partial class KitchenPage : System.Windows.Forms.Form
     {
+        private int sipId = 1000;
         public KitchenPage()
         {
             InitializeComponent();
@@ -22,7 +23,9 @@ namespace VisualProgrammingProject
         {
             foreach (ListViewItem items in liViewKitchen.SelectedItems)
             {
-                items.SubItems[3].Text = status;
+                items.SubItems[4].Text = status;
+                items.SubItems[5].Text = DateTime.Now.ToString();
+                
             }
         }
         private void btnQueue_Click(object sender, EventArgs e)
@@ -69,11 +72,16 @@ namespace VisualProgrammingProject
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
-        {
-            ListViewItem item = new ListViewItem(txtName.Text);
+        {           
+            string id = sipId.ToString();
+            sipId++;
+            DateTime selectedDatetime = DateTime.Now;
+            ListViewItem item = new ListViewItem(id);
+            item.SubItems.Add(txtName.Text);
             item.SubItems.Add(txtAmount.Text);
             item.SubItems.Add(txtDrink.Text);
             item.SubItems.Add("In Queue");
+            item.SubItems.Add(selectedDatetime.ToString());
             item.BackColor = Color.IndianRed;
 
             liViewKitchen.Items.Add(item);
