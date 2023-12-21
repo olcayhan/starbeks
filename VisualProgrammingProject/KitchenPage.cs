@@ -90,20 +90,5 @@ namespace VisualProgrammingProject
                 MessageBox.Show("Please select a row.");
             }
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {           
-            string id = sipId.ToString();
-            sipId++;
-            ListViewItem item = new ListViewItem(id);
-            item.SubItems.Add(txtName.Text);
-            item.SubItems.Add(txtAmount.Text);
-            item.SubItems.Add(txtDrink.Text);
-            item.SubItems.Add("In Queue");
-            item.SubItems.Add(selectedDatetime.ToString());
-            item.BackColor = Color.IndianRed;
-
-            liViewKitchen.Items.Add(item);
-        }
     }
 }
