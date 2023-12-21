@@ -46,25 +46,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminPage.Designer.cs">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="checkoutPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="checkoutPage.Designer.cs">
+      <DependentUpon>checkoutPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderPage.Designer.cs">
+      <DependentUpon>OrderPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitchenPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitchenPage.Designer.cs">
+      <DependentUpon>KitchenPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminPage.resx">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="checkoutPage.resx">
+      <DependentUpon>checkoutPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderPage.resx">
+      <DependentUpon>OrderPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitchenPage.resx">
+      <DependentUpon>KitchenPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
