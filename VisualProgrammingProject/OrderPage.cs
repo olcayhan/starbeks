@@ -11,7 +11,14 @@ using System.Windows.Forms;
 namespace VisualProgrammingProject
 {
     public partial class OrderPage : Form
+        
     {
+        private KitchenPage kitchenForm;
+
+        public void SetKitchenForm(KitchenPage kitchenForm)
+        {
+            this.kitchenForm = kitchenForm;
+        }
         Dictionary<string, List<string>> CoffeeType = new Dictionary<string, List<string>>
         {
             { "Hot Coffee", new List<string> { "Turkish coffee", "Espresso", "Americano" } },
@@ -37,6 +44,7 @@ namespace VisualProgrammingProject
         public OrderPage()
         {
             InitializeComponent();
+            
         }
         private void MenuUpdate(string cofetype)
         {
@@ -140,6 +148,11 @@ namespace VisualProgrammingProject
         private void btnClean_Click(object sender, EventArgs e)
         {
             LstVwOrder.Items.Clear();
+        }
+
+        private void orderbtn_Click(object sender, EventArgs e)
+        {
+            kitchenForm.UpdateListView(OrderDetailing, CoffeePrice);
         }
     }
 }

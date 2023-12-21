@@ -12,6 +12,7 @@ namespace VisualProgrammingProject
 {
     public partial class Form1 : System.Windows.Forms.Form
     {
+
         public Form1()
         {
             InitializeComponent();           
@@ -19,10 +20,10 @@ namespace VisualProgrammingProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            KitchenPage kitchenForm = new KitchenPage();
             OrderPage orderForm = new OrderPage();
             checkoutPage checkoutForm = new checkoutPage();
-            AdminPage adminForm = new AdminPage();
+            KitchenPage kitchenForm = new KitchenPage();
+            orderForm.SetKitchenForm(kitchenForm);
             kitchenForm.Show();
             orderForm.Show();
             checkoutForm.Show();
