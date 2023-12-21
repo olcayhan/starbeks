@@ -49,6 +49,8 @@
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.liboxCategories = new System.Windows.Forms.ListBox();
             this.lblCategories = new System.Windows.Forms.Label();
+            this.btnDeleteCategory = new System.Windows.Forms.Button();
+            this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtProductPrice
@@ -134,11 +136,11 @@
             // btnAddProduct
             // 
             this.btnAddProduct.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAddProduct.Location = new System.Drawing.Point(809, 544);
+            this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAddProduct.Location = new System.Drawing.Point(1072, 303);
             this.btnAddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(91, 30);
+            this.btnAddProduct.Size = new System.Drawing.Size(140, 67);
             this.btnAddProduct.TabIndex = 27;
             this.btnAddProduct.Text = "Add";
             this.btnAddProduct.UseVisualStyleBackColor = false;
@@ -245,6 +247,7 @@
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(159, 32);
             this.txtCategory.TabIndex = 20;
+            
             // 
             // liboxCategories
             // 
@@ -273,12 +276,40 @@
             this.lblCategories.TabIndex = 18;
             this.lblCategories.Text = "Categories";
             // 
+            // btnDeleteCategory
+            // 
+            this.btnDeleteCategory.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDeleteCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDeleteCategory.Location = new System.Drawing.Point(133, 391);
+            this.btnDeleteCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteCategory.Name = "btnDeleteCategory";
+            this.btnDeleteCategory.Size = new System.Drawing.Size(91, 30);
+            this.btnDeleteCategory.TabIndex = 35;
+            this.btnDeleteCategory.Text = "Delete";
+            this.btnDeleteCategory.UseVisualStyleBackColor = false;
+            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
+            // 
+            // btnDeleteProduct
+            // 
+            this.btnDeleteProduct.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDeleteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDeleteProduct.Location = new System.Drawing.Point(1072, 460);
+            this.btnDeleteProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(140, 68);
+            this.btnDeleteProduct.TabIndex = 36;
+            this.btnDeleteProduct.Text = "Delete";
+            this.btnDeleteProduct.UseVisualStyleBackColor = false;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
+            // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(1320, 625);
+            this.Controls.Add(this.btnDeleteProduct);
+            this.Controls.Add(this.btnDeleteCategory);
             this.Controls.Add(this.txtProductPrice);
             this.Controls.Add(this.lblProductPrice);
             this.Controls.Add(this.cmbProductCategory);
@@ -298,7 +329,6 @@
             this.Controls.Add(this.lblCategories);
             this.Name = "AdminPage";
             this.Text = "Form2";
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,5 +357,7 @@
         private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.ListBox liboxCategories;
         private System.Windows.Forms.Label lblCategories;
+        private System.Windows.Forms.Button btnDeleteCategory;
+        private System.Windows.Forms.Button btnDeleteProduct;
     }
 }
