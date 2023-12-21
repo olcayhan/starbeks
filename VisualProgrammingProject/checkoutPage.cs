@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VisualProgrammingProject
 {
@@ -69,6 +71,51 @@ namespace VisualProgrammingProject
         private void checkoutPage_Load(object sender, EventArgs e)
         {
             updateFatura();
+        }
+
+        double toplamFiyat = 0;
+
+        private void HesaplaVeYazdir()
+        {
+            ListViewItem selectedRow = lstviewFatura.SelectedItems[0];
+            string fiyatSutunu = selectedRow.SubItems[2].Text;
+
+            int sayi = DegeriAl(fiyatSutunu);
+            toplamFiyat += sayi*1.00;
+            txtSecilen.Text = toplamFiyat.ToString("C");
+        }
+        static int DegeriAl(string metinselIfade)
+        {
+            // Sayıyı almak için Regex kullanalım
+            Match match = Regex.Match(metinselIfade, @"\d+");
+
+            if (match.Success)
+            {
+                return int.Parse(match.Value);
+            }
+
+            return -1;
+        }
+        private void btnÖde_Click(object sender, EventArgs e)
+        {
+            HesaplaVeYazdir();
+            string textBoxText = txtSecilen.Text;
+
+            if (!string.IsNullOrEmpty(textBoxText))
+            {
+                MessageBox.Show(textBoxText, "TextBox Değer");
+
+                txtSecilen.Clear();
+            }
+            else
+            {
+                MessageBox.Show("TextBox boş. Lütfen bir sayı girin.");
+            }
+        }
+
+        private void lstviewFatura_MouseClick(object sender, MouseEventArgs e)
+        {
+            HesaplaVeYazdir();
         }
     }
 }

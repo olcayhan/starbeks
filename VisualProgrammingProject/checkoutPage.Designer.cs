@@ -38,35 +38,35 @@
             this.btnOde = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSecilen = new System.Windows.Forms.TextBox();
+            this.btnÖde = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(31, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sipariş No:";
             // 
             // lblSprNo
             // 
             this.lblSprNo.AutoSize = true;
-            this.lblSprNo.Location = new System.Drawing.Point(93, 32);
-            this.lblSprNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSprNo.Location = new System.Drawing.Point(124, 39);
             this.lblSprNo.Name = "lblSprNo";
-            this.lblSprNo.Size = new System.Drawing.Size(55, 13);
+            this.lblSprNo.Size = new System.Drawing.Size(63, 16);
             this.lblSprNo.TabIndex = 1;
             this.lblSprNo.Text = "00000001";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(265, 86);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(346, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(45, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Fatura";
             // 
@@ -76,14 +76,16 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.lstviewFatura.FullRowSelect = true;
             this.lstviewFatura.HideSelection = false;
-            this.lstviewFatura.Location = new System.Drawing.Point(164, 102);
-            this.lstviewFatura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstviewFatura.Location = new System.Drawing.Point(206, 105);
+            this.lstviewFatura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstviewFatura.Name = "lstviewFatura";
-            this.lstviewFatura.Size = new System.Drawing.Size(255, 193);
+            this.lstviewFatura.Size = new System.Drawing.Size(339, 237);
             this.lstviewFatura.TabIndex = 3;
             this.lstviewFatura.UseCompatibleStateImageBehavior = false;
             this.lstviewFatura.View = System.Windows.Forms.View.Details;
+            this.lstviewFatura.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lstviewFatura_MouseClick);
             // 
             // columnHeader1
             // 
@@ -100,10 +102,10 @@
             // 
             // btnOde
             // 
-            this.btnOde.Location = new System.Drawing.Point(400, 319);
-            this.btnOde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOde.Location = new System.Drawing.Point(461, 404);
+            this.btnOde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOde.Name = "btnOde";
-            this.btnOde.Size = new System.Drawing.Size(85, 19);
+            this.btnOde.Size = new System.Drawing.Size(113, 23);
             this.btnOde.TabIndex = 4;
             this.btnOde.Text = "Hesabı Öde";
             this.btnOde.UseVisualStyleBackColor = true;
@@ -112,27 +114,56 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(215, 322);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(220, 404);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.Size = new System.Drawing.Size(57, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Toplam:";
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(267, 316);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrice.Location = new System.Drawing.Point(330, 398);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
-            this.txtPrice.Size = new System.Drawing.Size(76, 20);
+            this.txtPrice.Size = new System.Drawing.Size(100, 22);
             this.txtPrice.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(220, 359);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Seçilen Tutar:";
+            // 
+            // txtSecilen
+            // 
+            this.txtSecilen.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSecilen.Location = new System.Drawing.Point(330, 359);
+            this.txtSecilen.Name = "txtSecilen";
+            this.txtSecilen.Size = new System.Drawing.Size(100, 22);
+            this.txtSecilen.TabIndex = 8;
+            // 
+            // btnÖde
+            // 
+            this.btnÖde.Location = new System.Drawing.Point(461, 356);
+            this.btnÖde.Name = "btnÖde";
+            this.btnÖde.Size = new System.Drawing.Size(75, 23);
+            this.btnÖde.TabIndex = 9;
+            this.btnÖde.Text = "Öde";
+            this.btnÖde.UseVisualStyleBackColor = true;
+            this.btnÖde.Click += new System.EventHandler(this.btnÖde_Click);
             // 
             // checkoutPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnÖde);
+            this.Controls.Add(this.txtSecilen);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnOde);
@@ -140,7 +171,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblSprNo);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "checkoutPage";
             this.Text = "checkoutPage";
             this.Load += new System.EventHandler(this.checkoutPage_Load);
@@ -161,5 +192,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtSecilen;
+        private System.Windows.Forms.Button btnÖde;
     }
 }
