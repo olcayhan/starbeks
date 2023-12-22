@@ -187,6 +187,7 @@
             this.columnAmount,
             this.columnCategory,
             this.columnPrice});
+            this.liviewProducts.FullRowSelect = true;
             this.liviewProducts.HideSelection = false;
             this.liviewProducts.Location = new System.Drawing.Point(809, 34);
             this.liviewProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -330,6 +331,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AdminPage";
             this.Text = "Form2";
+ 
             this.ResumeLayout(false);
             this.PerformLayout();
 
