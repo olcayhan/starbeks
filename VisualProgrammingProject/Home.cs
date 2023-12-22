@@ -19,39 +19,59 @@ namespace VisualProgrammingProject
         public Home()
         {
             InitializeComponent();
-            
+            this.FormClosing += Home_FormClosing;
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            orderForm.Show();
-            kitchenForm.Hide();
-            checkoutForm.Hide();
-            adminForm.Hide();
+            OrderPage orderForm = new OrderPage();
+            handleClose(orderForm);
         }
+
 
         private void btnKitchen_Click(object sender, EventArgs e)
         {
-            kitchenForm.Show();
-            adminForm.Hide();
-            orderForm.Hide();
-            checkoutForm.Hide();
+            KitchenPage kitchenForm = new KitchenPage();
+            handleClose(kitchenForm);
         }
 
         private void btnCheckout_Click(object sender, EventArgs e)
-        {
-            checkoutForm.Show();
-            adminForm.Hide();
-            orderForm.Hide();
-            kitchenForm.Hide();
+        { 
+            checkoutPage checkoutForm = new checkoutPage();
+            handleClose(checkoutForm);
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            adminForm.Show();
+            AdminPage adminForm = new AdminPage();
+            handleClose(adminForm);   
+        }
+
+        private void handleClose(Form newForm)
+        {
+            KitchenPage kitchenForm = new KitchenPage();
+            OrderPage orderForm = new OrderPage();
+            checkoutPage checkoutForm = new checkoutPage();
+            AdminPage adminForm = new AdminPage();
+
+            adminForm.Hide();
             orderForm.Hide();
             kitchenForm.Hide();
             checkoutForm.Hide();
+
+            newForm.Show();
+
+        }
+
+        private void Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Formu kapatmak istediğinizden emin misiniz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.No)
+            {    
+                e.Cancel = true;
+            }
+            
         }
     }
 }
