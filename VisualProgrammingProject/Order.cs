@@ -12,7 +12,7 @@ namespace VisualProgrammingProject
         public Order() {}
 
 
-        public Order[] ordersList;
+        public static List<Order> ordersList = new List<Order>();
         public int orderID { get; set; }
         public string orderName { get; set; }
         public DateTime orderTime { get; set; }
@@ -23,12 +23,17 @@ namespace VisualProgrammingProject
 
         public void addOrder(Order order)
         {
-            ordersList.ToList().Add(order); 
+            ordersList.Add(order); 
         }
 
         public void removeOrder(Order order)
         {
-            ordersList.ToList().Remove(order);
+            ordersList.Remove(order);
+        }
+
+        public List<Order> getOrders()
+        {
+            return ordersList;
         }
 
 
