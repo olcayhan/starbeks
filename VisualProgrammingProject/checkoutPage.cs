@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -8,46 +9,25 @@ namespace VisualProgrammingProject
 {
     public partial class checkoutPage : Form
     {
-        Dictionary<string, double> CfeFiyat = new Dictionary<string, double>
-        {
-            { "Türk Kahvesi", 8.00 },
-            { "Espresso", 10.00 },
-            { "Americano", 12.00 }
-        };
-
-        Dictionary<string, int> FaturaPage = new Dictionary<string, int>();
-
+        Order order = new Order();
         public checkoutPage()
         {
             InitializeComponent();
-            checkoutPage_Load(this, EventArgs.Empty);
+            updateNameList();
         }
-
-        private void updateFatura()
+        private void updateNameList()
         {
-            lstviewFatura.Items.Clear();
-            double toplamfiyat = 0;
-
-            foreach (var Cfe in CfeFiyat)
+            lstVwName.Items.Clear();
+            foreach (Order item in order.getOrders())
             {
-                Random  rnd = new Random();
-                string cfename = Cfe.Key;
-                double cfepiece = rnd.Next(3,7);
-                double cfeprice = CfeFiyat[cfename];
-                toplamfiyat += cfeprice * cfepiece;
-
-                ListViewItem item = new ListViewItem(cfename);
-                item.SubItems.Add(cfepiece.ToString());
-                item.SubItems.Add((cfeprice * cfepiece).ToString("C"));
-
-                lstviewFatura.Items.Add(item);
+                ListViewItem listItem = new ListViewItem(item.orderID.ToString());
+                listItem.SubItems.Add(item.orderName);
+                lstVwName.Items.Add(listItem);
             }
-            txtPrice.Text = toplamfiyat.ToString("C");
         }
 
         private void btnOde_Click(object sender, EventArgs e)
         {
-         
             double tutar;
 
             if (double.TryParse(txtPrice.Text.Replace("₺", "").Trim(), out tutar))
@@ -67,10 +47,6 @@ namespace VisualProgrammingProject
                     MessageBox.Show("hesap ödenmiş");
                 }
             }
-        }
-        private void checkoutPage_Load(object sender, EventArgs e)
-        {
-            updateFatura();
         }
 
         double toplamFiyat = 0;
@@ -116,6 +92,31 @@ namespace VisualProgrammingProject
         private void lstviewFatura_MouseClick(object sender, MouseEventArgs e)
         {
             HesaplaVeYazdir();
+        }
+
+        private void lstVwName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lstviewFatura.Items.Clear();
+            double toplamfiyat = 0;
+
+            if (lstVwName.SelectedItems.Count > 0)
+            {
+                foreach (var product in order.getOrders()[lstVwName.SelectedIndices[0]].orderDetails)
+                {
+                    string cfename = product.productName;
+                    double cfepiece = product.productQuantity;
+                    double cfeprice = product.productPrice;
+                    toplamfiyat += cfeprice * cfepiece;
+
+                    ListViewItem item = new ListViewItem(cfename);
+                    item.SubItems.Add(cfepiece.ToString());
+                    item.SubItems.Add((cfeprice * cfepiece).ToString("C"));
+
+                    lstviewFatura.Items.Add(item);
+                }
+            }
+
+            txtPrice.Text = toplamfiyat.ToString("C");
         }
     }
 }

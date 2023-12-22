@@ -9,17 +9,15 @@ namespace VisualProgrammingProject
     public enum Situation { inQueue, Preparing, Ready }
     public class Order
     {
-        public Order() {}
-
-
         public static List<Order> ordersList = new List<Order>();
+        public List<OrderProduct> orderDetails = new List<OrderProduct>();
+
         public int orderID { get; set; }
         public string orderName { get; set; }
         public DateTime orderTime { get; set; }
         public Situation orderSituation { get; set; }
-        public OrderProduct[] orderDetails { get; set; }
 
-
+        public Order() {}
 
         public void addOrder(Order order)
         {
@@ -35,8 +33,6 @@ namespace VisualProgrammingProject
         {
             return ordersList;
         }
-
-
     }
 
 
