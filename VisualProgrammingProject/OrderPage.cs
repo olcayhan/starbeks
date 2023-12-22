@@ -144,15 +144,31 @@ namespace VisualProgrammingProject
 
             OrderUpdate();
         }
+        private void cleanList()
+        {
+            foreach (ListViewItem selectedItem in LstVwOrder.Items)
+            {
+                LstVwOrder.Items.Remove(selectedItem);
 
+                string selectCfe = selectedItem.Text;
+
+                if (OrderDetailing.ContainsKey(selectCfe))
+                {
+                    OrderDetailing.Remove(selectCfe);
+                }
+                txtTotal.Text = "";
+            }
+        }
         private void btnClean_Click(object sender, EventArgs e)
         {
-            LstVwOrder.Items.Clear();
+            cleanList();
         }
 
         private void orderbtn_Click(object sender, EventArgs e)
         {
-            kitchenForm.UpdateListView(OrderDetailing, CoffeePrice);
+            cleanList();
+            MessageBox.Show("Your order has been received");    
+            
         }
     }
 }
