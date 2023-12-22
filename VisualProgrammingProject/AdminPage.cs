@@ -47,6 +47,10 @@ namespace VisualProgrammingProject
 
                 liviewProducts.Items.Add(item);
             }
+            txtProductName.Text = "";
+            txtProductAmount.Text = "";
+            cmbProductCategory.Text = "";
+            txtProductPrice.Text = "";
         }
 
         private void btnDeleteCategory_Click(object sender, EventArgs e)
@@ -74,6 +78,6 @@ namespace VisualProgrammingProject
             {
                 MessageBox.Show("Select a Product");
             }
-        }
+        }     
     }
 }
