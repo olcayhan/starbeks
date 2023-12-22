@@ -19,13 +19,18 @@ namespace VisualProgrammingProject
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            liboxCategories.Items.Add(txtCategory.Text);
-            cmbProductCategory.Items.Add(txtCategory.Text);
-
+   
             if(txtCategory.Text == "")
             {
                 MessageBox.Show("Type a category.");
             }
+            else
+            {
+                liboxCategories.Items.Add(txtCategory.Text);
+                cmbProductCategory.Items.Add(txtCategory.Text);
+            }
+
+            txtCategory.Text = "";
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -47,12 +52,17 @@ namespace VisualProgrammingProject
 
                 liviewProducts.Items.Add(item);
             }
+            txtProductName.Text = "";
+            txtProductAmount.Text = "";
+            cmbProductCategory.SelectedIndex = 0;
+            txtProductPrice.Text = "";
         }
 
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
             if(liboxCategories.SelectedIndex != -1)
             {
+                cmbProductCategory.Items.RemoveAt(liboxCategories.SelectedIndex);
                 liboxCategories.Items.RemoveAt(liboxCategories.SelectedIndex);
             }
             else
@@ -74,6 +84,6 @@ namespace VisualProgrammingProject
             {
                 MessageBox.Show("Select a Product");
             }
-        }
+        }     
     }
 }
