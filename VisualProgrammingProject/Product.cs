@@ -8,7 +8,7 @@ namespace VisualProgrammingProject
 {
     public class Product
     {
-        public int Name { get; set; }
+        public string Name { get; set; }
         public Category Category { get; set; }
         public int Amount { get; set; }
         public double Price { get; set; }
@@ -16,7 +16,7 @@ namespace VisualProgrammingProject
         public static List<Product> ProductList = new List<Product>();
 
         public Product() { }
-        public Product(int Name, Category Category, int Amount, double Price)
+        public Product(string Name, Category Category, int Amount, double Price)
         {
             this.Name = Name;
             this.Category = Category;

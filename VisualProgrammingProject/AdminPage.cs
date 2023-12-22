@@ -13,6 +13,7 @@ namespace VisualProgrammingProject
     public partial class AdminPage : Form
     {
         Category category = new Category();
+        Product product = new Product();
         public AdminPage()
         {
             InitializeComponent();
@@ -48,6 +49,19 @@ namespace VisualProgrammingProject
             txtCategory.Text = "";
         }
 
+        public void updateProducts()
+        {
+            liviewProducts.Items.Clear();
+            foreach (Product productItem in product.getProducts())
+            {
+                ListViewItem item = new ListViewItem(productItem.Name.ToString());
+                item.SubItems.Add(productItem.Amount.ToString());
+                item.SubItems.Add(productItem.Category.Name);
+                item.SubItems.Add(productItem.Price.ToString());
+                liviewProducts.Items.Add(item);
+            }
+        }
+
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             if (txtProductName.Text == "" || txtProductAmount.Text == "" || cmbProductCategory.Text == "" || txtProductPrice.Text == "")
@@ -56,16 +70,12 @@ namespace VisualProgrammingProject
             }
             else
             {
-
-                ListViewItem item = new ListViewItem(txtProductName.Text);
-                item.SubItems.Add(txtProductAmount.Text);
-                item.SubItems.Add(cmbProductCategory.Text);
-                item.SubItems.Add(txtProductPrice.Text);
-
-                liviewProducts.Items.Add(item);
-
-
+                Category newCategory = new Category(cmbProductCategory.Text);
+                Product newProduct = new Product(txtProductName.Text, newCategory, Convert.ToInt32(txtProductAmount.Text), Convert.ToDouble(txtProductPrice.Text));
+                newProduct.addProduct(newProduct);
+                updateProducts();
             }
+
             txtProductName.Text = "";
             txtProductAmount.Text = "";
             cmbProductCategory.SelectedIndex = 0;
@@ -89,10 +99,11 @@ namespace VisualProgrammingProject
         {
             if (liviewProducts.SelectedItems.Count > 0)
             {
-                foreach (ListViewItem item in liviewProducts.SelectedItems)
+                foreach (int index in liviewProducts.SelectedIndices)
                 {
-                    liviewProducts.Items.Remove(item);
+                    product.getProducts().RemoveAt(index);
                 }
+                updateProducts();
             }
             else
             {
