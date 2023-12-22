@@ -9,29 +9,30 @@ namespace VisualProgrammingProject
     public enum Situation { inQueue, Preparing, Ready }
     public class Order
     {
-        public Order() {}
+        public static List<Order> ordersList = new List<Order>();
+        public List<OrderProduct> orderDetails = new List<OrderProduct>();
 
-
-        public Order[] ordersList;
         public int orderID { get; set; }
         public string orderName { get; set; }
         public DateTime orderTime { get; set; }
         public Situation orderSituation { get; set; }
-        public OrderProduct[] orderDetails { get; set; }
 
-
+        public Order() {}
 
         public void addOrder(Order order)
         {
-            ordersList.ToList().Add(order); 
+            ordersList.Add(order); 
         }
 
         public void removeOrder(Order order)
         {
-            ordersList.ToList().Remove(order);
+            ordersList.Remove(order);
         }
 
-
+        public List<Order> getOrders()
+        {
+            return ordersList;
+        }
     }
 
 
