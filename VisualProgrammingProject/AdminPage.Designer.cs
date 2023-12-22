@@ -76,6 +76,7 @@
             // 
             // cmbProductCategory
             // 
+            this.cmbProductCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbProductCategory.FormattingEnabled = true;
             this.cmbProductCategory.Items.AddRange(new object[] {
