@@ -19,13 +19,18 @@ namespace VisualProgrammingProject
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            liboxCategories.Items.Add(txtCategory.Text);
-            cmbProductCategory.Items.Add(txtCategory.Text);
-
+   
             if(txtCategory.Text == "")
             {
                 MessageBox.Show("Type a category.");
             }
+            else
+            {
+                liboxCategories.Items.Add(txtCategory.Text);
+                cmbProductCategory.Items.Add(txtCategory.Text);
+            }
+
+            txtCategory.Text = "";
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -49,7 +54,7 @@ namespace VisualProgrammingProject
             }
             txtProductName.Text = "";
             txtProductAmount.Text = "";
-            cmbProductCategory.Text = "";
+            cmbProductCategory.SelectedIndex = 0;
             txtProductPrice.Text = "";
         }
 
