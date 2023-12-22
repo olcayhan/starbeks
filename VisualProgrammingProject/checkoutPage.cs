@@ -14,24 +14,6 @@ namespace VisualProgrammingProject
             { "olcay", 1001 },
             { "ismail",1002  }
         };
-        Dictionary<double, List<string>> CoffeeOrder = new Dictionary<double, List<string>>
-        {
-            { 1000, new List<string> { "Turkish coffee", "Espresso", "Americano" } },
-            { 1001, new List<string> { "Frappe", "Cold Brew", "Iced Latte" } },
-            { 1002, new List<string> { "Latte", "Cappuccino", "Macchiato" } }
-        };
-        Dictionary<string, double> CoffeePrice = new Dictionary<string, double>
-        {
-            { "Turkish coffee", 8.00 },
-            { "Espresso", 10.00 },
-            { "Americano", 12.00 },
-            { "Frappe", 15.00 },
-            { "Cold Brew", 14.00 },
-            { "Iced Latte", 16.00 },
-            { "Latte", 14.50 },
-            { "Cappuccino", 16.50 },
-            { "Macchiato", 15.50 }
-        };
 
         Dictionary<string, double> CfeFiyat = new Dictionary<string, double>
         {
@@ -62,7 +44,7 @@ namespace VisualProgrammingProject
             }
         }
 
-        private void updateFatura(double id)
+        private void updateFatura()
         {
             lstviewFatura.Items.Clear();
             double toplamfiyat = 0;
