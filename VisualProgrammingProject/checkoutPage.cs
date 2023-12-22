@@ -8,12 +8,38 @@ namespace VisualProgrammingProject
 {
     public partial class checkoutPage : Form
     {
+        Dictionary<string, double> IdName = new Dictionary<string, double>()
+        {
+            { "hakan", 1000  },
+            { "olcay", 1001 },
+            { "ismail",1002  }
+        };
+        Dictionary<double, List<string>> CoffeeOrder = new Dictionary<double, List<string>>
+        {
+            { 1000, new List<string> { "Turkish coffee", "Espresso", "Americano" } },
+            { 1001, new List<string> { "Frappe", "Cold Brew", "Iced Latte" } },
+            { 1002, new List<string> { "Latte", "Cappuccino", "Macchiato" } }
+        };
+        Dictionary<string, double> CoffeePrice = new Dictionary<string, double>
+        {
+            { "Turkish coffee", 8.00 },
+            { "Espresso", 10.00 },
+            { "Americano", 12.00 },
+            { "Frappe", 15.00 },
+            { "Cold Brew", 14.00 },
+            { "Iced Latte", 16.00 },
+            { "Latte", 14.50 },
+            { "Cappuccino", 16.50 },
+            { "Macchiato", 15.50 }
+        };
+
         Dictionary<string, double> CfeFiyat = new Dictionary<string, double>
         {
             { "Türk Kahvesi", 8.00 },
             { "Espresso", 10.00 },
             { "Americano", 12.00 }
         };
+        
 
         Dictionary<string, int> FaturaPage = new Dictionary<string, int>();
 
@@ -22,8 +48,21 @@ namespace VisualProgrammingProject
             InitializeComponent();
             checkoutPage_Load(this, EventArgs.Empty);
         }
+        private void updateNameList()
+        {
+            lstVwName.Items.Clear();
+            foreach (var OrderName in  IdName)
+            {
+                string name = OrderName.Key;
+                double id = OrderName.Value;
+                
+                ListViewItem item = new ListViewItem(id.ToString());
+                item.SubItems.Add(name);
+                lstVwName.Items.Add(item);
+            }
+        }
 
-        private void updateFatura()
+        private void updateFatura(double id)
         {
             lstviewFatura.Items.Clear();
             double toplamfiyat = 0;
@@ -71,6 +110,7 @@ namespace VisualProgrammingProject
         private void checkoutPage_Load(object sender, EventArgs e)
         {
             updateFatura();
+            updateNameList();
         }
 
         double toplamFiyat = 0;
