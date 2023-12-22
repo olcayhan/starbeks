@@ -64,6 +64,7 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order.cs" />
     <Compile Include="OrderPage.cs">
       <SubType>Form</SubType>
     </Compile>

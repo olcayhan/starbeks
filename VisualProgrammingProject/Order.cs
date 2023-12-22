@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VisualProgrammingProject
+{
+    public enum Situation { inQueue, Preparing, Ready }
+    public class Order
+    {
+        public Order() {}
+
+
+        public Order[] ordersList;
+        public int orderID { get; set; }
+        public string orderName { get; set; }
+        public DateTime orderTime { get; set; }
+        public Situation orderSituation { get; set; }
+        public OrderProduct[] orderDetails { get; set; }
+
+
+
+        public void addOrder(Order order)
+        {
+            ordersList.ToList().Add(order); 
+        }
+
+        public void removeOrder(Order order)
+        {
+            ordersList.ToList().Remove(order);
+        }
+
+
+    }
+
+
+    public class OrderProduct
+    {
+        public string productName { get; set; }
+        public double productPrice { get; set; }
+        public int productQuantity { get; set; }
+    }
+}
