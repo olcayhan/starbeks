@@ -187,7 +187,7 @@
             this.Controls.Add(this.lblName);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "KitchenPage";
-            this.Text = "Form2";
+            this.Text = "Kitchen";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VisualProgrammingProject
 {
-    public enum Situation { inQueue, Preparing, Ready }
+    public enum Status { inQueue, Preparing, Ready }
     public class Order
     {
         public static List<Order> ordersList = new List<Order>();
@@ -15,7 +15,7 @@ namespace VisualProgrammingProject
         public int orderID { get; set; }
         public string orderName { get; set; }
         public DateTime orderTime { get; set; }
-        public Situation orderSituation { get; set; }
+        public Status orderStatus { get; set; }
 
         public Order() {}
         public Order(int orderID, string orderName, DateTime orderTime)
@@ -51,13 +51,13 @@ namespace VisualProgrammingProject
     {
         public string productName { get; set; }
         public double productPrice { get; set; }
-        public int productQuantity { get; set; }
+        public int productPiece { get; set; }
 
-        public OrderProduct(string productName, double productPrice,int productQuantity)
+        public OrderProduct(string productName, double productPrice,int productPiece)
         {
             this.productName = productName;
             this.productPrice = productPrice;
-            this.productQuantity = productQuantity;
+            this.productPiece = productPiece;
         }
     }
 }

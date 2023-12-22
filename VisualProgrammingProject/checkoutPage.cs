@@ -106,7 +106,7 @@ namespace VisualProgrammingProject
                 foreach (var product in order.getOrders()[lstVwName.SelectedIndices[0]].orderDetails)
                 {
                     string cfename = product.productName;
-                    double cfepiece = product.productQuantity;
+                    double cfepiece = product.productPiece;
                     double cfeprice = product.productPrice;
                     toplamfiyat += cfeprice * cfepiece;
 

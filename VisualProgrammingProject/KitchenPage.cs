@@ -12,83 +12,58 @@ namespace VisualProgrammingProject
 {
     public partial class KitchenPage : System.Windows.Forms.Form
     {
-        private int sipId = 1000;
-        DateTime selectedDatetime = DateTime.Now;
+        Order order = new Order();
         public KitchenPage()
         {
             InitializeComponent();
+            UpdateListView();
         }
-        public void UpdateListView(Dictionary<string, int> orderDetailing, Dictionary<string, double> coffeePrice)
+        public void UpdateListView()
         {
-
-            string id = sipId.ToString();
-            string name = "hakan";
-
-
-            foreach (var cfe in orderDetailing)
+            liViewKitchen.Items.Clear();
+            foreach (Order order in order.getOrders())
             {
-                string orderDet = cfe.Key;
-                int orderPiece = cfe.Value;
+                ListViewItem item = new ListViewItem(order.orderID.ToString());
+                item.SubItems.Add(order.orderName);
+                item.SubItems.Add("35");
+                item.SubItems.Add("Çay");
+                item.SubItems.Add(order.orderStatus.ToString());
+                item.SubItems.Add(order.orderTime.ToString());
+                if(order.orderStatus == Status.inQueue) item.BackColor = Color.IndianRed;
+                else if(order.orderStatus == Status.Preparing) item.BackColor = Color.LightYellow;
+                else item.BackColor = Color.LightSeaGreen;
 
-                ListViewItem item = new ListViewItem(id);
-                item.SubItems.Add(name);
-                item.SubItems.Add(orderPiece.ToString());
-                item.SubItems.Add(orderDet);
-                item.SubItems.Add("In Queue");
-                item.SubItems.Add(selectedDatetime.ToString());
                 liViewKitchen.Items.Add(item);
             }
-            sipId++;
         }
-        public void changeStatus(string status)
+        public void changeStatus(Status status)
         {
-            foreach (ListViewItem items in liViewKitchen.SelectedItems)
+            if (liViewKitchen.SelectedItems.Count > 0)
             {
-                items.SubItems[4].Text = status;
-                items.SubItems[5].Text = DateTime.Now.ToString();             
+                foreach (ListViewItem listItem in liViewKitchen.SelectedItems)
+                {
+                    Order newOrder = order.getOrders().Find(item => item.orderID.ToString() == listItem.Text);
+                    newOrder.orderStatus = status;
+                    newOrder.orderTime = DateTime.Now;
+                }
+                UpdateListView();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row.");
             }
         }
         private void btnQueue_Click(object sender, EventArgs e)
         {
-            
-            if (liViewKitchen.SelectedItems.Count > 0)
-            {
-                changeStatus("In Queue");
-                liViewKitchen.SelectedItems[0].BackColor = Color.IndianRed;
-            }
-            else
-            {
-                MessageBox.Show("Please select a row.");
-            }
+                changeStatus(Status.inQueue);
         }
-
         private void btnPrepare_Click(object sender, EventArgs e)
         {
-            
-            if (liViewKitchen.SelectedItems.Count > 0)
-            {
-                changeStatus("Preparing");
-                liViewKitchen.SelectedItems[0].BackColor = Color.LightYellow;
-            }
-            else
-            {
-                MessageBox.Show("Please select a row.");
-            }
+                changeStatus(Status.Preparing);
         }
-
         private void btnReady_Click(object sender, EventArgs e)
         {
-           
-            if (liViewKitchen.SelectedItems.Count > 0)
-            {
-                changeStatus("Ready");
-                liViewKitchen.SelectedItems[0].BackColor = Color.LightSeaGreen;
-
-            }
-            else
-            {
-                MessageBox.Show("Please select a row.");
-            }
+                changeStatus(Status.Ready);
         }
     }
 }

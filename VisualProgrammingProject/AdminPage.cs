@@ -12,22 +12,37 @@ namespace VisualProgrammingProject
 {
     public partial class AdminPage : Form
     {
+        Category category = new Category();
         public AdminPage()
         {
             InitializeComponent();
+            updateCategories();
+        }
+
+        public void updateCategories()
+        {
+            liboxCategories.Items.Clear();
+            cmbProductCategory.Items.Clear();
+
+            foreach (Category item in category.GetCategories())
+            {
+                liboxCategories.Items.Add(item.Name);
+                cmbProductCategory.Items.Add(item.Name);
+            }
         }
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-   
-            if(txtCategory.Text == "")
+
+            if (txtCategory.Text == "")
             {
                 MessageBox.Show("Type a category.");
             }
             else
             {
-                liboxCategories.Items.Add(txtCategory.Text);
-                cmbProductCategory.Items.Add(txtCategory.Text);
+                Category newCategory = new Category(txtCategory.Text);
+                category.AddCategory(newCategory);
+                updateCategories();
             }
 
             txtCategory.Text = "";
@@ -35,22 +50,21 @@ namespace VisualProgrammingProject
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            if(txtProductName.Text == "" || txtProductAmount.Text == "")
-            {
-                MessageBox.Show("Fill in the blanks");
-            }
-            else if(cmbProductCategory.Text == "" || txtProductPrice.Text == "")
+            if (txtProductName.Text == "" || txtProductAmount.Text == "" || cmbProductCategory.Text == "" || txtProductPrice.Text == "")
             {
                 MessageBox.Show("Fill in the blanks");
             }
             else
             {
+
                 ListViewItem item = new ListViewItem(txtProductName.Text);
                 item.SubItems.Add(txtProductAmount.Text);
                 item.SubItems.Add(cmbProductCategory.Text);
                 item.SubItems.Add(txtProductPrice.Text);
 
                 liviewProducts.Items.Add(item);
+
+
             }
             txtProductName.Text = "";
             txtProductAmount.Text = "";
@@ -60,10 +74,10 @@ namespace VisualProgrammingProject
 
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
-            if(liboxCategories.SelectedIndex != -1)
+            if (liboxCategories.SelectedIndex != -1)
             {
-                cmbProductCategory.Items.RemoveAt(liboxCategories.SelectedIndex);
-                liboxCategories.Items.RemoveAt(liboxCategories.SelectedIndex);
+                category.GetCategories().RemoveAt(liboxCategories.SelectedIndex);
+                updateCategories();
             }
             else
             {
@@ -73,9 +87,9 @@ namespace VisualProgrammingProject
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            if(liviewProducts.SelectedItems.Count > 0)
+            if (liviewProducts.SelectedItems.Count > 0)
             {
-                foreach(ListViewItem item in liviewProducts.SelectedItems)
+                foreach (ListViewItem item in liviewProducts.SelectedItems)
                 {
                     liviewProducts.Items.Remove(item);
                 }
@@ -84,6 +98,6 @@ namespace VisualProgrammingProject
             {
                 MessageBox.Show("Select a Product");
             }
-        }     
+        }
     }
 }
