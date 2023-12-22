@@ -28,6 +28,8 @@ namespace VisualProgrammingProject
 
         private void btnOde_Click(object sender, EventArgs e)
         {
+            updateNameList();
+
             double tutar;
 
             if (double.TryParse(txtPrice.Text.Replace("₺", "").Trim(), out tutar))

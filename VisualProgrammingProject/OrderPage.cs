@@ -11,14 +11,7 @@ using System.Windows.Forms;
 namespace VisualProgrammingProject
 {
     public partial class OrderPage : Form
-        
     {
-        private KitchenPage kitchenForm;
-
-        public void SetKitchenForm(KitchenPage kitchenForm)
-        {
-            this.kitchenForm = kitchenForm;
-        }
         Dictionary<string, List<string>> CoffeeType = new Dictionary<string, List<string>>
         {
             { "Hot Coffee", new List<string> { "Turkish coffee", "Espresso", "Americano" } },
@@ -55,7 +48,7 @@ namespace VisualProgrammingProject
                 double price = CoffeePrice[Cfe];
 
                 ListViewItem item = new ListViewItem(Cfe);
-                item.SubItems.Add(price.ToString("C"));
+                item.SubItems.Add(price.ToString());
                 LstVwMenu.Items.Add(item);
             }
         }
@@ -74,11 +67,11 @@ namespace VisualProgrammingProject
 
                 ListViewItem item = new ListViewItem(orderdet);
                 item.SubItems.Add(orderpiece.ToString());
-                item.SubItems.Add((orderpiece * cfeprice).ToString("C"));
+                item.SubItems.Add((orderpiece * cfeprice).ToString());
                 LstVwOrder.Items.Add(item);
             }
             NumericPiece.Value = 0;
-            txtTotal.Text = Total.ToString("C");
+            txtTotal.Text = Total.ToString();
 
         }
         private void btnHot_Click(object sender, EventArgs e)
@@ -157,6 +150,7 @@ namespace VisualProgrammingProject
                     OrderDetailing.Remove(selectCfe);
                 }
                 txtTotal.Text = "";
+                txtName.Text = "";
             }
         }
         private void btnClean_Click(object sender, EventArgs e)
@@ -166,9 +160,19 @@ namespace VisualProgrammingProject
 
         private void orderbtn_Click(object sender, EventArgs e)
         {
+            Random rnd = new Random();
+            Order newOrder = new Order(rnd.Next(1000,3000),txtName.Text,DateTime.Now);
+
+            foreach(ListViewItem item in LstVwOrder.Items)
+            {
+                OrderProduct newProduct = new OrderProduct(item.Text, Convert.ToInt32(item.SubItems[2].Text), Convert.ToInt32(item.SubItems[1].Text));
+                newOrder.addProduct(newProduct); 
+            }
+            newOrder.addOrder(newOrder);
+
             cleanList();
+
             MessageBox.Show("Your order has been received");    
-            
         }
     }
 }

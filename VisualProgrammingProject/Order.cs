@@ -18,10 +18,21 @@ namespace VisualProgrammingProject
         public Situation orderSituation { get; set; }
 
         public Order() {}
+        public Order(int orderID, string orderName, DateTime orderTime)
+        {
+            this.orderID = orderID;
+            this.orderName = orderName;
+            this.orderTime = orderTime;
+        }
 
         public void addOrder(Order order)
         {
             ordersList.Add(order); 
+        }
+
+        public void addProduct(OrderProduct product)
+        {
+            orderDetails.Add(product);
         }
 
         public void removeOrder(Order order)
@@ -41,5 +52,12 @@ namespace VisualProgrammingProject
         public string productName { get; set; }
         public double productPrice { get; set; }
         public int productQuantity { get; set; }
+
+        public OrderProduct(string productName, double productPrice,int productQuantity)
+        {
+            this.productName = productName;
+            this.productPrice = productPrice;
+            this.productQuantity = productQuantity;
+        }
     }
 }
