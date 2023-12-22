@@ -53,6 +53,7 @@ namespace VisualProgrammingProject
         {
             if(liboxCategories.SelectedIndex != -1)
             {
+                cmbProductCategory.Items.RemoveAt(liboxCategories.SelectedIndex);
                 liboxCategories.Items.RemoveAt(liboxCategories.SelectedIndex);
             }
             else
