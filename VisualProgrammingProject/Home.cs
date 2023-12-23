@@ -16,51 +16,57 @@ namespace VisualProgrammingProject
         OrderPage orderForm = new OrderPage();
         checkoutPage checkoutForm = new checkoutPage();
         AdminPage adminForm = new AdminPage();
+
         public Home()
         {
             InitializeComponent();
             this.FormClosing += Home_FormClosing;
         }
 
+
+        public void hideForms()
+        {
+            adminForm.Hide();
+            orderForm.Hide();
+            kitchenForm.Hide();
+            checkoutForm.Hide();
+        }
+
+        private void Form_Closing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            hideForms();
+        }
+
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            OrderPage orderForm = new OrderPage();
+            orderForm.FormClosing += Form_Closing;
             handleClose(orderForm);
         }
 
-
+ 
         private void btnKitchen_Click(object sender, EventArgs e)
         {
-            KitchenPage kitchenForm = new KitchenPage();
+            kitchenForm.FormClosing += Form_Closing;
             handleClose(kitchenForm);
         }
 
         private void btnCheckout_Click(object sender, EventArgs e)
-        { 
-            checkoutPage checkoutForm = new checkoutPage();
+        {
+            checkoutForm.FormClosing += Form_Closing;
             handleClose(checkoutForm);
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            AdminPage adminForm = new AdminPage();
+            adminForm.FormClosing += Form_Closing;
             handleClose(adminForm);   
         }
 
         private void handleClose(Form newForm)
         {
-            KitchenPage kitchenForm = new KitchenPage();
-            OrderPage orderForm = new OrderPage();
-            checkoutPage checkoutForm = new checkoutPage();
-            AdminPage adminForm = new AdminPage();
-
-            adminForm.Hide();
-            orderForm.Hide();
-            kitchenForm.Hide();
-            checkoutForm.Hide();
-
+            hideForms();
             newForm.Show();
-
         }
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
