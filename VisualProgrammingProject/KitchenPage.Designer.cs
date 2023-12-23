@@ -37,8 +37,6 @@
             this.liViewKitchen = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
@@ -49,10 +47,9 @@
             this.lblDrink.BackColor = System.Drawing.SystemColors.InfoText;
             this.lblDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblDrink.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblDrink.Location = new System.Drawing.Point(-71, 176);
-            this.lblDrink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDrink.Location = new System.Drawing.Point(-95, 217);
             this.lblDrink.Name = "lblDrink";
-            this.lblDrink.Size = new System.Drawing.Size(41, 17);
+            this.lblDrink.Size = new System.Drawing.Size(49, 20);
             this.lblDrink.TabIndex = 22;
             this.lblDrink.Text = "Drink";
             // 
@@ -62,10 +59,9 @@
             this.lblAmount.BackColor = System.Drawing.SystemColors.InfoText;
             this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblAmount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblAmount.Location = new System.Drawing.Point(-71, 125);
-            this.lblAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAmount.Location = new System.Drawing.Point(-95, 154);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(56, 17);
+            this.lblAmount.Size = new System.Drawing.Size(66, 20);
             this.lblAmount.TabIndex = 21;
             this.lblAmount.Text = "Amount";
             // 
@@ -75,10 +71,9 @@
             this.lblName.BackColor = System.Drawing.SystemColors.InfoText;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblName.Location = new System.Drawing.Point(-71, 78);
-            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Location = new System.Drawing.Point(-95, 96);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(45, 17);
+            this.lblName.Size = new System.Drawing.Size(53, 20);
             this.lblName.TabIndex = 20;
             this.lblName.Text = "Name";
             // 
@@ -86,10 +81,10 @@
             // 
             this.btnPrepare.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnPrepare.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnPrepare.Location = new System.Drawing.Point(724, 195);
-            this.btnPrepare.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrepare.Location = new System.Drawing.Point(965, 240);
+            this.btnPrepare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrepare.Name = "btnPrepare";
-            this.btnPrepare.Size = new System.Drawing.Size(111, 48);
+            this.btnPrepare.Size = new System.Drawing.Size(148, 59);
             this.btnPrepare.TabIndex = 26;
             this.btnPrepare.Text = "Preparing";
             this.btnPrepare.UseVisualStyleBackColor = false;
@@ -99,10 +94,10 @@
             // 
             this.btnReady.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnReady.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnReady.Location = new System.Drawing.Point(724, 311);
-            this.btnReady.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReady.Location = new System.Drawing.Point(965, 383);
+            this.btnReady.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReady.Name = "btnReady";
-            this.btnReady.Size = new System.Drawing.Size(111, 48);
+            this.btnReady.Size = new System.Drawing.Size(148, 59);
             this.btnReady.TabIndex = 25;
             this.btnReady.Text = "Ready";
             this.btnReady.UseVisualStyleBackColor = false;
@@ -112,10 +107,10 @@
             // 
             this.btnQueue.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnQueue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnQueue.Location = new System.Drawing.Point(724, 83);
-            this.btnQueue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnQueue.Location = new System.Drawing.Point(965, 102);
+            this.btnQueue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQueue.Name = "btnQueue";
-            this.btnQueue.Size = new System.Drawing.Size(111, 48);
+            this.btnQueue.Size = new System.Drawing.Size(148, 59);
             this.btnQueue.TabIndex = 24;
             this.btnQueue.Text = "In Queue";
             this.btnQueue.UseVisualStyleBackColor = false;
@@ -127,20 +122,19 @@
             this.liViewKitchen.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
             this.liViewKitchen.FullRowSelect = true;
             this.liViewKitchen.HideSelection = false;
-            this.liViewKitchen.Location = new System.Drawing.Point(72, 92);
-            this.liViewKitchen.Margin = new System.Windows.Forms.Padding(2);
+            this.liViewKitchen.Location = new System.Drawing.Point(96, 113);
+            this.liViewKitchen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.liViewKitchen.MultiSelect = false;
             this.liViewKitchen.Name = "liViewKitchen";
-            this.liViewKitchen.Size = new System.Drawing.Size(569, 274);
+            this.liViewKitchen.Size = new System.Drawing.Size(757, 336);
             this.liViewKitchen.TabIndex = 23;
             this.liViewKitchen.UseCompatibleStateImageBehavior = false;
             this.liViewKitchen.View = System.Windows.Forms.View.Details;
+            this.liViewKitchen.SelectedIndexChanged += new System.EventHandler(this.liViewKitchen_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -151,16 +145,6 @@
             // 
             this.columnHeader2.Text = "Name";
             this.columnHeader2.Width = 82;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Amount";
-            this.columnHeader3.Width = 68;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Drink";
-            this.columnHeader4.Width = 122;
             // 
             // columnHeader5
             // 
@@ -174,10 +158,10 @@
             // 
             // KitchenPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(922, 462);
+            this.ClientSize = new System.Drawing.Size(1229, 569);
             this.Controls.Add(this.btnPrepare);
             this.Controls.Add(this.btnReady);
             this.Controls.Add(this.btnQueue);
@@ -185,7 +169,7 @@
             this.Controls.Add(this.lblDrink);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblName);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "KitchenPage";
             this.Text = "Kitchen";
             this.ResumeLayout(false);
@@ -203,8 +187,6 @@
         private System.Windows.Forms.Button btnQueue;
         private System.Windows.Forms.ListView liViewKitchen;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader6;

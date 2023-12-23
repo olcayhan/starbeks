@@ -65,5 +65,17 @@ namespace VisualProgrammingProject
         {
                 changeStatus(Status.Ready);
         }
+
+        private void liViewKitchen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(liViewKitchen.SelectedItems.Count > 0){
+                Order newOrder = order.getOrders().Find(item => item.orderID == Convert.ToInt32(liViewKitchen.SelectedItems[0].Text)); 
+
+                OrderDetails orderDetailsForm = new OrderDetails(newOrder);
+                orderDetailsForm.ShowDialog();
+            }
+
+            
+        }
     }
 }
