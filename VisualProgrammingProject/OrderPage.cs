@@ -165,7 +165,7 @@ namespace VisualProgrammingProject
 
             foreach(ListViewItem item in LstVwOrder.Items)
             {
-                OrderProduct newProduct = new OrderProduct(item.Text, Convert.ToInt32(item.SubItems[2].Text), Convert.ToInt32(item.SubItems[1].Text));
+                OrderProduct newProduct = new OrderProduct(item.Text, Convert.ToDouble(item.SubItems[2].Text), Convert.ToInt32(item.SubItems[1].Text));
                 newOrder.addProduct(newProduct); 
             }
             newOrder.addOrder(newOrder);
