@@ -17,7 +17,13 @@ namespace VisualProgrammingProject
         public AdminPage()
         {
             InitializeComponent();
+            this.Activated += AdminPage_Activated;
+        }
+
+        private void AdminPage_Activated(object sender, EventArgs e)
+        {
             updateCategories();
+            updateProducts();
         }
 
         public void updateCategories()

@@ -13,10 +13,10 @@ namespace VisualProgrammingProject
         public checkoutPage()
         {
             InitializeComponent();
-            this.Load += CheckoutPage_Load;
+            this.Activated += CheckoutPage_Activated; ;
         }
 
-        private void CheckoutPage_Load(object sender, EventArgs e)
+        private void CheckoutPage_Activated(object sender, EventArgs e)
         {
             updateNameList();
         }

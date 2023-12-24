@@ -17,10 +17,10 @@ namespace VisualProgrammingProject
         public KitchenPage()
         {
             InitializeComponent();
-            this.Load += KitchenPage_Load;
+            this.Activated += KitchenPage_Activated; ;
         }
 
-        private void KitchenPage_Load(object sender, EventArgs e)
+        private void KitchenPage_Activated(object sender, EventArgs e)
         {
             UpdateListView();
         }
