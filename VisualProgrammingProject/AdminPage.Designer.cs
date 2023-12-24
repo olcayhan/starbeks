@@ -301,9 +301,9 @@
             this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.liboxCategories);
             this.Controls.Add(this.lblCategories);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminPage";
-            this.Text = "Form2";
+            this.Text = "Admin";
             this.ResumeLayout(false);
             this.PerformLayout();
 
