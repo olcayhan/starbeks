@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,11 @@ namespace VisualProgrammingProject
         public KitchenPage()
         {
             InitializeComponent();
+            this.Load += KitchenPage_Load;
+        }
+
+        private void KitchenPage_Load(object sender, EventArgs e)
+        {
             UpdateListView();
         }
         public void UpdateListView()

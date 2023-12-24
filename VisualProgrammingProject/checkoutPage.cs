@@ -13,8 +13,14 @@ namespace VisualProgrammingProject
         public checkoutPage()
         {
             InitializeComponent();
+            this.Load += CheckoutPage_Load;
+        }
+
+        private void CheckoutPage_Load(object sender, EventArgs e)
+        {
             updateNameList();
         }
+
         private void updateNameList()
         {
             lstVwName.Items.Clear();
