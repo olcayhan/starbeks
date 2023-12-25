@@ -1,25 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace VisualProgrammingProject
 {
     public partial class OrderPage : Form
     {
-        Dictionary<string, List<string>> CoffeeType = new Dictionary<string, List<string>>
+        private readonly Dictionary<string, List<string>> CoffeeType = new Dictionary<string, List<string>>
         {
             { "Hot Coffee", new List<string> { "Turkish coffee", "Espresso", "Americano" } },
             { "Cold Coffee", new List<string> { "Frappe", "Cold Brew", "Iced Latte" } },
             { "Milky Coffee", new List<string> { "Latte", "Cappuccino", "Macchiato" } }
         };
 
-        Dictionary<string, double> CoffeePrice = new Dictionary<string, double>
+        private readonly Dictionary<string, double> CoffeePrice = new Dictionary<string, double>
         {
             { "Turkish coffee", 8.00 },
             { "Espresso", 10.00 },
@@ -32,48 +26,50 @@ namespace VisualProgrammingProject
             { "Macchiato", 15.50 }
         };
 
-        Dictionary<string, int> OrderDetailing = new Dictionary<string, int>();
+        private readonly Dictionary<string, int> OrderDetailing = new Dictionary<string, int>();
 
         public OrderPage()
         {
             InitializeComponent();
-            
         }
-        private void MenuUpdate(string cofetype)
+
+        private void MenuUpdate(string coffeeType)
         {
             LstVwMenu.Items.Clear();
 
-            foreach (var Cfe in CoffeeType[cofetype])
-            {                
-                double price = CoffeePrice[Cfe];
+            foreach (var coffee in CoffeeType[coffeeType])
+            {
+                double price = CoffeePrice[coffee];
 
-                ListViewItem item = new ListViewItem(Cfe);
+                ListViewItem item = new ListViewItem(coffee);
                 item.SubItems.Add(price.ToString());
                 LstVwMenu.Items.Add(item);
             }
         }
+
         private void OrderUpdate()
         {
             LstVwOrder.Items.Clear();
 
-            double Total = 0;
+            double total = 0;
 
-            foreach (var Cfe in OrderDetailing)
+            foreach (var coffee in OrderDetailing)
             {
-                string orderdet = Cfe.Key;
-                int orderpiece = Cfe.Value;
-                double cfeprice = CoffeePrice[orderdet];
-                Total += orderpiece * cfeprice;
+                string orderDet = coffee.Key;
+                int orderPiece = coffee.Value;
+                double coffeePrice = CoffeePrice[orderDet];
+                total += orderPiece * coffeePrice;
 
-                ListViewItem item = new ListViewItem(orderdet);
-                item.SubItems.Add(orderpiece.ToString());
-                item.SubItems.Add((orderpiece * cfeprice).ToString());
+                ListViewItem item = new ListViewItem(orderDet);
+                item.SubItems.Add(orderPiece.ToString());
+                item.SubItems.Add((orderPiece * coffeePrice).ToString());
                 LstVwOrder.Items.Add(item);
             }
-            NumericPiece.Value = 0;
-            txtTotal.Text = Total.ToString();
 
+            NumericPiece.Value = 0;
+            txtTotal.Text = total.ToString();
         }
+
         private void btnHot_Click(object sender, EventArgs e)
         {
             MenuUpdate("Hot Coffee");
@@ -93,21 +89,22 @@ namespace VisualProgrammingProject
         {
             if (LstVwMenu.SelectedItems.Count > 0)
             {
-                string ChooseCfe = LstVwMenu.SelectedItems[0].Text;
+                string chooseCoffee = LstVwMenu.SelectedItems[0].Text;
                 int piece = Convert.ToInt32(NumericPiece.Value);
 
                 if (piece == 0)
                 {
-                    MessageBox.Show("Please take a piece.");
+                    MessageBox.Show("Please take at least one piece.");
                     return;
                 }
-                if(OrderDetailing.ContainsKey(ChooseCfe))
+
+                if (OrderDetailing.ContainsKey(chooseCoffee))
                 {
-                    OrderDetailing[ChooseCfe] += piece;
+                    OrderDetailing[chooseCoffee] += piece;
                 }
                 else
                 {
-                    OrderDetailing.Add(ChooseCfe, piece);
+                    OrderDetailing.Add(chooseCoffee, piece);
                 }
 
                 OrderUpdate();
@@ -120,39 +117,47 @@ namespace VisualProgrammingProject
 
         private void btndelete_Click(object sender, EventArgs e)
         {
+            if (LstVwOrder.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please Choose a Coffee");
+                return;
+            }
+
             foreach (ListViewItem selectedItem in LstVwOrder.SelectedItems)
             {
-                string selectCfe = selectedItem.Text;
+                string selectCoffee = selectedItem.Text;
 
-                if (OrderDetailing.ContainsKey(selectCfe))
+                if (OrderDetailing.ContainsKey(selectCoffee))
                 {
-                    OrderDetailing[selectCfe]--;
+                    OrderDetailing[selectCoffee]--;
 
-                    if (OrderDetailing[selectCfe] == 0)
+                    if (OrderDetailing[selectCoffee] == 0)
                     {
-                        OrderDetailing.Remove(selectCfe);
+                        OrderDetailing.Remove(selectCoffee);
                     }
                 }
             }
 
             OrderUpdate();
         }
+
         private void cleanList()
         {
             foreach (ListViewItem selectedItem in LstVwOrder.Items)
             {
                 LstVwOrder.Items.Remove(selectedItem);
 
-                string selectCfe = selectedItem.Text;
+                string selectCoffee = selectedItem.Text;
 
-                if (OrderDetailing.ContainsKey(selectCfe))
+                if (OrderDetailing.ContainsKey(selectCoffee))
                 {
-                    OrderDetailing.Remove(selectCfe);
+                    OrderDetailing.Remove(selectCoffee);
                 }
+
                 txtTotal.Text = "";
-                txtName.Text = "";
             }
         }
+
         private void btnClean_Click(object sender, EventArgs e)
         {
             cleanList();
@@ -161,18 +166,25 @@ namespace VisualProgrammingProject
         private void orderbtn_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            Order newOrder = new Order(rnd.Next(1000,3000),txtName.Text,DateTime.Now);
+            Order newOrder = new Order(rnd.Next(1000, 3000), txtName.Text, DateTime.Now);
 
-            foreach(ListViewItem item in LstVwOrder.Items)
+
+
+            if (txtName.Text == "") MessageBox.Show("Plase enter your name");
+            else if (LstVwOrder.Items.Count > 0)
             {
-                OrderProduct newProduct = new OrderProduct(item.Text, Convert.ToDouble(item.SubItems[2].Text), Convert.ToInt32(item.SubItems[1].Text));
-                newOrder.addProduct(newProduct); 
+                foreach (ListViewItem item in LstVwOrder.Items)
+                {
+                    OrderProduct newProduct = new OrderProduct(item.Text, Convert.ToDouble(item.SubItems[2].Text), Convert.ToInt32(item.SubItems[1].Text));
+                    newOrder.addProduct(newProduct);
+                }
+                newOrder.addOrder(newOrder);
+                cleanList();
+                MessageBox.Show("Your order has been received");
             }
-            newOrder.addOrder(newOrder);
+            else MessageBox.Show("Plase select at least one product");
+            
 
-            cleanList();
-
-            MessageBox.Show("Your order has been received");    
         }
     }
 }
