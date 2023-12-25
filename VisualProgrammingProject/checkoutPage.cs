@@ -11,7 +11,7 @@ namespace VisualProgrammingProject
     public partial class checkoutPage : Form
     {
         Order order = new Order();
-        
+
         public checkoutPage()
         {
             InitializeComponent();
@@ -31,14 +31,12 @@ namespace VisualProgrammingProject
             {
                 foreach (var product in order.getOrders()[lstVwName.SelectedIndices[0]].orderDetails)
                 {
-                    string cfename = product.productName;
-                    double cfepiece = product.productPiece;
-                    double cfeprice = product.productPrice;
-                    TotalPrice += cfeprice * cfepiece;
+                    double price = product.productPrice * product.productPiece;
+                    TotalPrice += price;
 
-                    ListViewItem item = new ListViewItem(cfename);
-                    item.SubItems.Add(cfepiece.ToString());
-                    item.SubItems.Add((cfeprice * cfepiece).ToString());
+                    ListViewItem item = new ListViewItem(product.productName);
+                    item.SubItems.Add(product.productPiece.ToString());
+                    item.SubItems.Add(price.ToString());
 
                     lstviewFatura.Items.Add(item);
                 }
@@ -46,7 +44,7 @@ namespace VisualProgrammingProject
 
             txtPrice.Text = TotalPrice.ToString();
         }
-       
+
 
         private void updateNameList()
         {
@@ -60,16 +58,9 @@ namespace VisualProgrammingProject
         }
         private void CalculateBill()
         {
-            if( lstviewFatura.SelectedItems.Count > 0)
-            { 
-                    ListViewItem selectedRow = lstviewFatura.SelectedItems[0];
-                    string fiyatSutunu = selectedRow.SubItems[2].Text;                    
-                    txtChoose.Text = fiyatSutunu.ToString();                                  
-            }
-            else
-            {
-                MessageBox.Show("Choose Bill");
-            }
+            if (lstviewFatura.SelectedItems.Count > 0) txtChoose.Text = lstviewFatura.SelectedItems[0].SubItems[2].Text;
+            else MessageBox.Show("Choose a Bill");
+
         }
 
         private void lstviewFatura_MouseClick(object sender, MouseEventArgs e)
@@ -88,17 +79,28 @@ namespace VisualProgrammingProject
             string BillPay = txtChoose.Text;
             double UpdateBillPrice;
 
-            if (!string.IsNullOrEmpty(BillPay))
+
+            if (double.TryParse(txtPrice.Text, out double currentBillPrice) &&
+               double.TryParse(BillPay, out double paymentAmount))
             {
-                if (double.TryParse(txtPrice.Text, out double currentBillPrice) &&
-                   double.TryParse(BillPay, out double paymentAmount))
+                if (lstviewFatura.SelectedItems.Count > 0)
                 {
+                    int id = Convert.ToInt32(lstVwName.SelectedItems[0].Text);
+                    Order newOrder = order.getOrder(id);
+                    newOrder.removeProduct(newOrder.orderDetails[lstviewFatura.SelectedIndices[0]]);
                     MessageBox.Show(BillPay, "TextBox Değer");
                     UpdateBillPrice = currentBillPrice - paymentAmount;
                     txtPrice.Text = UpdateBillPrice.ToString();
                     txtChoose.Clear();
+
+                    if (newOrder.orderDetails.Count == 0)
+                    {
+                        newOrder.removeOrder(newOrder);
+                        updateNameList();
+                    }
                 }
             }
+            updateBillList();
         }
         private void BtnPayAll_Click(object sender, EventArgs e)
         {
@@ -117,7 +119,6 @@ namespace VisualProgrammingProject
                         MessageBox.Show(message, "Account Payment Process");
                         txtPrice.Text = "0.00";
                         txtChoose.Text = "";
-
                     }
                 }
                 else

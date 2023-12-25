@@ -40,9 +40,19 @@ namespace VisualProgrammingProject
             ordersList.Remove(order);
         }
 
+        public void removeProduct(OrderProduct product)
+        {
+            orderDetails.Remove(product);
+        }
+
         public List<Order> getOrders()
         {
             return ordersList;
+        }
+
+        public Order getOrder(int id)
+        {
+            return ordersList.Find(item => item.orderID == id);
         }
     }
 
