@@ -36,8 +36,8 @@
             this.lblNameresponse = new System.Windows.Forms.Label();
             this.lblStatusResponse = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnProduct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
@@ -47,9 +47,9 @@
             this.lblOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblOrderId.Location = new System.Drawing.Point(41, 72);
             this.lblOrderId.Name = "lblOrderId";
-            this.lblOrderId.Size = new System.Drawing.Size(86, 25);
+            this.lblOrderId.Size = new System.Drawing.Size(92, 25);
             this.lblOrderId.TabIndex = 0;
-            this.lblOrderId.Text = "Order ID";
+            this.lblOrderId.Text = "Order ID:";
             // 
             // lblName
             // 
@@ -57,9 +57,9 @@
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblName.Location = new System.Drawing.Point(41, 127);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(64, 25);
+            this.lblName.Size = new System.Drawing.Size(70, 25);
             this.lblName.TabIndex = 1;
-            this.lblName.Text = "Name";
+            this.lblName.Text = "Name:";
             // 
             // lblOrder
             // 
@@ -67,9 +67,9 @@
             this.lblOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblOrder.Location = new System.Drawing.Point(41, 188);
             this.lblOrder.Name = "lblOrder";
-            this.lblOrder.Size = new System.Drawing.Size(62, 25);
+            this.lblOrder.Size = new System.Drawing.Size(68, 25);
             this.lblOrder.TabIndex = 2;
-            this.lblOrder.Text = "Order";
+            this.lblOrder.Text = "Order:";
             // 
             // lblStatus
             // 
@@ -77,9 +77,9 @@
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblStatus.Location = new System.Drawing.Point(41, 506);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(68, 25);
+            this.lblStatus.Size = new System.Drawing.Size(74, 25);
             this.lblStatus.TabIndex = 3;
-            this.lblStatus.Text = "Status";
+            this.lblStatus.Text = "Status:";
             // 
             // lblOrderIDResponse
             // 
@@ -125,15 +125,15 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // columnAmount
-            // 
-            this.columnAmount.Text = "Amount";
-            this.columnAmount.Width = 82;
-            // 
             // columnProduct
             // 
             this.columnProduct.Text = "Product";
             this.columnProduct.Width = 92;
+            // 
+            // columnAmount
+            // 
+            this.columnAmount.Text = "Amount";
+            this.columnAmount.Width = 82;
             // 
             // columnPrice
             // 
