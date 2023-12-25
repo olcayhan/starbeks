@@ -70,7 +70,7 @@ namespace VisualProgrammingProject
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            if (txtProductName.Text == "" || txtProductAmount.Text == "" || cmbProductCategory.Text == "" || txtProductPrice.Text == "")
+            if (txtProductName.Text == "" || txtProductAmount.Text == "" || cmbProductCategory.SelectedIndex == -1 || txtProductPrice.Text == "")
             {
                 MessageBox.Show("Fill in the blanks");
             }
@@ -84,7 +84,7 @@ namespace VisualProgrammingProject
 
             txtProductName.Text = "";
             txtProductAmount.Text = "";
-            cmbProductCategory.SelectedIndex = 0;
+            cmbProductCategory.SelectedIndex = -1;
             txtProductPrice.Text = "";
         }
 
