@@ -168,15 +168,23 @@ namespace VisualProgrammingProject
             Random rnd = new Random();
             Order newOrder = new Order(rnd.Next(1000, 3000), txtName.Text, DateTime.Now);
 
-            foreach (ListViewItem item in LstVwOrder.Items)
-            {
-                OrderProduct newProduct = new OrderProduct(item.Text, Convert.ToDouble(item.SubItems[2].Text), Convert.ToInt32(item.SubItems[1].Text));
-                newOrder.addProduct(newProduct);
-            }
 
-            newOrder.addOrder(newOrder);
-            cleanList();
-            MessageBox.Show("Your order has been received");
+
+            if (txtName.Text == "") MessageBox.Show("Plase enter your name");
+            else if (LstVwOrder.Items.Count > 0)
+            {
+                foreach (ListViewItem item in LstVwOrder.Items)
+                {
+                    OrderProduct newProduct = new OrderProduct(item.Text, Convert.ToDouble(item.SubItems[2].Text), Convert.ToInt32(item.SubItems[1].Text));
+                    newOrder.addProduct(newProduct);
+                }
+                newOrder.addOrder(newOrder);
+                cleanList();
+                MessageBox.Show("Your order has been received");
+            }
+            else MessageBox.Show("Plase select at least one product");
+            
+
         }
     }
 }
