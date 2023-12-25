@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VisualProgrammingProject
@@ -10,6 +11,7 @@ namespace VisualProgrammingProject
     public partial class checkoutPage : Form
     {
         Order order = new Order();
+        
         public checkoutPage()
         {
             InitializeComponent();
@@ -20,6 +22,31 @@ namespace VisualProgrammingProject
         {
             updateNameList();
         }
+        private void updateBillList()
+        {
+            lstviewFatura.Items.Clear();
+            double TotalPrice = 0;
+
+            if (lstVwName.SelectedItems.Count > 0)
+            {
+                foreach (var product in order.getOrders()[lstVwName.SelectedIndices[0]].orderDetails)
+                {
+                    string cfename = product.productName;
+                    double cfepiece = product.productPiece;
+                    double cfeprice = product.productPrice;
+                    TotalPrice += cfeprice * cfepiece;
+
+                    ListViewItem item = new ListViewItem(cfename);
+                    item.SubItems.Add(cfepiece.ToString());
+                    item.SubItems.Add((cfeprice * cfepiece).ToString());
+
+                    lstviewFatura.Items.Add(item);
+                }
+            }
+
+            txtPrice.Text = TotalPrice.ToString();
+        }
+       
 
         private void updateNameList()
         {
@@ -31,100 +58,73 @@ namespace VisualProgrammingProject
                 lstVwName.Items.Add(listItem);
             }
         }
-
-        private void btnOde_Click(object sender, EventArgs e)
+        private void CalculateBill()
         {
-            updateNameList();
-
-            double tutar;
-
-            if (double.TryParse(txtPrice.Text.Replace("₺", "").Trim(), out tutar))
-            {
-                if (tutar > 0)
-                {
-                    string message = "Toplam Tutar: " + tutar.ToString("C") + "\n\n";
-
-                    if (!string.IsNullOrEmpty(message))
-                    {
-                        MessageBox.Show(message, "Hesap Ödeme İşlemi");
-                        txtPrice.Text = "₺0.00";
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("hesap ödenmiş");
-                }
-            }
-        }
-
-        double toplamFiyat = 0;
-
-        private void HesaplaVeYazdir()
-        {
-            ListViewItem selectedRow = lstviewFatura.SelectedItems[0];
-            string fiyatSutunu = selectedRow.SubItems[2].Text;
-
-            int sayi = DegeriAl(fiyatSutunu);
-            toplamFiyat += sayi*1.00;
-            txtSecilen.Text = toplamFiyat.ToString("C");
-        }
-        static int DegeriAl(string metinselIfade)
-        {
-            // Sayıyı almak için Regex kullanalım
-            Match match = Regex.Match(metinselIfade, @"\d+");
-
-            if (match.Success)
-            {
-                return int.Parse(match.Value);
-            }
-
-            return -1;
-        }
-        private void btnÖde_Click(object sender, EventArgs e)
-        {
-            HesaplaVeYazdir();
-            string textBoxText = txtSecilen.Text;
-
-            if (!string.IsNullOrEmpty(textBoxText))
-            {
-                MessageBox.Show(textBoxText, "TextBox Değer");
-
-                txtSecilen.Clear();
+            if( lstviewFatura.SelectedItems.Count > 0)
+            { 
+                    ListViewItem selectedRow = lstviewFatura.SelectedItems[0];
+                    string fiyatSutunu = selectedRow.SubItems[2].Text;                    
+                    txtChoose.Text = fiyatSutunu.ToString();                                  
             }
             else
             {
-                MessageBox.Show("TextBox boş. Lütfen bir sayı girin.");
+                MessageBox.Show("Choose Bill");
             }
         }
 
         private void lstviewFatura_MouseClick(object sender, MouseEventArgs e)
         {
-            HesaplaVeYazdir();
+            CalculateBill();
         }
 
         private void lstVwName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lstviewFatura.Items.Clear();
-            double toplamfiyat = 0;
+            updateBillList();
+        }
 
-            if (lstVwName.SelectedItems.Count > 0)
+        private void BtnPay_Click(object sender, EventArgs e)
+        {
+            CalculateBill();
+            string BillPay = txtChoose.Text;
+            double UpdateBillPrice;
+
+            if (!string.IsNullOrEmpty(BillPay))
             {
-                foreach (var product in order.getOrders()[lstVwName.SelectedIndices[0]].orderDetails)
+                if (double.TryParse(txtPrice.Text, out double currentBillPrice) &&
+                   double.TryParse(BillPay, out double paymentAmount))
                 {
-                    string cfename = product.productName;
-                    double cfepiece = product.productPiece;
-                    double cfeprice = product.productPrice;
-                    toplamfiyat += cfeprice * cfepiece;
-
-                    ListViewItem item = new ListViewItem(cfename);
-                    item.SubItems.Add(cfepiece.ToString());
-                    item.SubItems.Add((cfeprice * cfepiece).ToString("C"));
-
-                    lstviewFatura.Items.Add(item);
+                    MessageBox.Show(BillPay, "TextBox Değer");
+                    UpdateBillPrice = currentBillPrice - paymentAmount;
+                    txtPrice.Text = UpdateBillPrice.ToString();
+                    txtChoose.Clear();
                 }
             }
+        }
+        private void BtnPayAll_Click(object sender, EventArgs e)
+        {
+            updateNameList();
 
-            txtPrice.Text = toplamfiyat.ToString("C");
+            double total;
+
+            if (double.TryParse(txtPrice.Text.Replace("₺", "").Trim(), out total))
+            {
+                if (total > 0)
+                {
+                    string message = "total: " + total.ToString() + "\n\n";
+
+                    if (!string.IsNullOrEmpty(message))
+                    {
+                        MessageBox.Show(message, "Account Payment Process");
+                        txtPrice.Text = "0.00";
+                        txtChoose.Text = "";
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bill was pay");
+                }
+            }
         }
     }
 }
