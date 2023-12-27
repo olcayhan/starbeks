@@ -39,6 +39,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnOrderDetails = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDrink
@@ -134,7 +135,6 @@
             this.liViewKitchen.TabIndex = 23;
             this.liViewKitchen.UseCompatibleStateImageBehavior = false;
             this.liViewKitchen.View = System.Windows.Forms.View.Details;
-            this.liViewKitchen.SelectedIndexChanged += new System.EventHandler(this.liViewKitchen_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -156,12 +156,26 @@
             this.columnHeader6.Text = "Time";
             this.columnHeader6.Width = 128;
             // 
+            // btnOrderDetails
+            // 
+            this.btnOrderDetails.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnOrderDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOrderDetails.Location = new System.Drawing.Point(371, 470);
+            this.btnOrderDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrderDetails.Name = "btnOrderDetails";
+            this.btnOrderDetails.Size = new System.Drawing.Size(148, 59);
+            this.btnOrderDetails.TabIndex = 27;
+            this.btnOrderDetails.Text = "Order Details";
+            this.btnOrderDetails.UseVisualStyleBackColor = false;
+            this.btnOrderDetails.Click += new System.EventHandler(this.btnOrderDetails_Click);
+            // 
             // KitchenPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1229, 569);
+            this.Controls.Add(this.btnOrderDetails);
             this.Controls.Add(this.btnPrepare);
             this.Controls.Add(this.btnReady);
             this.Controls.Add(this.btnQueue);
@@ -190,5 +204,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.Button btnOrderDetails;
     }
 }
