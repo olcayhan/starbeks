@@ -11,7 +11,7 @@ namespace VisualProgrammingProject
     public partial class checkoutPage : Form
     {
         Order order = new Order();
-
+         
         public checkoutPage()
         {
             InitializeComponent();
@@ -31,13 +31,10 @@ namespace VisualProgrammingProject
             {
                 foreach (var product in order.getOrders()[lstVwName.SelectedIndices[0]].orderDetails)
                 {
-                    double price = product.productPrice * product.productPiece;
-                    TotalPrice += price;
-
+                    TotalPrice += product.productPrice;
                     ListViewItem item = new ListViewItem(product.productName);
                     item.SubItems.Add(product.productPiece.ToString());
-                    item.SubItems.Add(price.ToString());
-
+                    item.SubItems.Add(product.productPrice.ToString());
                     lstviewFatura.Items.Add(item);
                 }
             }
@@ -55,12 +52,12 @@ namespace VisualProgrammingProject
                 listItem.SubItems.Add(item.orderName);
                 lstVwName.Items.Add(listItem);
             }
+            updateBillList();
         }
         private void CalculateBill()
         {
             if (lstviewFatura.SelectedItems.Count > 0) txtChoose.Text = lstviewFatura.SelectedItems[0].SubItems[2].Text;
             else MessageBox.Show("Choose a Bill");
-
         }
 
         private void lstviewFatura_MouseClick(object sender, MouseEventArgs e)
@@ -77,8 +74,6 @@ namespace VisualProgrammingProject
         {
             CalculateBill();
             string BillPay = txtChoose.Text;
-            double UpdateBillPrice;
-
 
             if (double.TryParse(txtPrice.Text, out double currentBillPrice) &&
                double.TryParse(BillPay, out double paymentAmount))
@@ -86,10 +81,10 @@ namespace VisualProgrammingProject
                 if (lstviewFatura.SelectedItems.Count > 0)
                 {
                     int id = Convert.ToInt32(lstVwName.SelectedItems[0].Text);
+                    double UpdateBillPrice = currentBillPrice - paymentAmount;
                     Order newOrder = order.getOrder(id);
+
                     newOrder.removeProduct(newOrder.orderDetails[lstviewFatura.SelectedIndices[0]]);
-                    MessageBox.Show(BillPay, "TextBox Değer");
-                    UpdateBillPrice = currentBillPrice - paymentAmount;
                     txtPrice.Text = UpdateBillPrice.ToString();
                     txtChoose.Clear();
 
@@ -99,32 +94,23 @@ namespace VisualProgrammingProject
                         updateNameList();
                     }
                 }
+                updateBillList();
             }
-            updateBillList();
         }
         private void BtnPayAll_Click(object sender, EventArgs e)
         {
-            updateNameList();
-
-            double total;
-
-            if (double.TryParse(txtPrice.Text.Replace("₺", "").Trim(), out total))
+            if (double.TryParse(txtPrice.Text.Replace("₺", "").Trim(), out double total))
             {
                 if (total > 0)
                 {
-                    string message = "total: " + total.ToString() + "\n\n";
-
-                    if (!string.IsNullOrEmpty(message))
-                    {
-                        MessageBox.Show(message, "Account Payment Process");
-                        txtPrice.Text = "0.00";
-                        txtChoose.Text = "";
-                    }
+                    int id = Convert.ToInt32(lstVwName.SelectedItems[0].Text);
+                    Order newOrder = order.getOrder(id);
+                    newOrder.removeOrder(newOrder);
+                    txtPrice.Clear();
+                    txtChoose.Clear();
                 }
-                else
-                {
-                    MessageBox.Show("Bill was pay");
-                }
+                else MessageBox.Show("Bill was pay");
+                updateNameList();
             }
         }
     }

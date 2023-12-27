@@ -183,8 +183,6 @@ namespace VisualProgrammingProject
                 MessageBox.Show("Your order has been received");
             }
             else MessageBox.Show("Plase select at least one product");
-            
-
         }
     }
 }
