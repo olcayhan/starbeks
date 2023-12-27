@@ -31,8 +31,6 @@ namespace VisualProgrammingProject
             {
                 ListViewItem item = new ListViewItem(order.orderID.ToString());
                 item.SubItems.Add(order.orderName);
-                item.SubItems.Add("35");
-                item.SubItems.Add("Çay");
                 item.SubItems.Add(order.orderStatus.ToString());
                 item.SubItems.Add(order.orderTime.ToString());
                 if(order.orderStatus == Status.inQueue) item.BackColor = Color.IndianRed;
