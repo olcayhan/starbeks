@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderDetails));
             this.lblOrderId = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblOrder = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@
             // 
             this.lblOrderId.AutoSize = true;
             this.lblOrderId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderId.Location = new System.Drawing.Point(41, 72);
+            this.lblOrderId.Location = new System.Drawing.Point(11, 12);
             this.lblOrderId.Name = "lblOrderId";
             this.lblOrderId.Size = new System.Drawing.Size(92, 25);
             this.lblOrderId.TabIndex = 0;
@@ -55,7 +56,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblName.Location = new System.Drawing.Point(41, 127);
+            this.lblName.Location = new System.Drawing.Point(9, 48);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(70, 25);
             this.lblName.TabIndex = 1;
@@ -65,7 +66,7 @@
             // 
             this.lblOrder.AutoSize = true;
             this.lblOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrder.Location = new System.Drawing.Point(41, 188);
+            this.lblOrder.Location = new System.Drawing.Point(11, 85);
             this.lblOrder.Name = "lblOrder";
             this.lblOrder.Size = new System.Drawing.Size(68, 25);
             this.lblOrder.TabIndex = 2;
@@ -75,7 +76,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblStatus.Location = new System.Drawing.Point(41, 506);
+            this.lblStatus.Location = new System.Drawing.Point(11, 339);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(74, 25);
             this.lblStatus.TabIndex = 3;
@@ -85,7 +86,7 @@
             // 
             this.lblOrderIDResponse.AutoSize = true;
             this.lblOrderIDResponse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrderIDResponse.Location = new System.Drawing.Point(150, 72);
+            this.lblOrderIDResponse.Location = new System.Drawing.Point(120, 12);
             this.lblOrderIDResponse.Name = "lblOrderIDResponse";
             this.lblOrderIDResponse.Size = new System.Drawing.Size(33, 25);
             this.lblOrderIDResponse.TabIndex = 4;
@@ -95,7 +96,7 @@
             // 
             this.lblNameresponse.AutoSize = true;
             this.lblNameresponse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblNameresponse.Location = new System.Drawing.Point(150, 127);
+            this.lblNameresponse.Location = new System.Drawing.Point(118, 48);
             this.lblNameresponse.Name = "lblNameresponse";
             this.lblNameresponse.Size = new System.Drawing.Size(33, 25);
             this.lblNameresponse.TabIndex = 5;
@@ -105,7 +106,7 @@
             // 
             this.lblStatusResponse.AutoSize = true;
             this.lblStatusResponse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblStatusResponse.Location = new System.Drawing.Point(150, 506);
+            this.lblStatusResponse.Location = new System.Drawing.Point(120, 339);
             this.lblStatusResponse.Name = "lblStatusResponse";
             this.lblStatusResponse.Size = new System.Drawing.Size(33, 25);
             this.lblStatusResponse.TabIndex = 6;
@@ -118,9 +119,9 @@
             this.columnAmount,
             this.columnPrice});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(155, 188);
+            this.listView1.Location = new System.Drawing.Point(16, 123);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(279, 303);
+            this.listView1.Size = new System.Drawing.Size(279, 204);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -144,7 +145,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 674);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(304, 372);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.lblStatusResponse);
             this.Controls.Add(this.lblNameresponse);

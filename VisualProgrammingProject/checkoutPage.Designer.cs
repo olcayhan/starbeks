@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(checkoutPage));
             this.label3 = new System.Windows.Forms.Label();
             this.lstviewFatura = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,10 +50,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(413, 40);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(551, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 26);
+            this.label3.Size = new System.Drawing.Size(54, 32);
             this.label3.TabIndex = 2;
             this.label3.Text = "Bill";
             // 
@@ -64,10 +64,10 @@
             this.columnHeader3});
             this.lstviewFatura.FullRowSelect = true;
             this.lstviewFatura.HideSelection = false;
-            this.lstviewFatura.Location = new System.Drawing.Point(301, 83);
-            this.lstviewFatura.Margin = new System.Windows.Forms.Padding(2);
+            this.lstviewFatura.Location = new System.Drawing.Point(401, 102);
+            this.lstviewFatura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstviewFatura.Name = "lstviewFatura";
-            this.lstviewFatura.Size = new System.Drawing.Size(255, 193);
+            this.lstviewFatura.Size = new System.Drawing.Size(339, 237);
             this.lstviewFatura.TabIndex = 3;
             this.lstviewFatura.UseCompatibleStateImageBehavior = false;
             this.lstviewFatura.View = System.Windows.Forms.View.Details;
@@ -90,30 +90,28 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(280, 327);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(373, 402);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Total :";
             // 
             // txtPrice
             // 
             this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrice.Location = new System.Drawing.Point(376, 322);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrice.Location = new System.Drawing.Point(501, 396);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
-            this.txtPrice.Size = new System.Drawing.Size(102, 20);
+            this.txtPrice.Size = new System.Drawing.Size(135, 22);
             this.txtPrice.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(281, 293);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(375, 361);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(101, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "Selected Price :";
             // 
@@ -121,10 +119,10 @@
             // 
             this.txtChoose.BackColor = System.Drawing.SystemColors.Control;
             this.txtChoose.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtChoose.Location = new System.Drawing.Point(376, 290);
-            this.txtChoose.Margin = new System.Windows.Forms.Padding(2);
+            this.txtChoose.Location = new System.Drawing.Point(501, 357);
+            this.txtChoose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtChoose.Name = "txtChoose";
-            this.txtChoose.Size = new System.Drawing.Size(102, 20);
+            this.txtChoose.Size = new System.Drawing.Size(135, 22);
             this.txtChoose.TabIndex = 8;
             // 
             // lstVwName
@@ -134,11 +132,11 @@
             this.columnHeader5});
             this.lstVwName.FullRowSelect = true;
             this.lstVwName.HideSelection = false;
-            this.lstVwName.Location = new System.Drawing.Point(26, 83);
-            this.lstVwName.Margin = new System.Windows.Forms.Padding(2);
+            this.lstVwName.Location = new System.Drawing.Point(35, 102);
+            this.lstVwName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstVwName.MultiSelect = false;
             this.lstVwName.Name = "lstVwName";
-            this.lstVwName.Size = new System.Drawing.Size(255, 193);
+            this.lstVwName.Size = new System.Drawing.Size(339, 237);
             this.lstVwName.TabIndex = 10;
             this.lstVwName.UseCompatibleStateImageBehavior = false;
             this.lstVwName.View = System.Windows.Forms.View.Details;
@@ -156,10 +154,10 @@
             // 
             // BtnPay
             // 
-            this.BtnPay.Location = new System.Drawing.Point(500, 285);
-            this.BtnPay.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnPay.Location = new System.Drawing.Point(667, 351);
+            this.BtnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnPay.Name = "BtnPay";
-            this.BtnPay.Size = new System.Drawing.Size(85, 27);
+            this.BtnPay.Size = new System.Drawing.Size(113, 33);
             this.BtnPay.TabIndex = 11;
             this.BtnPay.Text = "Pay";
             this.BtnPay.UseVisualStyleBackColor = true;
@@ -167,10 +165,10 @@
             // 
             // BtnPayAll
             // 
-            this.BtnPayAll.Location = new System.Drawing.Point(500, 322);
-            this.BtnPayAll.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnPayAll.Location = new System.Drawing.Point(667, 396);
+            this.BtnPayAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnPayAll.Name = "BtnPayAll";
-            this.BtnPayAll.Size = new System.Drawing.Size(85, 26);
+            this.BtnPayAll.Size = new System.Drawing.Size(113, 32);
             this.BtnPayAll.TabIndex = 12;
             this.BtnPayAll.Text = "Pay the Bill";
             this.BtnPayAll.UseVisualStyleBackColor = true;
@@ -180,18 +178,19 @@
             // 
             this.orderLbl.AutoSize = true;
             this.orderLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.orderLbl.Location = new System.Drawing.Point(112, 40);
-            this.orderLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.orderLbl.Location = new System.Drawing.Point(149, 49);
             this.orderLbl.Name = "orderLbl";
-            this.orderLbl.Size = new System.Drawing.Size(67, 26);
+            this.orderLbl.Size = new System.Drawing.Size(86, 32);
             this.orderLbl.TabIndex = 13;
             this.orderLbl.Text = "Order";
             // 
             // checkoutPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.orderLbl);
             this.Controls.Add(this.BtnPayAll);
             this.Controls.Add(this.BtnPay);
@@ -202,7 +201,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lstviewFatura);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "checkoutPage";
             this.Text = "checkoutPage";
             this.ResumeLayout(false);
