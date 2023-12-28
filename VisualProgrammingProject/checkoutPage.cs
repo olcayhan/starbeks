@@ -15,7 +15,8 @@ namespace VisualProgrammingProject
         public checkoutPage()
         {
             InitializeComponent();
-            this.Activated += CheckoutPage_Activated; ;
+            this.Activated += CheckoutPage_Activated;
+         
         }
 
         private void CheckoutPage_Activated(object sender, EventArgs e)
