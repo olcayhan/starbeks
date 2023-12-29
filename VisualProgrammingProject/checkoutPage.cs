@@ -28,10 +28,9 @@ namespace VisualProgrammingProject
         {
             lstviewFatura.Items.Clear();
             double TotalPrice = 0;
-
             if (lstVwName.SelectedItems.Count > 0)
             {
-                foreach (var product in order.getOrders()[lstVwName.SelectedIndices[0]].orderDetails)
+                foreach (var product in order.getProducts(Convert.ToInt32(lstVwName.SelectedItems[0].Text)))
                 {
                     TotalPrice += product.productPrice;
                     ListViewItem item = new ListViewItem(product.productName);

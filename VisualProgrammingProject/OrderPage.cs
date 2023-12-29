@@ -166,19 +166,20 @@ namespace VisualProgrammingProject
         private void orderbtn_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            Order newOrder = new Order(rnd.Next(1000, 3000), txtName.Text, DateTime.Now);
-
-
+            int orderID = rnd.Next(1000, 3000);
+            Order newOrder = new Order(orderID, txtName.Text, DateTime.Now, Status.inQueue);
 
             if (txtName.Text == "") MessageBox.Show("Plase enter your name");
             else if (LstVwOrder.Items.Count > 0)
             {
+                newOrder.addOrder(newOrder);
+
                 foreach (ListViewItem item in LstVwOrder.Items)
                 {
-                    OrderProduct newProduct = new OrderProduct(item.Text, Convert.ToDouble(item.SubItems[2].Text), Convert.ToInt32(item.SubItems[1].Text));
+                    int productID = rnd.Next(1000, 3000);
+                    OrderProduct newProduct = new OrderProduct(productID, item.Text, Convert.ToDouble(item.SubItems[2].Text), Convert.ToInt32(item.SubItems[1].Text), orderID);
                     newOrder.addProduct(newProduct);
                 }
-                newOrder.addOrder(newOrder);
                 cleanList();
                 MessageBox.Show("Your order has been received");
             }
