@@ -74,8 +74,7 @@ namespace VisualProgrammingProject
         {
             if (liViewKitchen.SelectedItems.Count > 0)
             {
-                Order newOrder = order.getOrders().Find(item => item.orderID == Convert.ToInt32(liViewKitchen.SelectedItems[0].Text));
-
+                Order newOrder = order.getOrder(Convert.ToInt32(liViewKitchen.SelectedItems[0].Text));
                 OrderDetails orderDetailsForm = new OrderDetails(newOrder);
                 orderDetailsForm.ShowDialog();
             }

@@ -19,13 +19,12 @@ namespace VisualProgrammingProject
             lblNameresponse.Text = order.orderName;
             lblStatusResponse.Text = order.orderStatus.ToString();
 
-            foreach (var product in order.orderDetails)
+            foreach (OrderProduct product in order.getProducts(order.orderID))
             {
                 ListViewItem item = new ListViewItem(product.productName.ToString());
                 item.SubItems.Add(product.productPiece.ToString());
                 item.SubItems.Add(product.productPrice.ToString());
                 listView1.Items.Add(item);
-                
             }
         }
     }

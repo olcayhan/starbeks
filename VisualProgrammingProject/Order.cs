@@ -11,7 +11,6 @@ namespace VisualProgrammingProject
     public enum Status { inQueue = 0, Preparing = 1, Ready = 2 }
     public class Order
     {
-        public List<OrderProduct> orderDetails = new List<OrderProduct>();
         public string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=starbeks;Integrated Security=True";
 
         public int orderID { get; set; }
@@ -68,7 +67,7 @@ namespace VisualProgrammingProject
 
         public void removeProduct(OrderProduct product)
         {
-            orderDetails.Remove(product);
+            //orderDetails.Remove(product);
         }
 
         public List<Order> getOrders()
@@ -92,7 +91,7 @@ namespace VisualProgrammingProject
         {
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
-            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM [Order] WHERE orderID=@ID", conn);
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM [Order] WHERE ID=@ID", conn);
             sqlCommand.Parameters.AddWithValue("@ID", id);
             SqlDataReader reader = sqlCommand.ExecuteReader();
             Order order = new Order();
@@ -113,7 +112,7 @@ namespace VisualProgrammingProject
             SqlDataReader reader = sqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                OrderProduct newOrder = new OrderProduct(reader.GetInt32(0), reader.GetString(1), reader.GetDouble(2), reader.GetInt32(3), reader.GetInt32(4));
+                OrderProduct newOrder = new OrderProduct(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetDouble(3), reader.GetInt32(4));
                 orderProducts.Add(newOrder);
             }
             conn.Close();
@@ -130,7 +129,7 @@ namespace VisualProgrammingProject
         public int productPiece { get; set; }
         public int orderID { get; set; }
 
-        public OrderProduct(int productID, string productName, double productPrice, int productPiece, int orderID)
+        public OrderProduct(int productID, string productName, int productPiece, double productPrice,  int orderID)
         {
             this.productID = productID;
             this.productName = productName;

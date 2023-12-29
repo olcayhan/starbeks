@@ -30,7 +30,7 @@ namespace VisualProgrammingProject
             double TotalPrice = 0;
             if (lstVwName.SelectedItems.Count > 0)
             {
-                foreach (var product in order.getProducts(Convert.ToInt32(lstVwName.SelectedItems[0].Text)))
+                foreach (OrderProduct product in order.getProducts(Convert.ToInt32(lstVwName.SelectedItems[0].Text)))
                 {
                     TotalPrice += product.productPrice;
                     ListViewItem item = new ListViewItem(product.productName);
@@ -85,15 +85,15 @@ namespace VisualProgrammingProject
                     double UpdateBillPrice = currentBillPrice - paymentAmount;
                     Order newOrder = order.getOrder(id);
 
-                    newOrder.removeProduct(newOrder.orderDetails[lstviewFatura.SelectedIndices[0]]);
+                    //newOrder.removeProduct(newOrder.orderDetails[lstviewFatura.SelectedIndices[0]]);
                     txtPrice.Text = UpdateBillPrice.ToString();
                     txtChoose.Clear();
 
-                    if (newOrder.orderDetails.Count == 0)
-                    {
-                        newOrder.removeOrder(newOrder);
-                        updateNameList();
-                    }
+                    //if (newOrder.orderDetails.Count == 0)
+                    //{
+                    //    newOrder.removeOrder(newOrder);
+                    //    updateNameList();
+                    //}
                 }
                 updateBillList();
             }
