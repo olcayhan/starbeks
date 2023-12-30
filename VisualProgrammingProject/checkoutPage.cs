@@ -22,9 +22,9 @@ namespace VisualProgrammingProject
 
         private void CheckoutPage_Activated(object sender, EventArgs e)
         {
-            updateNameList();
+            UpdateNameList();
         }
-        private void updateBillList()
+        private void UpdateBillList()
         {
             lstviewFatura.Items.Clear();
             double TotalPrice = 0;
@@ -44,7 +44,7 @@ namespace VisualProgrammingProject
         }
 
 
-        private void updateNameList()
+        private void UpdateNameList()
         {
             lstVwName.Items.Clear();
             foreach (Order item in order.getOrders())
@@ -53,7 +53,7 @@ namespace VisualProgrammingProject
                 listItem.SubItems.Add(item.orderName);
                 lstVwName.Items.Add(listItem);
             }
-            updateBillList();
+            UpdateBillList();
         }
         private void CalculateBill()
         {
@@ -68,7 +68,7 @@ namespace VisualProgrammingProject
 
         private void lstVwName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            updateBillList();
+            UpdateBillList();
         }
 
         private void BtnPay_Click(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace VisualProgrammingProject
                     //    updateNameList();
                     //}
                 }
-                updateBillList();
+                UpdateBillList();
             }
         }
         private void BtnPayAll_Click(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace VisualProgrammingProject
                     txtChoose.Clear();
                 }
                 else MessageBox.Show("Bill was pay");
-                updateNameList();
+                UpdateNameList();
             }
         }
     }

@@ -14,6 +14,8 @@ namespace VisualProgrammingProject
     {
         Category category = new Category();
         Product product = new Product();
+        Random rnd = new Random();
+
         public AdminPage()
         {
             InitializeComponent();
@@ -47,11 +49,10 @@ namespace VisualProgrammingProject
             }
             else
             {
-                Category newCategory = new Category(txtCategory.Text);
+                Category newCategory = new Category(rnd.Next(100, 999), txtCategory.Text);
                 category.AddCategory(newCategory);
                 updateCategories();
             }
-
             txtCategory.Text = "";
         }
 
@@ -60,8 +61,9 @@ namespace VisualProgrammingProject
             liviewProducts.Items.Clear();
             foreach (Product productItem in product.getProducts())
             {
-                ListViewItem item = new ListViewItem(productItem.Name.ToString());
-                item.SubItems.Add(productItem.Amount.ToString());
+                ListViewItem item = new ListViewItem(productItem.ID.ToString());
+                item.SubItems.Add(productItem.Name);
+                item.SubItems.Add(productItem.Quantity.ToString());
                 item.SubItems.Add(productItem.Category.Name);
                 item.SubItems.Add(productItem.Price.ToString());
                 liviewProducts.Items.Add(item);
@@ -76,8 +78,8 @@ namespace VisualProgrammingProject
             }
             else
             {
-                Category newCategory = new Category(cmbProductCategory.Text);
-                Product newProduct = new Product(txtProductName.Text, newCategory, Convert.ToInt32(txtProductAmount.Text), Convert.ToDouble(txtProductPrice.Text));
+                Category newCategory = category.getCategory(cmbProductCategory.SelectedItem.ToString());
+                Product newProduct = new Product(rnd.Next(1000, 9999), txtProductName.Text, newCategory, Convert.ToInt32(txtProductAmount.Text), Convert.ToDouble(txtProductPrice.Text));
                 newProduct.addProduct(newProduct);
                 updateProducts();
             }
@@ -92,8 +94,9 @@ namespace VisualProgrammingProject
         {
             if (liboxCategories.SelectedIndex != -1)
             {
-                category.GetCategories().RemoveAt(liboxCategories.SelectedIndex);
+                category.removeCategory(category.getCategory(liboxCategories.SelectedItem.ToString()));
                 updateCategories();
+                updateProducts();
             }
             else
             {
@@ -105,16 +108,12 @@ namespace VisualProgrammingProject
         {
             if (liviewProducts.SelectedItems.Count > 0)
             {
-                foreach (int index in liviewProducts.SelectedIndices)
-                {
-                    product.getProducts().RemoveAt(index);
-                }
+                foreach (ListViewItem item in liviewProducts.SelectedItems)
+                    product.removeProduct(product.getProduct(Convert.ToInt32(item.Text)));
                 updateProducts();
             }
             else
-            {
                 MessageBox.Show("Select a Product");
-            }
         }
     }
 }

@@ -59,8 +59,8 @@ namespace VisualProgrammingProject
         {
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
-            SqlCommand sqlCommand = new SqlCommand("DELETE FROM [Order] WHERE orderID=@ID", conn);
-            sqlCommand.Parameters.AddWithValue("@ID", order.orderID);
+            SqlCommand sqlCommand = new SqlCommand("DELETE FROM [Order] WHERE orderID=@orderID", conn);
+            sqlCommand.Parameters.AddWithValue("@orderID", order.orderID);
             sqlCommand.ExecuteNonQuery();
             conn.Close();
         }
