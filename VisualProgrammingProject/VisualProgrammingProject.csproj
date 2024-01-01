@@ -58,6 +58,7 @@
     <Compile Include="Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Category.cs" />
     <Compile Include="checkoutPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +90,7 @@
     <Compile Include="KitchenPage.Designer.cs">
       <DependentUpon>KitchenPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderProduct.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
