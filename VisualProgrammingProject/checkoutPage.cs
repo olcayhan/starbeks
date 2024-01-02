@@ -32,10 +32,10 @@ namespace VisualProgrammingProject
             {
                 foreach (OrderProduct product in order.getProducts(Convert.ToInt32(lstVwName.SelectedItems[0].Text)))
                 {
-                    TotalPrice += product.productPrice;
-                    ListViewItem item = new ListViewItem(product.productName);
-                    item.SubItems.Add(product.productPiece.ToString());
-                    item.SubItems.Add(product.productPrice.ToString());
+                    TotalPrice += product.Price;
+                    ListViewItem item = new ListViewItem(product.Name);
+                    item.SubItems.Add(product.Piece.ToString());
+                    item.SubItems.Add(product.Price.ToString());
                     lstviewFatura.Items.Add(item);
                 }
             }

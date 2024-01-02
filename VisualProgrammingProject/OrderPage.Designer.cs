@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderPage));
             this.LstVwMenu = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LstVwOrder = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,37 +46,41 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.nameLbl = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.columnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.NumericPiece)).BeginInit();
             this.SuspendLayout();
             // 
             // LstVwMenu
             // 
             this.LstVwMenu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
+            this.columnID,
+            this.columnName,
+            this.columnPrice});
             this.LstVwMenu.FullRowSelect = true;
             this.LstVwMenu.HideSelection = false;
             this.LstVwMenu.Location = new System.Drawing.Point(45, 196);
             this.LstVwMenu.Margin = new System.Windows.Forms.Padding(2);
             this.LstVwMenu.Name = "LstVwMenu";
-            this.LstVwMenu.Size = new System.Drawing.Size(190, 160);
+            this.LstVwMenu.Size = new System.Drawing.Size(183, 160);
             this.LstVwMenu.TabIndex = 3;
             this.LstVwMenu.UseCompatibleStateImageBehavior = false;
             this.LstVwMenu.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // columnName
             // 
-            this.columnHeader1.Text = "Coffees";
-            this.columnHeader1.Width = 130;
+            this.columnName.Text = "Name";
+            this.columnName.Width = 73;
             // 
-            // columnHeader2
+            // columnPrice
             // 
-            this.columnHeader2.Text = "Price";
-            this.columnHeader2.Width = 50;
+            this.columnPrice.Text = "Price";
+            this.columnPrice.Width = 73;
             // 
             // LstVwOrder
             // 
             this.LstVwOrder.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
@@ -92,7 +96,7 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Coffees";
+            this.columnHeader3.Text = "Name";
             this.columnHeader3.Width = 150;
             // 
             // columnHeader4
@@ -201,6 +205,15 @@
             this.flowLayoutPanel.Size = new System.Drawing.Size(600, 105);
             this.flowLayoutPanel.TabIndex = 14;
             // 
+            // columnID
+            // 
+            this.columnID.Text = "ID";
+            this.columnID.Width = 34;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,8 +245,8 @@
 
         #endregion
         private System.Windows.Forms.ListView LstVwMenu;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnName;
+        private System.Windows.Forms.ColumnHeader columnPrice;
         private System.Windows.Forms.ListView LstVwOrder;
         private System.Windows.Forms.NumericUpDown NumericPiece;
         private System.Windows.Forms.Label label1;
@@ -248,5 +261,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
+        private System.Windows.Forms.ColumnHeader columnID;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

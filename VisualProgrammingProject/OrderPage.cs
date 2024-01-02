@@ -6,15 +6,8 @@ namespace VisualProgrammingProject
 {
     public partial class OrderPage : Form
     {
-        private readonly List<Basket> BasketList = new List<Basket>();
-
-        class Basket
-        {
-            public string Name { get; set; }
-            public int Piece { get; set; }
-            public float Price { get; set; }
-        }
-
+        public static List<OrderProduct> BasketList = new List<OrderProduct>();
+       
         public OrderPage()
         {
             InitializeComponent();
@@ -25,11 +18,12 @@ namespace VisualProgrammingProject
             LstVwOrder.Items.Clear();
 
             double total = 0;
-            foreach (Basket coffee in BasketList)
+            foreach (OrderProduct coffee in BasketList)
             {
                 total += coffee.Piece * coffee.Price;
 
-                ListViewItem item = new ListViewItem(coffee.Name);
+                ListViewItem item = new ListViewItem(coffee.ID.ToString());
+                item.SubItems.Add(coffee.Name.ToString());
                 item.SubItems.Add(coffee.Piece.ToString());
                 item.SubItems.Add((coffee.Piece * coffee.Price).ToString());
                 LstVwOrder.Items.Add(item);
@@ -41,32 +35,24 @@ namespace VisualProgrammingProject
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-        //    if (LstVwMenu.SelectedItems.Count > 0)
-        //    {
-        //        string chooseCoffee = LstVwMenu.SelectedItems[0].Text;
-        //        int piece = Convert.ToInt32(NumericPiece.Value);
-
-        //        if (piece == 0)
-        //        {
-        //            MessageBox.Show("Please take at least one piece.");
-        //            return;
-        //        }
-
-        //        if (BasketList.ContainsKey(chooseCoffee))
-        //        {
-        //            BasketList[chooseCoffee] += piece;
-        //        }
-        //        else
-        //        {
-        //            BasketList.Add(chooseCoffee, piece);
-        //        }
-
-        //        OrderUpdate();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Please Choose a Coffee");
-        //    }
+            if (LstVwMenu.SelectedItems.Count > 0)
+            {
+                int productID = Convert.ToInt32(LstVwMenu.SelectedItems[0].Text);
+                Product product1 = new Product().getProduct(productID);
+                int piece = Convert.ToInt32(NumericPiece.Value);
+                
+                if (piece == 0)
+                {
+                    MessageBox.Show("Please take at least one piece.");
+                    return;
+                }
+                
+                OrderUpdate();
+            }
+            else
+            {
+                MessageBox.Show("Please Choose a Coffee");
+            }
         }
 
         private void btndelete_Click(object sender, EventArgs e)
@@ -97,19 +83,9 @@ namespace VisualProgrammingProject
 
         private void cleanList()
         {
-        //    foreach (ListViewItem selectedItem in LstVwOrder.Items)
-        //    {
-        //        LstVwOrder.Items.Remove(selectedItem);
-
-        //        string selectCoffee = selectedItem.Text;
-
-        //        if (BasketList.ContainsKey(selectCoffee))
-        //        {
-        //            BasketList.Remove(selectCoffee);
-        //        }
-
-        //        txtTotal.Text = "";
-        //    }
+            BasketList.Clear();
+            LstVwOrder.Items.Clear();
+            txtTotal.Text = "";
         }
 
         private void btnClean_Click(object sender, EventArgs e)
@@ -166,7 +142,8 @@ namespace VisualProgrammingProject
 
             foreach (Product coffee in new Product().getProductsByCategory(Convert.ToInt32((sender as Button).Name)))
             {
-                ListViewItem item = new ListViewItem(coffee.Name);
+                ListViewItem item = new ListViewItem(coffee.ID.ToString());
+                item.SubItems.Add(coffee.Name);
                 item.SubItems.Add(coffee.Price.ToString());
                 LstVwMenu.Items.Add(item);
             }

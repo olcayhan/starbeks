@@ -8,18 +8,18 @@ namespace VisualProgrammingProject
 {
     public class OrderProduct
     {
-        public int productID { get; set; }
-        public string productName { get; set; }
-        public double productPrice { get; set; }
-        public int productPiece { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public int Piece { get; set; }
         public int orderID { get; set; }
 
-        public OrderProduct(int productID, string productName, int productPiece, double productPrice, int orderID)
+        public OrderProduct(int ID, string Name, int Piece, double Price, int orderID)
         {
-            this.productID = productID;
-            this.productName = productName;
-            this.productPrice = productPrice;
-            this.productPiece = productPiece;
+            this.ID = ID;
+            this.Name = Name;
+            this.Price = Price;
+            this.Piece = Piece;
             this.orderID = orderID;
         }
     }

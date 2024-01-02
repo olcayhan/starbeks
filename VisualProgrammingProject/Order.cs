@@ -46,10 +46,10 @@ namespace VisualProgrammingProject
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
             SqlCommand sqlCommand = new SqlCommand("INSERT INTO [OrderProduct] (ID,Name,Price,Piece,orderID) VALUES (@ID,@Name,@Price,@Piece,@orderID)", conn);
-            sqlCommand.Parameters.AddWithValue("@ID", product.productID);
-            sqlCommand.Parameters.AddWithValue("@Name", product.productName);
-            sqlCommand.Parameters.AddWithValue("@Price", product.productPrice);
-            sqlCommand.Parameters.AddWithValue("@Piece", product.productPiece);
+            sqlCommand.Parameters.AddWithValue("@ID", product.ID);
+            sqlCommand.Parameters.AddWithValue("@Name", product.Name);
+            sqlCommand.Parameters.AddWithValue("@Price", product.Price);
+            sqlCommand.Parameters.AddWithValue("@Piece", product.Piece);
             sqlCommand.Parameters.AddWithValue("@orderID", product.orderID);
             sqlCommand.ExecuteNonQuery();
             conn.Close();

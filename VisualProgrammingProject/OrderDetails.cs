@@ -21,9 +21,9 @@ namespace VisualProgrammingProject
 
             foreach (OrderProduct product in order.getProducts(order.orderID))
             {
-                ListViewItem item = new ListViewItem(product.productName.ToString());
-                item.SubItems.Add(product.productPiece.ToString());
-                item.SubItems.Add(product.productPrice.ToString());
+                ListViewItem item = new ListViewItem(product.Name.ToString());
+                item.SubItems.Add(product.Piece.ToString());
+                item.SubItems.Add(product.Price.ToString());
                 listView1.Items.Add(item);
             }
         }
