@@ -46,8 +46,6 @@ namespace VisualProgrammingProject
             conn.Close();
             return product;
         }
-
-
         public void addProduct(Product product)
         {
             SqlConnection conn = new SqlConnection(connString);
@@ -82,6 +80,30 @@ namespace VisualProgrammingProject
             }
             conn.Close();
             return ProductList;
+        }
+
+        public List<Product> getProductsByCategory(int categoryId)
+        {
+            List<Product> productList = new List<Product>();
+
+            SqlConnection conn = new SqlConnection(connString);
+            conn.Open();
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM [Product] WHERE CategoryID = @CategoryID", conn);
+            sqlCommand.Parameters.AddWithValue("@CategoryID", categoryId);
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                Product product = new Product();
+                product.ID = Convert.ToInt32(reader["ID"]);
+                product.Name = reader["Name"].ToString();
+                product.Quantity = Convert.ToInt32(reader["Quantity"]);
+                product.Price = Convert.ToDouble(reader["Price"]);
+                product.Category = new Category().getCategory(Convert.ToInt32(reader["CategoryID"]));
+                productList.Add(product);
+            }
+            conn.Close();
+            return productList;
+
         }
         public void removeProduct(Product product)
         {

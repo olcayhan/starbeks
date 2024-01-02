@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderPage));
-            this.btnHot = new System.Windows.Forms.Button();
-            this.BtnCold = new System.Windows.Forms.Button();
-            this.BtnMilky = new System.Windows.Forms.Button();
             this.LstVwMenu = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,44 +45,9 @@
             this.orderbtn = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.nameLbl = new System.Windows.Forms.Label();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.NumericPiece)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnHot
-            // 
-            this.btnHot.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnHot.Location = new System.Drawing.Point(53, 46);
-            this.btnHot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnHot.Name = "btnHot";
-            this.btnHot.Size = new System.Drawing.Size(158, 91);
-            this.btnHot.TabIndex = 0;
-            this.btnHot.Text = "Hot";
-            this.btnHot.UseVisualStyleBackColor = true;
-            this.btnHot.Click += new System.EventHandler(this.btnHot_Click);
-            // 
-            // BtnCold
-            // 
-            this.BtnCold.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnCold.Location = new System.Drawing.Point(264, 46);
-            this.BtnCold.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.BtnCold.Name = "BtnCold";
-            this.BtnCold.Size = new System.Drawing.Size(158, 91);
-            this.BtnCold.TabIndex = 1;
-            this.BtnCold.Text = "Cold";
-            this.BtnCold.UseVisualStyleBackColor = true;
-            this.BtnCold.Click += new System.EventHandler(this.BtnCold_Click);
-            // 
-            // BtnMilky
-            // 
-            this.BtnMilky.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnMilky.Location = new System.Drawing.Point(475, 46);
-            this.BtnMilky.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.BtnMilky.Name = "BtnMilky";
-            this.BtnMilky.Size = new System.Drawing.Size(158, 91);
-            this.BtnMilky.TabIndex = 2;
-            this.BtnMilky.Text = "Milky";
-            this.BtnMilky.UseVisualStyleBackColor = true;
-            this.BtnMilky.Click += new System.EventHandler(this.BtnMilky_Click);
             // 
             // LstVwMenu
             // 
@@ -95,7 +57,7 @@
             this.LstVwMenu.FullRowSelect = true;
             this.LstVwMenu.HideSelection = false;
             this.LstVwMenu.Location = new System.Drawing.Point(45, 196);
-            this.LstVwMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LstVwMenu.Margin = new System.Windows.Forms.Padding(2);
             this.LstVwMenu.Name = "LstVwMenu";
             this.LstVwMenu.Size = new System.Drawing.Size(190, 160);
             this.LstVwMenu.TabIndex = 3;
@@ -121,7 +83,7 @@
             this.LstVwOrder.FullRowSelect = true;
             this.LstVwOrder.HideSelection = false;
             this.LstVwOrder.Location = new System.Drawing.Point(377, 196);
-            this.LstVwOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LstVwOrder.Margin = new System.Windows.Forms.Padding(2);
             this.LstVwOrder.Name = "LstVwOrder";
             this.LstVwOrder.Size = new System.Drawing.Size(268, 160);
             this.LstVwOrder.TabIndex = 4;
@@ -145,7 +107,7 @@
             // NumericPiece
             // 
             this.NumericPiece.Location = new System.Drawing.Point(263, 252);
-            this.NumericPiece.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NumericPiece.Margin = new System.Windows.Forms.Padding(2);
             this.NumericPiece.Name = "NumericPiece";
             this.NumericPiece.Size = new System.Drawing.Size(90, 20);
             this.NumericPiece.TabIndex = 5;
@@ -164,7 +126,7 @@
             // txtTotal
             // 
             this.txtTotal.Location = new System.Drawing.Point(436, 392);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(76, 20);
             this.txtTotal.TabIndex = 7;
@@ -173,7 +135,7 @@
             // 
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnAdd.Location = new System.Drawing.Point(263, 306);
-            this.BtnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(90, 50);
             this.BtnAdd.TabIndex = 8;
@@ -215,7 +177,7 @@
             // 
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Location = new System.Drawing.Point(137, 391);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(76, 20);
             this.txtName.TabIndex = 13;
@@ -231,6 +193,14 @@
             this.nameLbl.TabIndex = 12;
             this.nameLbl.Text = "Name :";
             // 
+            // flowLayoutPanel
+            // 
+            this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(45, 28);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(600, 105);
+            this.flowLayoutPanel.TabIndex = 14;
+            // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +208,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(692, 433);
+            this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.orderbtn);
@@ -249,12 +220,10 @@
             this.Controls.Add(this.NumericPiece);
             this.Controls.Add(this.LstVwOrder);
             this.Controls.Add(this.LstVwMenu);
-            this.Controls.Add(this.BtnMilky);
-            this.Controls.Add(this.BtnCold);
-            this.Controls.Add(this.btnHot);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "OrderPage";
             this.Text = "OrderPage";
+            this.Load += new System.EventHandler(this.OrderPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NumericPiece)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -262,10 +231,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnHot;
-        private System.Windows.Forms.Button BtnCold;
-        private System.Windows.Forms.Button BtnMilky;
         private System.Windows.Forms.ListView LstVwMenu;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -282,5 +247,6 @@
         private System.Windows.Forms.Button orderbtn;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label nameLbl;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
     }
 }
