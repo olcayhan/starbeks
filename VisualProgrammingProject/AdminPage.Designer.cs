@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPage));
             this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.cmbProductCategory = new System.Windows.Forms.ComboBox();
@@ -41,6 +40,7 @@
             this.lblProduct = new System.Windows.Forms.Label();
             this.lblProducts = new System.Windows.Forms.Label();
             this.liviewProducts = new System.Windows.Forms.ListView();
+            this.columnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -52,13 +52,12 @@
             this.lblCategories = new System.Windows.Forms.Label();
             this.btnDeleteCategory = new System.Windows.Forms.Button();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
-            this.columnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // txtProductPrice
             // 
             this.txtProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtProductPrice.Location = new System.Drawing.Point(607, 403);
+            this.txtProductPrice.Location = new System.Drawing.Point(641, 404);
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(120, 27);
             this.txtProductPrice.TabIndex = 34;
@@ -68,7 +67,7 @@
             this.lblProductPrice.AutoSize = true;
             this.lblProductPrice.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblProductPrice.Location = new System.Drawing.Point(613, 384);
+            this.lblProductPrice.Location = new System.Drawing.Point(647, 385);
             this.lblProductPrice.Name = "lblProductPrice";
             this.lblProductPrice.Size = new System.Drawing.Size(40, 17);
             this.lblProductPrice.TabIndex = 33;
@@ -79,7 +78,7 @@
             this.cmbProductCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbProductCategory.FormattingEnabled = true;
-            this.cmbProductCategory.Location = new System.Drawing.Point(606, 354);
+            this.cmbProductCategory.Location = new System.Drawing.Point(640, 355);
             this.cmbProductCategory.Name = "cmbProductCategory";
             this.cmbProductCategory.Size = new System.Drawing.Size(121, 26);
             this.cmbProductCategory.TabIndex = 32;
@@ -89,7 +88,7 @@
             this.lblProductCategory.AutoSize = true;
             this.lblProductCategory.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblProductCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblProductCategory.Location = new System.Drawing.Point(613, 334);
+            this.lblProductCategory.Location = new System.Drawing.Point(647, 335);
             this.lblProductCategory.Name = "lblProductCategory";
             this.lblProductCategory.Size = new System.Drawing.Size(65, 17);
             this.lblProductCategory.TabIndex = 31;
@@ -98,7 +97,7 @@
             // txtProductAmount
             // 
             this.txtProductAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtProductAmount.Location = new System.Drawing.Point(607, 305);
+            this.txtProductAmount.Location = new System.Drawing.Point(641, 306);
             this.txtProductAmount.Name = "txtProductAmount";
             this.txtProductAmount.Size = new System.Drawing.Size(120, 27);
             this.txtProductAmount.TabIndex = 30;
@@ -108,7 +107,7 @@
             this.lblProductAmount.AutoSize = true;
             this.lblProductAmount.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblProductAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblProductAmount.Location = new System.Drawing.Point(613, 284);
+            this.lblProductAmount.Location = new System.Drawing.Point(647, 285);
             this.lblProductAmount.Name = "lblProductAmount";
             this.lblProductAmount.Size = new System.Drawing.Size(56, 17);
             this.lblProductAmount.TabIndex = 29;
@@ -119,7 +118,7 @@
             this.lblProductName.AutoSize = true;
             this.lblProductName.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblProductName.Location = new System.Drawing.Point(613, 234);
+            this.lblProductName.Location = new System.Drawing.Point(647, 235);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(45, 17);
             this.lblProductName.TabIndex = 28;
@@ -129,7 +128,7 @@
             // 
             this.btnAddProduct.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAddProduct.Location = new System.Drawing.Point(804, 246);
+            this.btnAddProduct.Location = new System.Drawing.Point(838, 247);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(105, 54);
             this.btnAddProduct.TabIndex = 27;
@@ -140,7 +139,7 @@
             // txtProductName
             // 
             this.txtProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtProductName.Location = new System.Drawing.Point(607, 254);
+            this.txtProductName.Location = new System.Drawing.Point(641, 255);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(120, 27);
             this.txtProductName.TabIndex = 26;
@@ -150,7 +149,7 @@
             this.lblProduct.AutoSize = true;
             this.lblProduct.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblProduct.Location = new System.Drawing.Point(734, 208);
+            this.lblProduct.Location = new System.Drawing.Point(768, 209);
             this.lblProduct.Name = "lblProduct";
             this.lblProduct.Size = new System.Drawing.Size(72, 22);
             this.lblProduct.TabIndex = 25;
@@ -161,7 +160,7 @@
             this.lblProducts.AutoSize = true;
             this.lblProducts.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblProducts.Location = new System.Drawing.Point(734, 3);
+            this.lblProducts.Location = new System.Drawing.Point(768, 4);
             this.lblProducts.Name = "lblProducts";
             this.lblProducts.Size = new System.Drawing.Size(81, 22);
             this.lblProducts.TabIndex = 24;
@@ -177,12 +176,17 @@
             this.columnPrice});
             this.liviewProducts.FullRowSelect = true;
             this.liviewProducts.HideSelection = false;
-            this.liviewProducts.Location = new System.Drawing.Point(569, 28);
+            this.liviewProducts.Location = new System.Drawing.Point(603, 29);
             this.liviewProducts.Name = "liviewProducts";
             this.liviewProducts.Size = new System.Drawing.Size(375, 164);
             this.liviewProducts.TabIndex = 23;
             this.liviewProducts.UseCompatibleStateImageBehavior = false;
             this.liviewProducts.View = System.Windows.Forms.View.Details;
+            // 
+            // columnID
+            // 
+            this.columnID.Text = "ID";
+            this.columnID.Width = 40;
             // 
             // columnName
             // 
@@ -207,7 +211,7 @@
             // 
             this.btnAddCategory.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAddCategory.Location = new System.Drawing.Point(100, 287);
+            this.btnAddCategory.Location = new System.Drawing.Point(94, 275);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(68, 24);
             this.btnAddCategory.TabIndex = 22;
@@ -220,7 +224,7 @@
             this.lblCategory.AutoSize = true;
             this.lblCategory.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCategory.Location = new System.Drawing.Point(114, 229);
+            this.lblCategory.Location = new System.Drawing.Point(108, 217);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(83, 22);
             this.lblCategory.TabIndex = 21;
@@ -229,7 +233,7 @@
             // txtCategory
             // 
             this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtCategory.Location = new System.Drawing.Point(100, 254);
+            this.txtCategory.Location = new System.Drawing.Point(94, 242);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(120, 27);
             this.txtCategory.TabIndex = 20;
@@ -239,7 +243,7 @@
             this.liboxCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.liboxCategories.FormattingEnabled = true;
             this.liboxCategories.ItemHeight = 20;
-            this.liboxCategories.Location = new System.Drawing.Point(100, 41);
+            this.liboxCategories.Location = new System.Drawing.Point(94, 29);
             this.liboxCategories.Name = "liboxCategories";
             this.liboxCategories.Size = new System.Drawing.Size(120, 104);
             this.liboxCategories.TabIndex = 19;
@@ -249,7 +253,7 @@
             this.lblCategories.AutoSize = true;
             this.lblCategories.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCategories.Location = new System.Drawing.Point(114, 16);
+            this.lblCategories.Location = new System.Drawing.Point(108, 4);
             this.lblCategories.Name = "lblCategories";
             this.lblCategories.Size = new System.Drawing.Size(97, 22);
             this.lblCategories.TabIndex = 18;
@@ -259,7 +263,7 @@
             // 
             this.btnDeleteCategory.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDeleteCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDeleteCategory.Location = new System.Drawing.Point(100, 318);
+            this.btnDeleteCategory.Location = new System.Drawing.Point(94, 306);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
             this.btnDeleteCategory.Size = new System.Drawing.Size(68, 24);
             this.btnDeleteCategory.TabIndex = 35;
@@ -271,7 +275,7 @@
             // 
             this.btnDeleteProduct.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDeleteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDeleteProduct.Location = new System.Drawing.Point(804, 374);
+            this.btnDeleteProduct.Location = new System.Drawing.Point(838, 375);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(105, 55);
             this.btnDeleteProduct.TabIndex = 36;
@@ -279,17 +283,11 @@
             this.btnDeleteProduct.UseVisualStyleBackColor = false;
             this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
-            // columnID
-            // 
-            this.columnID.Text = "ID";
-            this.columnID.Width = 40;
-            // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(990, 508);
             this.Controls.Add(this.btnDeleteProduct);
@@ -311,7 +309,7 @@
             this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.liboxCategories);
             this.Controls.Add(this.lblCategories);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminPage";
             this.Text = "Admin";
             this.ResumeLayout(false);

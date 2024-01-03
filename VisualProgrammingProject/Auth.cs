@@ -18,30 +18,49 @@ namespace VisualProgrammingProject
         {
             InitializeComponent();
         }
-        private bool Valid(string Email, string Password)
-        {
-            return Email == "admin" && Password == "password";
-        }
         private void LogBtn_Click(object sender, EventArgs e)
         {
             string email = txtemail.Text;
             string password = txtpassword.Text;
 
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+
+            if(email == "" || password == "")
             {
-                MessageBox.Show("E-mail and password cannot be empty. Please fill in all fields.");
+                MessageBox.Show("Please fill all the fields.");
             }
             else
             {
-                if (Valid(email, password))
+                User user = new User().Auth(email, password);
+                if(user.Role == Users.Admin)
                 {
-                    MessageBox.Show("Login Succesful");
+                    AdminPage admin = new AdminPage();
+                    admin.Show();
+                    this.Hide();
+                }
+                else if(user.Role == Users.Client)
+                {
+                    OrderPage client = new OrderPage();
+                    client.Show();
+                    this.Hide();
+                }
+                else if(user.Role == Users.Waiter)
+                {
+                    KitchenPage waiter = new KitchenPage();
+                    waiter.Show();
+                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Unvalid password and E-mail, Please Try Again");
+                    MessageBox.Show("Invalid email or password");
                 }
             }
+        }
+
+        private void signupBtn_Click(object sender, EventArgs e)
+        {
+            SignupPage signup = new SignupPage();
+            signup.Show();
+            this.Hide();
         }
     }
 }
