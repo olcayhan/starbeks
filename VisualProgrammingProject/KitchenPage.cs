@@ -49,6 +49,7 @@ namespace VisualProgrammingProject
                     Order newOrder = order.getOrders().Find(item => item.orderID.ToString() == listItem.Text);
                     newOrder.orderStatus = status;
                     newOrder.orderTime = DateTime.Now;
+                    order.updateOrder(newOrder);
                 }
                 UpdateListView();
             }

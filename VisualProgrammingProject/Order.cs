@@ -40,6 +40,18 @@ namespace VisualProgrammingProject
             sqlCommand.ExecuteNonQuery();
             conn.Close();
         }
+        public void updateOrder(Order order)
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            conn.Open();
+            SqlCommand sqlCommand = new SqlCommand("UPDATE [Order] SET Name=@Name,Time=@Time,Status=@Status WHERE ID=@ID", conn);
+            sqlCommand.Parameters.AddWithValue("@ID", order.orderID);
+            sqlCommand.Parameters.AddWithValue("@Name", order.orderName);
+            sqlCommand.Parameters.AddWithValue("@Time", order.orderTime);
+            sqlCommand.Parameters.AddWithValue("@Status", order.orderStatus.ToString());
+            sqlCommand.ExecuteNonQuery();
+            conn.Close();
+        }
 
         public void addProduct(OrderProduct product)
         {
