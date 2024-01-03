@@ -71,12 +71,6 @@
     <Compile Include="OrderDetails.Designer.cs">
       <DependentUpon>OrderDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
-    </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="OrderPage.cs">
       <SubType>Form</SubType>
@@ -112,9 +106,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderDetails.resx">
       <DependentUpon>OrderDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderPage.resx">
       <DependentUpon>OrderPage.cs</DependentUpon>

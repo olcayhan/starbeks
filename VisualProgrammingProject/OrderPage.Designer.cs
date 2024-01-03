@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderPage));
             this.LstVwMenu = new System.Windows.Forms.ListView();
+            this.columnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LstVwOrder = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,8 +47,6 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.nameLbl = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.columnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.NumericPiece)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +65,11 @@
             this.LstVwMenu.TabIndex = 3;
             this.LstVwMenu.UseCompatibleStateImageBehavior = false;
             this.LstVwMenu.View = System.Windows.Forms.View.Details;
+            // 
+            // columnID
+            // 
+            this.columnID.Text = "ID";
+            this.columnID.Width = 34;
             // 
             // columnName
             // 
@@ -93,6 +97,10 @@
             this.LstVwOrder.TabIndex = 4;
             this.LstVwOrder.UseCompatibleStateImageBehavior = false;
             this.LstVwOrder.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
             // 
             // columnHeader3
             // 
@@ -205,20 +213,10 @@
             this.flowLayoutPanel.Size = new System.Drawing.Size(600, 105);
             this.flowLayoutPanel.TabIndex = 14;
             // 
-            // columnID
-            // 
-            this.columnID.Text = "ID";
-            this.columnID.Width = 34;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(692, 433);
             this.Controls.Add(this.flowLayoutPanel);

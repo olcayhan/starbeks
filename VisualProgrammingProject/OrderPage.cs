@@ -7,7 +7,7 @@ namespace VisualProgrammingProject
     public partial class OrderPage : Form
     {
         public static List<OrderProduct> BasketList = new List<OrderProduct>();
-       
+
         public OrderPage()
         {
             InitializeComponent();
@@ -38,15 +38,26 @@ namespace VisualProgrammingProject
             if (LstVwMenu.SelectedItems.Count > 0)
             {
                 int productID = Convert.ToInt32(LstVwMenu.SelectedItems[0].Text);
-                Product product1 = new Product().getProduct(productID);
                 int piece = Convert.ToInt32(NumericPiece.Value);
-                
+
                 if (piece == 0)
                 {
                     MessageBox.Show("Please take at least one piece.");
                     return;
                 }
-                
+
+                OrderProduct product = BasketList.Find(x => x.ID == productID);
+                if (product == null)
+                {
+                    Product prd = new Product().getProduct(productID);
+                    OrderProduct newProd = new OrderProduct(productID, prd.Name, piece, prd.Price, 0);
+                    BasketList.Add(newProd);
+                }
+                else
+                {
+                    product.Piece += piece;
+                }
+
                 OrderUpdate();
             }
             else
@@ -57,28 +68,28 @@ namespace VisualProgrammingProject
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-        //    if (LstVwOrder.SelectedItems.Count == 0)
-        //    {
-        //        MessageBox.Show("Please Choose a Coffee");
-        //        return;
-        //    }
+            if (LstVwOrder.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please Choose a Coffee");
+                return;
+            }
 
-        //    foreach (ListViewItem selectedItem in LstVwOrder.SelectedItems)
-        //    {
-        //        string selectCoffee = selectedItem.Text;
+            foreach (ListViewItem selectedItem in LstVwOrder.SelectedItems)
+            {
+                OrderProduct prd = BasketList.Find(x => x.ID == Convert.ToInt32(selectedItem.Text));
 
-        //        if (BasketList.ContainsKey(selectCoffee))
-        //        {
-        //            BasketList[selectCoffee]--;
+                if (prd != null)
+                {
+                    prd.Piece -= 1;
 
-        //            if (BasketList[selectCoffee] == 0)
-        //            {
-        //                BasketList.Remove(selectCoffee);
-        //            }
-        //        }
-        //    }
+                    if (prd.Piece == 0)
+                    {
+                        BasketList.Remove(prd);
+                    }
+                }
+            }
 
-        //    OrderUpdate();
+            OrderUpdate();
         }
 
         private void cleanList()
@@ -99,18 +110,16 @@ namespace VisualProgrammingProject
             int orderID = rnd.Next(1000, 3000);
             Order newOrder = new Order(orderID, txtName.Text, DateTime.Now, Status.inQueue);
 
-            if (txtName.Text == "") MessageBox.Show("Plase enter your name");
-            else if (LstVwOrder.Items.Count > 0)
+            if (LstVwOrder.Items.Count > 0)
             {
                 newOrder.addOrder(newOrder);
 
-                foreach (ListViewItem item in LstVwOrder.Items)
+                foreach (OrderProduct product in BasketList)
                 {
-                    int productID = rnd.Next(1000, 3000);
-                    OrderProduct newProduct = new OrderProduct(productID, item.Text, Convert.ToInt32(item.SubItems[2].Text), Convert.ToDouble(item.SubItems[1].Text), orderID);
-                    newOrder.addProduct(newProduct);
+                    product.orderID = orderID;
+                    newOrder.addProduct(product);
                 }
-                //cleanList();
+                cleanList();
                 MessageBox.Show("Your order has been received");
             }
             else MessageBox.Show("Plase select at least one product");
@@ -129,14 +138,14 @@ namespace VisualProgrammingProject
                 btn.Height = 100;
                 btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                 btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-                btn.Click += Btn_Click;
+                btn.Click += getProducts;
                 flowLayoutPanel.Controls.Add(btn);
             }
 
 
         }
 
-        private void Btn_Click(object sender, EventArgs e)
+        private void getProducts(object sender, EventArgs e)
         {
             LstVwMenu.Items.Clear();
 
