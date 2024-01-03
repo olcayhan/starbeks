@@ -43,10 +43,16 @@ namespace VisualProgrammingProject
                     client.Show();
                     this.Hide();
                 }
-                else if(user.Role == Users.Waiter)
+                else if(user.Role == Users.Kitchen)
                 {
                     KitchenPage waiter = new KitchenPage();
                     waiter.Show();
+                    this.Hide();
+                }
+                else if (user.Role == Users.Cashier)
+                {
+                    checkoutPage checkoutPage = new checkoutPage();
+                    checkoutPage.Show();
                     this.Hide();
                 }
                 else
