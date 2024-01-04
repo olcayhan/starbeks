@@ -24,7 +24,7 @@ namespace VisualProgrammingProject
             {
                 total += coffee.Piece * coffee.Price;
 
-                ListViewItem item = new ListViewItem(coffee.ID.ToString());
+                ListViewItem item = new ListViewItem(coffee.productID.ToString());
                 item.SubItems.Add(coffee.Name.ToString());
                 item.SubItems.Add(coffee.Piece.ToString());
                 item.SubItems.Add((coffee.Piece * coffee.Price).ToString());
