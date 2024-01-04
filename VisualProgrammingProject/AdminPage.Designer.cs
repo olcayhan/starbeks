@@ -67,7 +67,7 @@
             this.txtProductPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtProductPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtProductPrice.Location = new System.Drawing.Point(25, 215);
+            this.txtProductPrice.Location = new System.Drawing.Point(37, 217);
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(120, 27);
             this.txtProductPrice.TabIndex = 34;
@@ -78,7 +78,7 @@
             this.lblProductPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.lblProductPrice.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.lblProductPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
-            this.lblProductPrice.Location = new System.Drawing.Point(31, 196);
+            this.lblProductPrice.Location = new System.Drawing.Point(43, 198);
             this.lblProductPrice.Name = "lblProductPrice";
             this.lblProductPrice.Size = new System.Drawing.Size(43, 16);
             this.lblProductPrice.TabIndex = 33;
@@ -91,7 +91,7 @@
             this.cmbProductCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbProductCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbProductCategory.FormattingEnabled = true;
-            this.cmbProductCategory.Location = new System.Drawing.Point(24, 166);
+            this.cmbProductCategory.Location = new System.Drawing.Point(36, 168);
             this.cmbProductCategory.Name = "cmbProductCategory";
             this.cmbProductCategory.Size = new System.Drawing.Size(121, 26);
             this.cmbProductCategory.TabIndex = 32;
@@ -102,7 +102,7 @@
             this.lblProductCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.lblProductCategory.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.lblProductCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
-            this.lblProductCategory.Location = new System.Drawing.Point(31, 146);
+            this.lblProductCategory.Location = new System.Drawing.Point(43, 148);
             this.lblProductCategory.Name = "lblProductCategory";
             this.lblProductCategory.Size = new System.Drawing.Size(70, 16);
             this.lblProductCategory.TabIndex = 31;
@@ -113,7 +113,7 @@
             this.txtProductAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtProductAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtProductAmount.Location = new System.Drawing.Point(25, 117);
+            this.txtProductAmount.Location = new System.Drawing.Point(37, 119);
             this.txtProductAmount.Name = "txtProductAmount";
             this.txtProductAmount.Size = new System.Drawing.Size(120, 27);
             this.txtProductAmount.TabIndex = 30;
@@ -124,7 +124,7 @@
             this.lblProductAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.lblProductAmount.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.lblProductAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
-            this.lblProductAmount.Location = new System.Drawing.Point(31, 96);
+            this.lblProductAmount.Location = new System.Drawing.Point(43, 98);
             this.lblProductAmount.Name = "lblProductAmount";
             this.lblProductAmount.Size = new System.Drawing.Size(60, 16);
             this.lblProductAmount.TabIndex = 29;
@@ -136,7 +136,7 @@
             this.lblProductName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.lblProductName.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.lblProductName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
-            this.lblProductName.Location = new System.Drawing.Point(31, 46);
+            this.lblProductName.Location = new System.Drawing.Point(43, 48);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(46, 16);
             this.lblProductName.TabIndex = 28;
@@ -147,7 +147,7 @@
             this.btnAddProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddProduct.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAddProduct.Location = new System.Drawing.Point(244, 83);
+            this.btnAddProduct.Location = new System.Drawing.Point(300, 83);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(105, 42);
             this.btnAddProduct.TabIndex = 27;
@@ -160,7 +160,7 @@
             this.txtProductName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtProductName.Location = new System.Drawing.Point(25, 66);
+            this.txtProductName.Location = new System.Drawing.Point(37, 68);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(120, 27);
             this.txtProductName.TabIndex = 26;
@@ -171,7 +171,7 @@
             this.lblProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.lblProduct.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.lblProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
-            this.lblProduct.Location = new System.Drawing.Point(160, 12);
+            this.lblProduct.Location = new System.Drawing.Point(184, 12);
             this.lblProduct.Name = "lblProduct";
             this.lblProduct.Size = new System.Drawing.Size(84, 22);
             this.lblProduct.TabIndex = 25;
@@ -183,7 +183,7 @@
             this.lblProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.lblProducts.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.lblProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
-            this.lblProducts.Location = new System.Drawing.Point(187, 13);
+            this.lblProducts.Location = new System.Drawing.Point(184, 13);
             this.lblProducts.Name = "lblProducts";
             this.lblProducts.Size = new System.Drawing.Size(95, 22);
             this.lblProducts.TabIndex = 24;
@@ -201,9 +201,9 @@
             this.liviewProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.liviewProducts.FullRowSelect = true;
             this.liviewProducts.HideSelection = false;
-            this.liviewProducts.Location = new System.Drawing.Point(47, 42);
+            this.liviewProducts.Location = new System.Drawing.Point(46, 54);
             this.liviewProducts.Name = "liviewProducts";
-            this.liviewProducts.Size = new System.Drawing.Size(379, 164);
+            this.liviewProducts.Size = new System.Drawing.Size(379, 190);
             this.liviewProducts.TabIndex = 23;
             this.liviewProducts.UseCompatibleStateImageBehavior = false;
             this.liviewProducts.View = System.Windows.Forms.View.Details;
@@ -237,9 +237,9 @@
             this.btnAddCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddCategory.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAddCategory.Location = new System.Drawing.Point(31, 82);
+            this.btnAddCategory.Location = new System.Drawing.Point(158, 122);
             this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(68, 24);
+            this.btnAddCategory.Size = new System.Drawing.Size(105, 42);
             this.btnAddCategory.TabIndex = 22;
             this.btnAddCategory.Text = "Add";
             this.btnAddCategory.UseVisualStyleBackColor = false;
@@ -251,7 +251,7 @@
             this.lblCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.lblCategory.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.lblCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
-            this.lblCategory.Location = new System.Drawing.Point(45, 24);
+            this.lblCategory.Location = new System.Drawing.Point(168, 21);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(95, 22);
             this.lblCategory.TabIndex = 21;
@@ -262,9 +262,9 @@
             this.txtCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtCategory.Location = new System.Drawing.Point(31, 49);
+            this.txtCategory.Location = new System.Drawing.Point(113, 68);
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(138, 27);
+            this.txtCategory.Size = new System.Drawing.Size(220, 27);
             this.txtCategory.TabIndex = 20;
             // 
             // liboxCategories
@@ -275,9 +275,9 @@
             this.liboxCategories.ForeColor = System.Drawing.SystemColors.WindowText;
             this.liboxCategories.FormattingEnabled = true;
             this.liboxCategories.ItemHeight = 20;
-            this.liboxCategories.Location = new System.Drawing.Point(26, 47);
+            this.liboxCategories.Location = new System.Drawing.Point(113, 54);
             this.liboxCategories.Name = "liboxCategories";
-            this.liboxCategories.Size = new System.Drawing.Size(143, 102);
+            this.liboxCategories.Size = new System.Drawing.Size(220, 142);
             this.liboxCategories.TabIndex = 19;
             // 
             // lblCategories
@@ -286,7 +286,7 @@
             this.lblCategories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.lblCategories.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.lblCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
-            this.lblCategories.Location = new System.Drawing.Point(31, 22);
+            this.lblCategories.Location = new System.Drawing.Point(152, 13);
             this.lblCategories.Name = "lblCategories";
             this.lblCategories.Size = new System.Drawing.Size(111, 22);
             this.lblCategories.TabIndex = 18;
@@ -297,9 +297,9 @@
             this.btnDeleteCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.btnDeleteCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDeleteCategory.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnDeleteCategory.Location = new System.Drawing.Point(31, 113);
+            this.btnDeleteCategory.Location = new System.Drawing.Point(158, 185);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
-            this.btnDeleteCategory.Size = new System.Drawing.Size(68, 24);
+            this.btnDeleteCategory.Size = new System.Drawing.Size(105, 42);
             this.btnDeleteCategory.TabIndex = 35;
             this.btnDeleteCategory.Text = "Delete";
             this.btnDeleteCategory.UseVisualStyleBackColor = false;
@@ -310,7 +310,7 @@
             this.btnDeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.btnDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDeleteProduct.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnDeleteProduct.Location = new System.Drawing.Point(244, 159);
+            this.btnDeleteProduct.Location = new System.Drawing.Point(300, 152);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(105, 42);
             this.btnDeleteProduct.TabIndex = 36;
@@ -323,9 +323,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.panel1.Controls.Add(this.liboxCategories);
             this.panel1.Controls.Add(this.lblCategories);
-            this.panel1.Location = new System.Drawing.Point(59, 82);
+            this.panel1.Location = new System.Drawing.Point(48, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 181);
+            this.panel1.Size = new System.Drawing.Size(468, 264);
             this.panel1.TabIndex = 37;
             // 
             // panel2
@@ -335,9 +335,9 @@
             this.panel2.Controls.Add(this.txtCategory);
             this.panel2.Controls.Add(this.btnAddCategory);
             this.panel2.Controls.Add(this.btnDeleteCategory);
-            this.panel2.Location = new System.Drawing.Point(59, 316);
+            this.panel2.Location = new System.Drawing.Point(48, 332);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 162);
+            this.panel2.Size = new System.Drawing.Size(468, 264);
             this.panel2.TabIndex = 38;
             // 
             // panel3
@@ -345,9 +345,9 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.panel3.Controls.Add(this.liviewProducts);
             this.panel3.Controls.Add(this.lblProducts);
-            this.panel3.Location = new System.Drawing.Point(371, 44);
+            this.panel3.Location = new System.Drawing.Point(578, 31);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(468, 219);
+            this.panel3.Size = new System.Drawing.Size(468, 264);
             this.panel3.TabIndex = 39;
             // 
             // panel4
@@ -364,9 +364,9 @@
             this.panel4.Controls.Add(this.cmbProductCategory);
             this.panel4.Controls.Add(this.txtProductAmount);
             this.panel4.Controls.Add(this.lblProductCategory);
-            this.panel4.Location = new System.Drawing.Point(371, 294);
+            this.panel4.Location = new System.Drawing.Point(578, 332);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(399, 264);
+            this.panel4.Size = new System.Drawing.Size(468, 264);
             this.panel4.TabIndex = 40;
             // 
             // AdminPage
@@ -375,7 +375,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(888, 591);
+            this.ClientSize = new System.Drawing.Size(1110, 636);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
