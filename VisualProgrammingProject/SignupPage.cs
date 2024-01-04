@@ -33,7 +33,7 @@ namespace VisualProgrammingProject
                 User user = new User();
                 user.Signup(rnd.Next(1000, 9999), name, email, Users.Client, password);
                 MessageBox.Show("You have successfully signed up.");
-                OrderPage orderPage = new OrderPage();
+                OrderPage orderPage = new OrderPage(user.ID);
                 orderPage.Show();
                 this.Hide();
             }

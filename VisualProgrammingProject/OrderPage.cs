@@ -7,10 +7,12 @@ namespace VisualProgrammingProject
     public partial class OrderPage : Form
     {
         public static List<OrderProduct> BasketList = new List<OrderProduct>();
+        User user = new User();
 
-        public OrderPage()
+        public OrderPage(int userID)
         {
             InitializeComponent();
+            user = user.getUser(userID);
         }
 
         private void OrderUpdate()
@@ -49,8 +51,9 @@ namespace VisualProgrammingProject
                 OrderProduct product = BasketList.Find(x => x.ID == productID);
                 if (product == null)
                 {
+                    Random rnd = new Random();
                     Product prd = new Product().getProduct(productID);
-                    OrderProduct newProd = new OrderProduct(productID, prd.Name, piece, prd.Price, 0);
+                    OrderProduct newProd = new OrderProduct(rnd.Next(10000,99999),productID, prd.Name, piece, prd.Price, 0);
                     BasketList.Add(newProd);
                 }
                 else
@@ -107,8 +110,8 @@ namespace VisualProgrammingProject
         private void orderbtn_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            int orderID = rnd.Next(1000, 3000);
-            Order newOrder = new Order(orderID, txtName.Text, DateTime.Now, Status.inQueue);
+            int orderID = rnd.Next(1000, 9999);
+            Order newOrder = new Order(orderID, user.Name, DateTime.Now, Status.inQueue);
 
             if (LstVwOrder.Items.Count > 0)
             {

@@ -57,8 +57,9 @@ namespace VisualProgrammingProject
         {
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
-            SqlCommand sqlCommand = new SqlCommand("INSERT INTO [OrderProduct] (ID,Name,Price,Piece,orderID) VALUES (@ID,@Name,@Price,@Piece,@orderID)", conn);
+            SqlCommand sqlCommand = new SqlCommand("INSERT INTO [OrderProduct] (ID,ProductID,Name,Price,Piece,orderID) VALUES (@ID,@ProductID,@Name,@Price,@Piece,@orderID)", conn);
             sqlCommand.Parameters.AddWithValue("@ID", product.ID);
+            sqlCommand.Parameters.AddWithValue("@ProductID", product.productID);
             sqlCommand.Parameters.AddWithValue("@Name", product.Name);
             sqlCommand.Parameters.AddWithValue("@Price", product.Price);
             sqlCommand.Parameters.AddWithValue("@Piece", product.Piece);
@@ -124,7 +125,7 @@ namespace VisualProgrammingProject
             SqlDataReader reader = sqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                OrderProduct newOrder = new OrderProduct(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetDouble(3), reader.GetInt32(4));
+                OrderProduct newOrder = new OrderProduct(reader.GetInt32(0),reader.GetInt32(1), reader.GetString(2), reader.GetInt32(3), reader.GetDouble(4), reader.GetInt32(5));
                 orderProducts.Add(newOrder);
             }
             conn.Close();

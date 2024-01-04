@@ -24,6 +24,26 @@ namespace VisualProgrammingProject
             this.Role = Role;
             this.Password = Password;
         }
+        public User getUser(int ID)
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            conn.Open();
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM [User] WHERE ID = @ID", conn);
+            sqlCommand.Parameters.AddWithValue("@ID", ID);
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            User user = new User();
+            while (reader.Read())
+            {
+                user.ID = Convert.ToInt32(reader["ID"]);
+                user.Name = reader["Name"].ToString();
+                user.Email = reader["Email"].ToString();
+                user.Role = (Users)Enum.Parse(typeof(Users), reader["Role"].ToString());
+                user.Password = reader["Password"].ToString();
+            }
+            conn.Close();
+            return user;
+        }
+
         public User Auth(string Email, string Password)
         {
             SqlConnection conn = new SqlConnection(connString);

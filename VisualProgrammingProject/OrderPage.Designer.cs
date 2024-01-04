@@ -44,8 +44,6 @@
             this.btndelete = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
             this.orderbtn = new System.Windows.Forms.Button();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.nameLbl = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.NumericPiece)).BeginInit();
             this.SuspendLayout();
@@ -185,26 +183,6 @@
             this.orderbtn.UseVisualStyleBackColor = true;
             this.orderbtn.Click += new System.EventHandler(this.orderbtn_Click);
             // 
-            // txtName
-            // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName.Location = new System.Drawing.Point(137, 391);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(76, 20);
-            this.txtName.TabIndex = 13;
-            // 
-            // nameLbl
-            // 
-            this.nameLbl.AutoSize = true;
-            this.nameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.nameLbl.Location = new System.Drawing.Point(74, 391);
-            this.nameLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.nameLbl.Name = "nameLbl";
-            this.nameLbl.Size = new System.Drawing.Size(59, 20);
-            this.nameLbl.TabIndex = 12;
-            this.nameLbl.Text = "Name :";
-            // 
             // flowLayoutPanel
             // 
             this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
@@ -220,8 +198,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(692, 433);
             this.Controls.Add(this.flowLayoutPanel);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.orderbtn);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.btndelete);
@@ -256,8 +232,6 @@
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Button orderbtn;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
         private System.Windows.Forms.ColumnHeader columnID;
         private System.Windows.Forms.ColumnHeader columnHeader1;
