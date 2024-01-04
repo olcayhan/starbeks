@@ -42,79 +42,106 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 252);
+            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
+            this.label3.Location = new System.Drawing.Point(26, 265);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(393, 13);
+            this.label3.Size = new System.Drawing.Size(407, 16);
             this.label3.TabIndex = 14;
-            this.label3.Text = "---------------------------------------- You already have an account ------------" +
-    "----------------------------";
+            this.label3.Text = "------------------ You already have an account --------------------";
             // 
             // loginBtn
             // 
-            this.loginBtn.Location = new System.Drawing.Point(162, 287);
+            this.loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.loginBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.loginBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
+            this.loginBtn.Location = new System.Drawing.Point(162, 299);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(105, 37);
+            this.loginBtn.Size = new System.Drawing.Size(105, 44);
             this.loginBtn.TabIndex = 13;
             this.loginBtn.Text = "Log in";
-            this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.UseVisualStyleBackColor = false;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // SignBtn
             // 
-            this.SignBtn.Location = new System.Drawing.Point(162, 186);
+            this.SignBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.SignBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SignBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.SignBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
+            this.SignBtn.Location = new System.Drawing.Point(162, 204);
             this.SignBtn.Name = "SignBtn";
-            this.SignBtn.Size = new System.Drawing.Size(105, 37);
+            this.SignBtn.Size = new System.Drawing.Size(105, 46);
             this.SignBtn.TabIndex = 12;
             this.SignBtn.Text = "Sign Up";
-            this.SignBtn.UseVisualStyleBackColor = true;
+            this.SignBtn.UseVisualStyleBackColor = false;
             this.SignBtn.Click += new System.EventHandler(this.SignBtn_Click);
             // 
             // txtpassword
             // 
-            this.txtpassword.Location = new System.Drawing.Point(101, 151);
+            this.txtpassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.txtpassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtpassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
+            this.txtpassword.Location = new System.Drawing.Point(101, 164);
             this.txtpassword.Name = "txtpassword";
-            this.txtpassword.Size = new System.Drawing.Size(227, 20);
+            this.txtpassword.Size = new System.Drawing.Size(227, 23);
             this.txtpassword.TabIndex = 11;
             this.txtpassword.UseSystemPasswordChar = true;
             // 
             // txtemail
             // 
-            this.txtemail.Location = new System.Drawing.Point(101, 101);
+            this.txtemail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtemail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
+            this.txtemail.Location = new System.Drawing.Point(101, 113);
             this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(227, 20);
+            this.txtemail.Size = new System.Drawing.Size(227, 23);
             this.txtemail.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(98, 135);
+            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
+            this.label2.Location = new System.Drawing.Point(98, 145);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(75, 16);
             this.label2.TabIndex = 9;
             this.label2.Text = "Password";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(98, 85);
+            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
+            this.label1.Location = new System.Drawing.Point(98, 94);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "E-mail";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(101, 62);
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
+            this.txtName.Location = new System.Drawing.Point(101, 65);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(227, 20);
+            this.txtName.Size = new System.Drawing.Size(227, 23);
             this.txtName.TabIndex = 16;
             // 
             // name
             // 
             this.name.AutoSize = true;
+            this.name.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
             this.name.Location = new System.Drawing.Point(98, 46);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(35, 13);
+            this.name.Size = new System.Drawing.Size(46, 16);
             this.name.TabIndex = 15;
             this.name.Text = "Name";
             // 
@@ -122,6 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(458, 374);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.name);
