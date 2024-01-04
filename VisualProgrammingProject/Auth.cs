@@ -31,6 +31,13 @@ namespace VisualProgrammingProject
             else
             {
                 User user = new User().Auth(email, password);
+             
+                if(user == null)
+                {
+                    MessageBox.Show("Invalid email or password");
+                    return;
+                }
+                
                 if(user.Role == Users.Admin)
                 {
                     AdminPage admin = new AdminPage();

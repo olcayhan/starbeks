@@ -17,7 +17,7 @@ namespace VisualProgrammingProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new KitchenPage());
+            Application.Run(new Auth());
         }
     }
 }

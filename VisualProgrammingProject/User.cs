@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VisualProgrammingProject
 {
-    enum Users { Admin, Client, Kitchen, Cashier };
+    enum Users { Admin = 1, Client, Kitchen, Cashier };
     internal class User
     {
         public string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=starbeks;Integrated Security=True";
