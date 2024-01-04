@@ -29,12 +29,12 @@ namespace VisualProgrammingProject
             liViewKitchen.Items.Clear();
             foreach (Order order in order.getOrders())
             {
-                ListViewItem item = new ListViewItem(order.orderID.ToString());
-                item.SubItems.Add(order.orderName);
-                item.SubItems.Add(order.orderStatus.ToString());
-                item.SubItems.Add(order.orderTime.ToString());
-                if(order.orderStatus == Status.inQueue) item.BackColor = Color.IndianRed;
-                else if(order.orderStatus == Status.Preparing) item.BackColor = Color.LightYellow;
+                ListViewItem item = new ListViewItem(order.ID.ToString());
+                item.SubItems.Add(order.Name);
+                item.SubItems.Add(order.Status.ToString());
+                item.SubItems.Add(order.Time.ToString());
+                if(order.Status == Status.inQueue) item.BackColor = Color.IndianRed;
+                else if(order.Status == Status.Preparing) item.BackColor = Color.LightYellow;
                 else item.BackColor = Color.LightSeaGreen;
 
                 liViewKitchen.Items.Add(item);
@@ -46,9 +46,9 @@ namespace VisualProgrammingProject
             {
                 foreach (ListViewItem listItem in liViewKitchen.SelectedItems)
                 {
-                    Order newOrder = order.getOrders().Find(item => item.orderID.ToString() == listItem.Text);
-                    newOrder.orderStatus = status;
-                    newOrder.orderTime = DateTime.Now;
+                    Order newOrder = order.getOrders().Find(item => item.ID.ToString() == listItem.Text);
+                    newOrder.Status = status;
+                    newOrder.Time = DateTime.Now;
                     order.updateOrder(newOrder);
                 }
                 UpdateListView();

@@ -53,7 +53,7 @@ namespace VisualProgrammingProject
                 {
                     Random rnd = new Random();
                     Product prd = new Product().getProduct(productID);
-                    OrderProduct newProd = new OrderProduct(rnd.Next(10000,99999),productID, prd.Name, piece, prd.Price, 0);
+                    OrderProduct newProd = new OrderProduct(rnd.Next(10000, 99999), productID, prd.Name, piece, prd.Price, 0);
                     BasketList.Add(newProd);
                 }
                 else
@@ -111,7 +111,7 @@ namespace VisualProgrammingProject
         {
             Random rnd = new Random();
             int orderID = rnd.Next(1000, 9999);
-            Order newOrder = new Order(orderID, user.Name, DateTime.Now, Status.inQueue);
+            Order newOrder = new Order(orderID, user.Name, DateTime.Now, Status.inQueue, user.ID);
 
             if (LstVwOrder.Items.Count > 0)
             {

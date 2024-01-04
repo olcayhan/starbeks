@@ -47,10 +47,10 @@ namespace VisualProgrammingProject
         private void UpdateNameList()
         {
             lstVwName.Items.Clear();
-            foreach (Order item in order.getOrders())
+            foreach (Order item in order.getReadyOrders())
             {
-                ListViewItem listItem = new ListViewItem(item.orderID.ToString());
-                listItem.SubItems.Add(item.orderName);
+                ListViewItem listItem = new ListViewItem(item.ID.ToString());
+                listItem.SubItems.Add(item.Name);
                 lstVwName.Items.Add(listItem);
             }
             UpdateBillList();

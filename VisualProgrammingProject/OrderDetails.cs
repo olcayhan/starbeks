@@ -15,11 +15,11 @@ namespace VisualProgrammingProject
         public OrderDetails(Order order)
         {
             InitializeComponent();
-            lblOrderIDResponse.Text = order.orderID.ToString();
-            lblNameresponse.Text = order.orderName;
-            lblStatusResponse.Text = order.orderStatus.ToString();
+            lblOrderIDResponse.Text = order.ID.ToString();
+            lblNameresponse.Text = order.Name;
+            lblStatusResponse.Text = order.Status.ToString();
 
-            foreach (OrderProduct product in order.getProducts(order.orderID))
+            foreach (OrderProduct product in order.getProducts(order.ID))
             {
                 ListViewItem item = new ListViewItem(product.Name.ToString());
                 item.SubItems.Add(product.Piece.ToString());

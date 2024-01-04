@@ -8,23 +8,25 @@ using System.Windows.Forms;
 
 namespace VisualProgrammingProject
 {
-    public enum Status { inQueue = 0, Preparing = 1, Ready = 2 }
+    public enum Status { inQueue = 0, Preparing, Ready, Paid }
     public class Order
     {
         public string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=starbeks;Integrated Security=True";
 
-        public int orderID { get; set; }
-        public string orderName { get; set; }
-        public DateTime orderTime { get; set; }
-        public Status orderStatus { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public DateTime Time { get; set; }
+        public Status Status { get; set; }
+        public int UserID { get; set; }
 
         public Order() { }
-        public Order(int orderID, string orderName, DateTime orderTime, Status orderStatus)
+        public Order(int ID, string Name, DateTime Time, Status Status, int UserID)
         {
-            this.orderID = orderID;
-            this.orderName = orderName;
-            this.orderTime = orderTime;
-            this.orderStatus = orderStatus;
+            this.ID = ID;
+            this.Name = Name;
+            this.Time = Time;
+            this.Status = Status;
+            this.UserID = UserID;
         }
 
         public void addOrder(Order order)
@@ -32,11 +34,13 @@ namespace VisualProgrammingProject
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
 
-            SqlCommand sqlCommand = new SqlCommand("INSERT INTO [Order] VALUES (@ID,@Name,@Time,@Status)", conn);
-            sqlCommand.Parameters.AddWithValue("@ID", order.orderID);
-            sqlCommand.Parameters.AddWithValue("@Name", order.orderName);
-            sqlCommand.Parameters.AddWithValue("@Time", order.orderTime);
-            sqlCommand.Parameters.AddWithValue("@Status", order.orderStatus.ToString());
+            SqlCommand sqlCommand = new SqlCommand("INSERT INTO [Order] VALUES (@ID,@Name,@Time,@Status,@UserID)", conn);
+            sqlCommand.Parameters.AddWithValue("@ID", order.ID);
+            sqlCommand.Parameters.AddWithValue("@Name", order.Name);
+            sqlCommand.Parameters.AddWithValue("@Time", order.Time);
+            sqlCommand.Parameters.AddWithValue("@Status", order.Status.ToString());
+            sqlCommand.Parameters.AddWithValue("@UserID", order.UserID);
+
             sqlCommand.ExecuteNonQuery();
             conn.Close();
         }
@@ -45,10 +49,10 @@ namespace VisualProgrammingProject
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
             SqlCommand sqlCommand = new SqlCommand("UPDATE [Order] SET Name=@Name,Time=@Time,Status=@Status WHERE ID=@ID", conn);
-            sqlCommand.Parameters.AddWithValue("@ID", order.orderID);
-            sqlCommand.Parameters.AddWithValue("@Name", order.orderName);
-            sqlCommand.Parameters.AddWithValue("@Time", order.orderTime);
-            sqlCommand.Parameters.AddWithValue("@Status", order.orderStatus.ToString());
+            sqlCommand.Parameters.AddWithValue("@ID", order.ID);
+            sqlCommand.Parameters.AddWithValue("@Name", order.Name);
+            sqlCommand.Parameters.AddWithValue("@Time", order.Time);
+            sqlCommand.Parameters.AddWithValue("@Status", order.Status.ToString());
             sqlCommand.ExecuteNonQuery();
             conn.Close();
         }
@@ -73,7 +77,7 @@ namespace VisualProgrammingProject
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
             SqlCommand sqlCommand = new SqlCommand("DELETE FROM [Order] WHERE ID=@ID", conn);
-            sqlCommand.Parameters.AddWithValue("@ID", order.orderID);
+            sqlCommand.Parameters.AddWithValue("@ID", order.ID);
             sqlCommand.ExecuteNonQuery();
             conn.Close();
         }
@@ -89,11 +93,10 @@ namespace VisualProgrammingProject
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
             SqlCommand sqlCommand = new SqlCommand("SELECT * FROM [Order]", conn);
-
             SqlDataReader reader = sqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                Order order = new Order(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), (Status)Enum.Parse(typeof(Status), reader.GetString(3)));
+                Order order = new Order(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), (Status)Enum.Parse(typeof(Status), reader.GetString(3)), reader.GetInt32(4));
                 ordersList.Add(order);
             }
 
@@ -110,7 +113,7 @@ namespace VisualProgrammingProject
             Order order = new Order();
             while (reader.Read())
             {
-                order = new Order(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), (Status)Enum.Parse(typeof(Status), reader.GetString(3)));
+                order = new Order(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), (Status)Enum.Parse(typeof(Status), reader.GetString(3)), reader.GetInt32(4));
             }
             conn.Close();
             return order;
@@ -125,11 +128,29 @@ namespace VisualProgrammingProject
             SqlDataReader reader = sqlCommand.ExecuteReader();
             while (reader.Read())
             {
-                OrderProduct newOrder = new OrderProduct(reader.GetInt32(0),reader.GetInt32(1), reader.GetString(2), reader.GetInt32(3), reader.GetDouble(4), reader.GetInt32(5));
+                OrderProduct newOrder = new OrderProduct(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetInt32(3), reader.GetDouble(4), reader.GetInt32(5));
                 orderProducts.Add(newOrder);
             }
             conn.Close();
             return orderProducts;
+        }
+
+        public List<Order> getReadyOrders()
+        {
+            List<Order> ordersList = new List<Order>();
+            SqlConnection conn = new SqlConnection(connString);
+            conn.Open();
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM [Order] WHERE Status=@Status", conn);
+            sqlCommand.Parameters.AddWithValue("@Status", Status.Ready.ToString());
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                Order order = new Order(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), (Status)Enum.Parse(typeof(Status), reader.GetString(3)), reader.GetInt32(4));
+                ordersList.Add(order);
+            }
+
+            conn.Close();
+            return ordersList;
         }
     }
 }
