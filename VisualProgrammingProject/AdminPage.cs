@@ -63,7 +63,6 @@ namespace VisualProgrammingProject
             {
                 ListViewItem item = new ListViewItem(productItem.ID.ToString());
                 item.SubItems.Add(productItem.Name);
-                item.SubItems.Add(productItem.Quantity.ToString());
                 item.SubItems.Add(productItem.Category.Name);
                 item.SubItems.Add(productItem.Price.ToString());
                 liviewProducts.Items.Add(item);
@@ -72,20 +71,19 @@ namespace VisualProgrammingProject
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            if (txtProductName.Text == "" || txtProductAmount.Text == "" || cmbProductCategory.SelectedIndex == -1 || txtProductPrice.Text == "")
+            if (txtProductName.Text == "" || cmbProductCategory.SelectedIndex == -1 || txtProductPrice.Text == "")
             {
                 MessageBox.Show("Fill in the blanks");
             }
             else
             {
                 Category newCategory = category.getCategory(cmbProductCategory.SelectedItem.ToString());
-                Product newProduct = new Product(rnd.Next(1000, 9999), txtProductName.Text, newCategory, Convert.ToInt32(txtProductAmount.Text), Convert.ToDouble(txtProductPrice.Text));
+                Product newProduct = new Product(rnd.Next(1000, 9999), txtProductName.Text, newCategory,  Convert.ToDouble(txtProductPrice.Text));
                 newProduct.addProduct(newProduct);
                 updateProducts();
             }
 
             txtProductName.Text = "";
-            txtProductAmount.Text = "";
             cmbProductCategory.SelectedIndex = -1;
             txtProductPrice.Text = "";
         }

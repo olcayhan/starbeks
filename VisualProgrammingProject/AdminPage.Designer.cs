@@ -32,8 +32,6 @@
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.cmbProductCategory = new System.Windows.Forms.ComboBox();
             this.lblProductCategory = new System.Windows.Forms.Label();
-            this.txtProductAmount = new System.Windows.Forms.TextBox();
-            this.lblProductAmount = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.txtProductName = new System.Windows.Forms.TextBox();
@@ -42,7 +40,6 @@
             this.liviewProducts = new System.Windows.Forms.ListView();
             this.columnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddCategory = new System.Windows.Forms.Button();
@@ -67,7 +64,7 @@
             this.txtProductPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtProductPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtProductPrice.Location = new System.Drawing.Point(37, 217);
+            this.txtProductPrice.Location = new System.Drawing.Point(37, 185);
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(120, 27);
             this.txtProductPrice.TabIndex = 34;
@@ -78,7 +75,7 @@
             this.lblProductPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.lblProductPrice.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.lblProductPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
-            this.lblProductPrice.Location = new System.Drawing.Point(43, 198);
+            this.lblProductPrice.Location = new System.Drawing.Point(43, 166);
             this.lblProductPrice.Name = "lblProductPrice";
             this.lblProductPrice.Size = new System.Drawing.Size(43, 16);
             this.lblProductPrice.TabIndex = 33;
@@ -91,7 +88,7 @@
             this.cmbProductCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbProductCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbProductCategory.FormattingEnabled = true;
-            this.cmbProductCategory.Location = new System.Drawing.Point(36, 168);
+            this.cmbProductCategory.Location = new System.Drawing.Point(36, 130);
             this.cmbProductCategory.Name = "cmbProductCategory";
             this.cmbProductCategory.Size = new System.Drawing.Size(121, 26);
             this.cmbProductCategory.TabIndex = 32;
@@ -102,33 +99,11 @@
             this.lblProductCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.lblProductCategory.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.lblProductCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
-            this.lblProductCategory.Location = new System.Drawing.Point(43, 148);
+            this.lblProductCategory.Location = new System.Drawing.Point(43, 110);
             this.lblProductCategory.Name = "lblProductCategory";
             this.lblProductCategory.Size = new System.Drawing.Size(70, 16);
             this.lblProductCategory.TabIndex = 31;
             this.lblProductCategory.Text = "Category";
-            // 
-            // txtProductAmount
-            // 
-            this.txtProductAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.txtProductAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtProductAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtProductAmount.Location = new System.Drawing.Point(37, 119);
-            this.txtProductAmount.Name = "txtProductAmount";
-            this.txtProductAmount.Size = new System.Drawing.Size(120, 27);
-            this.txtProductAmount.TabIndex = 30;
-            // 
-            // lblProductAmount
-            // 
-            this.lblProductAmount.AutoSize = true;
-            this.lblProductAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
-            this.lblProductAmount.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.lblProductAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
-            this.lblProductAmount.Location = new System.Drawing.Point(43, 98);
-            this.lblProductAmount.Name = "lblProductAmount";
-            this.lblProductAmount.Size = new System.Drawing.Size(60, 16);
-            this.lblProductAmount.TabIndex = 29;
-            this.lblProductAmount.Text = "Amount";
             // 
             // lblProductName
             // 
@@ -195,7 +170,6 @@
             this.liviewProducts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnID,
             this.columnName,
-            this.columnAmount,
             this.columnCategory,
             this.columnPrice});
             this.liviewProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -216,11 +190,7 @@
             // columnName
             // 
             this.columnName.Text = "Name";
-            // 
-            // columnAmount
-            // 
-            this.columnAmount.Text = "Amount";
-            this.columnAmount.Width = 79;
+            this.columnName.Width = 140;
             // 
             // columnCategory
             // 
@@ -360,9 +330,7 @@
             this.panel4.Controls.Add(this.txtProductPrice);
             this.panel4.Controls.Add(this.txtProductName);
             this.panel4.Controls.Add(this.lblProductPrice);
-            this.panel4.Controls.Add(this.lblProductAmount);
             this.panel4.Controls.Add(this.cmbProductCategory);
-            this.panel4.Controls.Add(this.txtProductAmount);
             this.panel4.Controls.Add(this.lblProductCategory);
             this.panel4.Location = new System.Drawing.Point(578, 332);
             this.panel4.Name = "panel4";
@@ -401,8 +369,6 @@
         private System.Windows.Forms.Label lblProductPrice;
         private System.Windows.Forms.ComboBox cmbProductCategory;
         private System.Windows.Forms.Label lblProductCategory;
-        private System.Windows.Forms.TextBox txtProductAmount;
-        private System.Windows.Forms.Label lblProductAmount;
         private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.TextBox txtProductName;
@@ -410,7 +376,6 @@
         private System.Windows.Forms.Label lblProducts;
         private System.Windows.Forms.ListView liviewProducts;
         private System.Windows.Forms.ColumnHeader columnName;
-        private System.Windows.Forms.ColumnHeader columnAmount;
         private System.Windows.Forms.ColumnHeader columnCategory;
         private System.Windows.Forms.ColumnHeader columnPrice;
         private System.Windows.Forms.Button btnAddCategory;
