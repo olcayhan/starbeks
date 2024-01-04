@@ -92,8 +92,8 @@
             this.btnPrepare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPrepare.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrepare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
-            this.btnPrepare.Location = new System.Drawing.Point(34, 158);
-            this.btnPrepare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrepare.Location = new System.Drawing.Point(965, 240);
+            this.btnPrepare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrepare.Name = "btnPrepare";
             this.btnPrepare.Size = new System.Drawing.Size(111, 48);
             this.btnPrepare.TabIndex = 26;
@@ -107,8 +107,8 @@
             this.btnReady.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReady.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnReady.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
-            this.btnReady.Location = new System.Drawing.Point(34, 267);
-            this.btnReady.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReady.Location = new System.Drawing.Point(965, 383);
+            this.btnReady.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReady.Name = "btnReady";
             this.btnReady.Size = new System.Drawing.Size(111, 48);
             this.btnReady.TabIndex = 25;
@@ -122,8 +122,8 @@
             this.btnQueue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQueue.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnQueue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
-            this.btnQueue.Location = new System.Drawing.Point(34, 41);
-            this.btnQueue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQueue.Location = new System.Drawing.Point(965, 102);
+            this.btnQueue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQueue.Name = "btnQueue";
             this.btnQueue.Size = new System.Drawing.Size(111, 48);
             this.btnQueue.TabIndex = 24;
@@ -139,10 +139,11 @@
             this.columnHeader2,
             this.columnHeader5,
             this.columnHeader6});
+            this.liViewKitchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.liViewKitchen.FullRowSelect = true;
             this.liViewKitchen.HideSelection = false;
-            this.liViewKitchen.Location = new System.Drawing.Point(18, 41);
-            this.liViewKitchen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.liViewKitchen.Location = new System.Drawing.Point(96, 113);
+            this.liViewKitchen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.liViewKitchen.MultiSelect = false;
             this.liViewKitchen.Name = "liViewKitchen";
             this.liViewKitchen.Size = new System.Drawing.Size(569, 274);
@@ -153,30 +154,30 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 47;
+            this.columnHeader1.Width = 88;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Name";
-            this.columnHeader2.Width = 82;
+            this.columnHeader2.Width = 206;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Situtaion";
-            this.columnHeader5.Width = 108;
+            this.columnHeader5.Text = "Status";
+            this.columnHeader5.Width = 131;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Time";
-            this.columnHeader6.Width = 128;
+            this.columnHeader6.Width = 140;
             // 
             // btnOrderDetails
             // 
             this.btnOrderDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.btnOrderDetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOrderDetails.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnOrderDetails.Location = new System.Drawing.Point(231, 319);
-            this.btnOrderDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOrderDetails.Location = new System.Drawing.Point(371, 470);
+            this.btnOrderDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOrderDetails.Name = "btnOrderDetails";
             this.btnOrderDetails.Size = new System.Drawing.Size(111, 48);
             this.btnOrderDetails.TabIndex = 27;
@@ -223,9 +224,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(922, 462);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1229, 569);
+            this.Controls.Add(this.btnOrderDetails);
+            this.Controls.Add(this.btnPrepare);
+            this.Controls.Add(this.btnReady);
+            this.Controls.Add(this.btnQueue);
+            this.Controls.Add(this.liViewKitchen);
             this.Controls.Add(this.lblDrink);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblName);
