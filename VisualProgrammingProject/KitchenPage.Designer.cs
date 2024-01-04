@@ -48,9 +48,10 @@
             this.lblDrink.BackColor = System.Drawing.SystemColors.InfoText;
             this.lblDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblDrink.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblDrink.Location = new System.Drawing.Point(-95, 217);
+            this.lblDrink.Location = new System.Drawing.Point(-71, 176);
+            this.lblDrink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDrink.Name = "lblDrink";
-            this.lblDrink.Size = new System.Drawing.Size(49, 20);
+            this.lblDrink.Size = new System.Drawing.Size(41, 17);
             this.lblDrink.TabIndex = 22;
             this.lblDrink.Text = "Drink";
             // 
@@ -60,9 +61,10 @@
             this.lblAmount.BackColor = System.Drawing.SystemColors.InfoText;
             this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblAmount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblAmount.Location = new System.Drawing.Point(-95, 154);
+            this.lblAmount.Location = new System.Drawing.Point(-71, 125);
+            this.lblAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(66, 20);
+            this.lblAmount.Size = new System.Drawing.Size(56, 17);
             this.lblAmount.TabIndex = 21;
             this.lblAmount.Text = "Amount";
             // 
@@ -72,9 +74,10 @@
             this.lblName.BackColor = System.Drawing.SystemColors.InfoText;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblName.Location = new System.Drawing.Point(-95, 96);
+            this.lblName.Location = new System.Drawing.Point(-71, 78);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(53, 20);
+            this.lblName.Size = new System.Drawing.Size(45, 17);
             this.lblName.TabIndex = 20;
             this.lblName.Text = "Name";
             // 
@@ -84,10 +87,10 @@
             this.btnPrepare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPrepare.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrepare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
-            this.btnPrepare.Location = new System.Drawing.Point(965, 240);
-            this.btnPrepare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrepare.Location = new System.Drawing.Point(724, 195);
+            this.btnPrepare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrepare.Name = "btnPrepare";
-            this.btnPrepare.Size = new System.Drawing.Size(148, 59);
+            this.btnPrepare.Size = new System.Drawing.Size(111, 48);
             this.btnPrepare.TabIndex = 26;
             this.btnPrepare.Text = "Preparing";
             this.btnPrepare.UseVisualStyleBackColor = false;
@@ -99,10 +102,10 @@
             this.btnReady.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReady.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnReady.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
-            this.btnReady.Location = new System.Drawing.Point(965, 383);
-            this.btnReady.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReady.Location = new System.Drawing.Point(724, 311);
+            this.btnReady.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReady.Name = "btnReady";
-            this.btnReady.Size = new System.Drawing.Size(148, 59);
+            this.btnReady.Size = new System.Drawing.Size(111, 48);
             this.btnReady.TabIndex = 25;
             this.btnReady.Text = "Ready";
             this.btnReady.UseVisualStyleBackColor = false;
@@ -114,10 +117,10 @@
             this.btnQueue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQueue.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnQueue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
-            this.btnQueue.Location = new System.Drawing.Point(965, 102);
-            this.btnQueue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnQueue.Location = new System.Drawing.Point(724, 83);
+            this.btnQueue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnQueue.Name = "btnQueue";
-            this.btnQueue.Size = new System.Drawing.Size(148, 59);
+            this.btnQueue.Size = new System.Drawing.Size(111, 48);
             this.btnQueue.TabIndex = 24;
             this.btnQueue.Text = "In Queue";
             this.btnQueue.UseVisualStyleBackColor = false;
@@ -131,13 +134,14 @@
             this.columnHeader2,
             this.columnHeader5,
             this.columnHeader6});
+            this.liViewKitchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.liViewKitchen.FullRowSelect = true;
             this.liViewKitchen.HideSelection = false;
-            this.liViewKitchen.Location = new System.Drawing.Point(96, 113);
-            this.liViewKitchen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.liViewKitchen.Location = new System.Drawing.Point(72, 92);
+            this.liViewKitchen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.liViewKitchen.MultiSelect = false;
             this.liViewKitchen.Name = "liViewKitchen";
-            this.liViewKitchen.Size = new System.Drawing.Size(757, 336);
+            this.liViewKitchen.Size = new System.Drawing.Size(569, 274);
             this.liViewKitchen.TabIndex = 23;
             this.liViewKitchen.UseCompatibleStateImageBehavior = false;
             this.liViewKitchen.View = System.Windows.Forms.View.Details;
@@ -145,32 +149,32 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 47;
+            this.columnHeader1.Width = 88;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Name";
-            this.columnHeader2.Width = 82;
+            this.columnHeader2.Width = 206;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Situtaion";
-            this.columnHeader5.Width = 108;
+            this.columnHeader5.Text = "Status";
+            this.columnHeader5.Width = 131;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Time";
-            this.columnHeader6.Width = 128;
+            this.columnHeader6.Width = 140;
             // 
             // btnOrderDetails
             // 
             this.btnOrderDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.btnOrderDetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOrderDetails.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnOrderDetails.Location = new System.Drawing.Point(371, 470);
-            this.btnOrderDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrderDetails.Location = new System.Drawing.Point(278, 382);
+            this.btnOrderDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOrderDetails.Name = "btnOrderDetails";
-            this.btnOrderDetails.Size = new System.Drawing.Size(148, 59);
+            this.btnOrderDetails.Size = new System.Drawing.Size(111, 48);
             this.btnOrderDetails.TabIndex = 27;
             this.btnOrderDetails.Text = "Order Details";
             this.btnOrderDetails.UseVisualStyleBackColor = false;
@@ -178,11 +182,11 @@
             // 
             // KitchenPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1229, 569);
+            this.ClientSize = new System.Drawing.Size(922, 462);
             this.Controls.Add(this.btnOrderDetails);
             this.Controls.Add(this.btnPrepare);
             this.Controls.Add(this.btnReady);
@@ -191,7 +195,7 @@
             this.Controls.Add(this.lblDrink);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblName);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "KitchenPage";
             this.Text = "Kitchen";
             this.ResumeLayout(false);
