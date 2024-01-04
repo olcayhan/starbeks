@@ -72,19 +72,15 @@ namespace VisualProgrammingProject
             conn.Close();
         }
 
-        public void removeOrder(Order order)
+        public void PayOrder(Order order)
         {
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
-            SqlCommand sqlCommand = new SqlCommand("DELETE FROM [Order] WHERE ID=@ID", conn);
+            SqlCommand sqlCommand = new SqlCommand("UPDATE [Order] SET Status=@Status WHERE ID=@ID", conn);
             sqlCommand.Parameters.AddWithValue("@ID", order.ID);
+            sqlCommand.Parameters.AddWithValue("@Status", Status.Paid.ToString());
             sqlCommand.ExecuteNonQuery();
             conn.Close();
-        }
-
-        public void removeProduct(OrderProduct product)
-        {
-            //orderDetails.Remove(product);
         }
 
         public List<Order> getOrders()
@@ -92,14 +88,14 @@ namespace VisualProgrammingProject
             List<Order> ordersList = new List<Order>();
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
-            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM [Order]", conn);
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM [Order] WHERE Status!=@Status", conn);
+            sqlCommand.Parameters.AddWithValue("@Status", Status.Paid.ToString());
             SqlDataReader reader = sqlCommand.ExecuteReader();
             while (reader.Read())
             {
                 Order order = new Order(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), (Status)Enum.Parse(typeof(Status), reader.GetString(3)), reader.GetInt32(4));
                 ordersList.Add(order);
             }
-
             conn.Close();
             return ordersList;
         }

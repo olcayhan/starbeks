@@ -35,12 +35,9 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtChoose = new System.Windows.Forms.TextBox();
             this.lstVwName = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.BtnPay = new System.Windows.Forms.Button();
             this.BtnPayAll = new System.Windows.Forms.Button();
             this.orderLbl = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -79,7 +76,6 @@
             this.lstviewFatura.TabIndex = 3;
             this.lstviewFatura.UseCompatibleStateImageBehavior = false;
             this.lstviewFatura.View = System.Windows.Forms.View.Details;
-            this.lstviewFatura.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lstviewFatura_MouseClick);
             // 
             // columnHeader1
             // 
@@ -100,7 +96,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.label4.Location = new System.Drawing.Point(77, 56);
+            this.label4.Location = new System.Drawing.Point(23, 25);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 16);
@@ -110,34 +106,12 @@
             // txtPrice
             // 
             this.txtPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.txtPrice.Location = new System.Drawing.Point(135, 55);
+            this.txtPrice.Location = new System.Drawing.Point(81, 24);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
             this.txtPrice.Size = new System.Drawing.Size(133, 20);
             this.txtPrice.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
-            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.label2.Location = new System.Drawing.Point(16, 25);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Selected Price :";
-            // 
-            // txtChoose
-            // 
-            this.txtChoose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.txtChoose.Location = new System.Drawing.Point(135, 21);
-            this.txtChoose.Margin = new System.Windows.Forms.Padding(2);
-            this.txtChoose.Name = "txtChoose";
-            this.txtChoose.Size = new System.Drawing.Size(133, 20);
-            this.txtChoose.TabIndex = 8;
             // 
             // lstVwName
             // 
@@ -169,28 +143,13 @@
             this.columnHeader5.Text = "Name";
             this.columnHeader5.Width = 122;
             // 
-            // BtnPay
-            // 
-            this.BtnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
-            this.BtnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnPay.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(206)))), ((int)(((byte)(163)))));
-            this.BtnPay.Location = new System.Drawing.Point(301, 14);
-            this.BtnPay.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnPay.Name = "BtnPay";
-            this.BtnPay.Size = new System.Drawing.Size(135, 33);
-            this.BtnPay.TabIndex = 11;
-            this.BtnPay.Text = "Pay";
-            this.BtnPay.UseVisualStyleBackColor = false;
-            this.BtnPay.Click += new System.EventHandler(this.BtnPay_Click);
-            // 
             // BtnPayAll
             // 
             this.BtnPayAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.BtnPayAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnPayAll.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnPayAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
-            this.BtnPayAll.Location = new System.Drawing.Point(301, 56);
+            this.BtnPayAll.Location = new System.Drawing.Point(248, 17);
             this.BtnPayAll.Margin = new System.Windows.Forms.Padding(2);
             this.BtnPayAll.Name = "BtnPayAll";
             this.BtnPayAll.Size = new System.Drawing.Size(135, 32);
@@ -227,15 +186,12 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel2.Controls.Add(this.txtChoose);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.BtnPayAll);
             this.panel2.Controls.Add(this.txtPrice);
-            this.panel2.Controls.Add(this.BtnPay);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(240, 342);
+            this.panel2.Location = new System.Drawing.Point(294, 375);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(462, 100);
+            this.panel2.Size = new System.Drawing.Size(408, 67);
             this.panel2.TabIndex = 15;
             // 
             // checkoutPage
@@ -266,12 +222,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtChoose;
         private System.Windows.Forms.ListView lstVwName;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.Button BtnPay;
         private System.Windows.Forms.Button BtnPayAll;
         private System.Windows.Forms.Label orderLbl;
         private System.Windows.Forms.Panel panel1;
