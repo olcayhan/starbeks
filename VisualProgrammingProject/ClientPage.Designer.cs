@@ -45,7 +45,6 @@
             this.orderBtn.TabIndex = 0;
             this.orderBtn.Text = "Let\'s Order";
             this.orderBtn.UseVisualStyleBackColor = true;
-            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
             // label3
             // 
@@ -56,7 +55,6 @@
             this.label3.Size = new System.Drawing.Size(248, 27);
             this.label3.TabIndex = 7;
             this.label3.Text = "Welcome to Starbeks,";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // NameLbl
             // 
@@ -67,7 +65,6 @@
             this.NameLbl.Size = new System.Drawing.Size(75, 27);
             this.NameLbl.TabIndex = 8;
             this.NameLbl.Text = "Name";
-            this.NameLbl.Click += new System.EventHandler(this.NameLbl_Click);
             // 
             // OrderDetailsBtn
             // 
@@ -88,7 +85,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ClientPage
             // 
