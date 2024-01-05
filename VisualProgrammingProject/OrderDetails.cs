@@ -12,9 +12,21 @@ namespace VisualProgrammingProject
 {
     public partial class OrderDetails : Form
     {
-        public OrderDetails(Order order)
+        Order order;
+        public OrderDetails(Order ord)
         {
             InitializeComponent();
+            order = ord;
+        }
+
+        public OrderDetails(int userID)
+        {
+            InitializeComponent();
+            order = new Order().getOrder(userID);
+        }
+
+        private void OrderDetails_Load(object sender, EventArgs e)
+        {
             lblOrderIDResponse.Text = order.ID.ToString();
             lblNameresponse.Text = order.Name;
             lblStatusResponse.Text = order.Status.ToString();

@@ -65,6 +65,12 @@
     <Compile Include="checkoutPage.Designer.cs">
       <DependentUpon>checkoutPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientOrdersPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientOrdersPage.Designer.cs">
+      <DependentUpon>ClientOrdersPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="checkoutPage.resx">
       <DependentUpon>checkoutPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientOrdersPage.resx">
+      <DependentUpon>ClientOrdersPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientPage.resx">
       <DependentUpon>ClientPage.cs</DependentUpon>

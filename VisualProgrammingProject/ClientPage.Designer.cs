@@ -31,20 +31,22 @@
             this.orderBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.NameLbl = new System.Windows.Forms.Label();
-            this.OrderDetailsBtn = new System.Windows.Forms.Button();
+            this.oldOrdersBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.activeOrderBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // orderBtn
             // 
             this.orderBtn.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.orderBtn.Location = new System.Drawing.Point(12, 428);
+            this.orderBtn.Location = new System.Drawing.Point(18, 484);
             this.orderBtn.Name = "orderBtn";
             this.orderBtn.Size = new System.Drawing.Size(407, 65);
             this.orderBtn.TabIndex = 0;
             this.orderBtn.Text = "Let\'s Order";
             this.orderBtn.UseVisualStyleBackColor = true;
+            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
             // label3
             // 
@@ -66,15 +68,16 @@
             this.NameLbl.TabIndex = 8;
             this.NameLbl.Text = "Name";
             // 
-            // OrderDetailsBtn
+            // oldOrdersBtn
             // 
-            this.OrderDetailsBtn.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.OrderDetailsBtn.Location = new System.Drawing.Point(12, 336);
-            this.OrderDetailsBtn.Name = "OrderDetailsBtn";
-            this.OrderDetailsBtn.Size = new System.Drawing.Size(407, 65);
-            this.OrderDetailsBtn.TabIndex = 9;
-            this.OrderDetailsBtn.Text = "Orders";
-            this.OrderDetailsBtn.UseVisualStyleBackColor = true;
+            this.oldOrdersBtn.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.oldOrdersBtn.Location = new System.Drawing.Point(18, 396);
+            this.oldOrdersBtn.Name = "oldOrdersBtn";
+            this.oldOrdersBtn.Size = new System.Drawing.Size(407, 65);
+            this.oldOrdersBtn.TabIndex = 9;
+            this.oldOrdersBtn.Text = "Old Orders";
+            this.oldOrdersBtn.UseVisualStyleBackColor = true;
+            this.oldOrdersBtn.Click += new System.EventHandler(this.oldOrdersBtn_Click);
             // 
             // pictureBox1
             // 
@@ -86,14 +89,26 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // activeOrderBtn
+            // 
+            this.activeOrderBtn.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.activeOrderBtn.Location = new System.Drawing.Point(18, 314);
+            this.activeOrderBtn.Name = "activeOrderBtn";
+            this.activeOrderBtn.Size = new System.Drawing.Size(407, 65);
+            this.activeOrderBtn.TabIndex = 11;
+            this.activeOrderBtn.Text = "Active Order";
+            this.activeOrderBtn.UseVisualStyleBackColor = true;
+            this.activeOrderBtn.Click += new System.EventHandler(this.activeOrderBtn_Click);
+            // 
             // ClientPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(437, 510);
+            this.ClientSize = new System.Drawing.Size(437, 561);
+            this.Controls.Add(this.activeOrderBtn);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.OrderDetailsBtn);
+            this.Controls.Add(this.oldOrdersBtn);
             this.Controls.Add(this.NameLbl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.orderBtn);
@@ -111,7 +126,8 @@
         private System.Windows.Forms.Button orderBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label NameLbl;
-        private System.Windows.Forms.Button OrderDetailsBtn;
+        private System.Windows.Forms.Button oldOrdersBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button activeOrderBtn;
     }
 }

@@ -172,6 +172,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "OrderDetails";
             this.Text = "OrderDetails";
+            this.Load += new System.EventHandler(this.OrderDetails_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
