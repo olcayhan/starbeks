@@ -46,7 +46,7 @@ namespace VisualProgrammingProject
                 }
                 else if(user.Role == Users.Client)
                 {
-                    OrderPage client = new OrderPage(user.ID);
+                    ClientPage client = new ClientPage(user.ID);
                     client.Show();
                     this.Hide();
                 }
