@@ -34,17 +34,22 @@
             this.columnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.orderDetailsBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
             // 
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnID,
             this.columnName,
             this.columnStatus,
             this.columnTime});
+            this.listView1.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.listView1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(39, 32);
+            this.listView1.Location = new System.Drawing.Point(30, 27);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(445, 196);
             this.listView1.TabIndex = 0;
@@ -71,25 +76,39 @@
             // 
             // orderDetailsBtn
             // 
+            this.orderDetailsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.orderDetailsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.orderDetailsBtn.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.orderDetailsBtn.Location = new System.Drawing.Point(155, 264);
+            this.orderDetailsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
+            this.orderDetailsBtn.Location = new System.Drawing.Point(145, 249);
             this.orderDetailsBtn.Name = "orderDetailsBtn";
             this.orderDetailsBtn.Size = new System.Drawing.Size(210, 76);
             this.orderDetailsBtn.TabIndex = 1;
             this.orderDetailsBtn.Text = "Order Details";
-            this.orderDetailsBtn.UseVisualStyleBackColor = true;
+            this.orderDetailsBtn.UseVisualStyleBackColor = false;
             this.orderDetailsBtn.Click += new System.EventHandler(this.orderDetailsBtn_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
+            this.panel1.Controls.Add(this.orderDetailsBtn);
+            this.panel1.Controls.Add(this.listView1);
+            this.panel1.Location = new System.Drawing.Point(52, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(505, 358);
+            this.panel1.TabIndex = 2;
             // 
             // ClientOrdersPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 372);
-            this.Controls.Add(this.orderDetailsBtn);
-            this.Controls.Add(this.listView1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
+            this.ClientSize = new System.Drawing.Size(612, 428);
+            this.Controls.Add(this.panel1);
             this.Name = "ClientOrdersPage";
             this.Text = "ClientOrdersPage";
             this.Load += new System.EventHandler(this.ClientOrdersPage_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -102,5 +121,6 @@
         private System.Windows.Forms.ColumnHeader columnStatus;
         private System.Windows.Forms.ColumnHeader columnTime;
         private System.Windows.Forms.Button orderDetailsBtn;
+        private System.Windows.Forms.Panel panel1;
     }
 }
