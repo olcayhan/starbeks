@@ -23,9 +23,15 @@ namespace VisualProgrammingProject
 
         private void orderDetailsBtn_Click(object sender, EventArgs e)
         {
-
-            OrderDetails orderDetails = new OrderDetails(Convert.ToInt32(listView1.SelectedItems[0].Text));
-            orderDetails.Show();
+            if (listView1.SelectedItems.Count > 0)
+            {
+                OrderDetails orderDetails = new OrderDetails(Convert.ToInt32(listView1.SelectedItems[0].Text));
+                orderDetails.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select an order to view details");
+            }
         }
 
         private void ClientOrdersPage_Load(object sender, EventArgs e)

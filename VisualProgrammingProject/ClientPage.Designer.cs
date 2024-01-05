@@ -32,8 +32,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.NameLbl = new System.Windows.Forms.Label();
             this.oldOrdersBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.activeOrderBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,16 +87,6 @@
             this.oldOrdersBtn.UseVisualStyleBackColor = false;
             this.oldOrdersBtn.Click += new System.EventHandler(this.oldOrdersBtn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::VisualProgrammingProject.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(101, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(237, 212);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
             // activeOrderBtn
             // 
             this.activeOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
@@ -110,6 +100,16 @@
             this.activeOrderBtn.Text = "Active Order";
             this.activeOrderBtn.UseVisualStyleBackColor = false;
             this.activeOrderBtn.Click += new System.EventHandler(this.activeOrderBtn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::VisualProgrammingProject.Properties.Resources.logo_starbeks;
+            this.pictureBox1.Location = new System.Drawing.Point(101, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(237, 212);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // ClientPage
             // 
