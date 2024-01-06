@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace VisualProgrammingProject
@@ -136,6 +137,7 @@ namespace VisualProgrammingProject
                 Button btn = new Button();
                 btn.Text = item.Name;
                 btn.Name = item.ID.ToString();
+                btn.BackColor = Color.FromArgb(229, 229, 203);
                 btn.UseCompatibleTextRendering = true;
                 btn.Width = 100;
                 btn.Height = 100;
@@ -159,6 +161,13 @@ namespace VisualProgrammingProject
                 item.SubItems.Add(coffee.Price.ToString());
                 LstVwMenu.Items.Add(item);
             }
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            ClientPage clientPage = new ClientPage(user.ID);
+            clientPage.Show();
+            this.Close();
         }
     }
 }

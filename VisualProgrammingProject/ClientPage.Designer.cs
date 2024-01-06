@@ -34,6 +34,7 @@
             this.oldOrdersBtn = new System.Windows.Forms.Button();
             this.activeOrderBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.logoutBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,12 +112,27 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // logoutBtn
+            // 
+            this.logoutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
+            this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.logoutBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.logoutBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.logoutBtn.Location = new System.Drawing.Point(18, 578);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(135, 32);
+            this.logoutBtn.TabIndex = 43;
+            this.logoutBtn.Text = "Log Out";
+            this.logoutBtn.UseVisualStyleBackColor = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
             // ClientPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
-            this.ClientSize = new System.Drawing.Size(440, 561);
+            this.ClientSize = new System.Drawing.Size(449, 622);
+            this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.activeOrderBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.oldOrdersBtn);
@@ -140,5 +156,6 @@
         private System.Windows.Forms.Button oldOrdersBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button activeOrderBtn;
+        private System.Windows.Forms.Button logoutBtn;
     }
 }

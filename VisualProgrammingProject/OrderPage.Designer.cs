@@ -47,6 +47,7 @@
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.backBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumericPiece)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -214,11 +215,13 @@
             // 
             // flowLayoutPanel
             // 
+            this.flowLayoutPanel.AutoScroll = true;
             this.flowLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
-            this.flowLayoutPanel.Location = new System.Drawing.Point(22, 30);
+            this.flowLayoutPanel.Location = new System.Drawing.Point(22, 12);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(683, 105);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(683, 123);
             this.flowLayoutPanel.TabIndex = 14;
+            this.flowLayoutPanel.WrapContents = false;
             // 
             // panel1
             // 
@@ -245,6 +248,20 @@
             this.panel2.Size = new System.Drawing.Size(294, 124);
             this.panel2.TabIndex = 16;
             // 
+            // backBtn
+            // 
+            this.backBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
+            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.backBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.backBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.backBtn.Location = new System.Drawing.Point(23, 461);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(135, 32);
+            this.backBtn.TabIndex = 45;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,6 +269,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(728, 511);
+            this.Controls.Add(this.backBtn);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel);
@@ -287,5 +305,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button backBtn;
     }
 }

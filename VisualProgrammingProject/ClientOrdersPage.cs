@@ -61,5 +61,12 @@ namespace VisualProgrammingProject
                 }
             }
         }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            ClientPage clientPage = new ClientPage(userID);
+            clientPage.Show();
+            this.Close();
+        }
     }
 }

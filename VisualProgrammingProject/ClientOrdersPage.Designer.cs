@@ -35,6 +35,7 @@
             this.columnTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.orderDetailsBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.backBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,10 +94,24 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
             this.panel1.Controls.Add(this.orderDetailsBtn);
             this.panel1.Controls.Add(this.listView1);
-            this.panel1.Location = new System.Drawing.Point(52, 33);
+            this.panel1.Location = new System.Drawing.Point(53, 58);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(505, 358);
             this.panel1.TabIndex = 2;
+            // 
+            // backBtn
+            // 
+            this.backBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(18)))), ((int)(((byte)(11)))));
+            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.backBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.backBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.backBtn.Location = new System.Drawing.Point(12, 12);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(135, 32);
+            this.backBtn.TabIndex = 44;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // ClientOrdersPage
             // 
@@ -104,6 +119,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(612, 428);
+            this.Controls.Add(this.backBtn);
             this.Controls.Add(this.panel1);
             this.Name = "ClientOrdersPage";
             this.Text = "ClientOrdersPage";
@@ -122,5 +138,6 @@
         private System.Windows.Forms.ColumnHeader columnTime;
         private System.Windows.Forms.Button orderDetailsBtn;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button backBtn;
     }
 }

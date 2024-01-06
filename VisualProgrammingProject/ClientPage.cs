@@ -36,20 +36,28 @@ namespace VisualProgrammingProject
         {
             OrderPage order = new OrderPage(user.ID);
             order.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void activeOrderBtn_Click(object sender, EventArgs e)
         {
             ClientOrdersPage orders = new ClientOrdersPage(user.ID,OrderStatus.Active);
             orders.Show();
-            //this.Hide();
+            this.Close();
         }
 
         private void oldOrdersBtn_Click(object sender, EventArgs e)
         {
             ClientOrdersPage orders = new ClientOrdersPage(user.ID, OrderStatus.Completed);
             orders.Show();
+            this.Close();
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            Auth auth = new Auth();
+            auth.Show();
+            this.Close();
         }
     }
 }
