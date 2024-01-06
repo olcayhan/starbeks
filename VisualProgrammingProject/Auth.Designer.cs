@@ -88,7 +88,7 @@
             this.LogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.LogBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.LogBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(33)))));
-            this.LogBtn.Location = new System.Drawing.Point(144, 149);
+            this.LogBtn.Location = new System.Drawing.Point(144, 158);
             this.LogBtn.Name = "LogBtn";
             this.LogBtn.Size = new System.Drawing.Size(105, 37);
             this.LogBtn.TabIndex = 4;

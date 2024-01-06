@@ -80,7 +80,7 @@ namespace VisualProgrammingProject
 
             foreach (ListViewItem selectedItem in LstVwOrder.SelectedItems)
             {
-                OrderProduct prd = BasketList.Find(x => x.ID == Convert.ToInt32(selectedItem.Text));
+                OrderProduct prd = BasketList.Find(x => x.productID == Convert.ToInt32(selectedItem.Text));
 
                 if (prd != null)
                 {
@@ -125,6 +125,9 @@ namespace VisualProgrammingProject
                 }
                 cleanList();
                 MessageBox.Show("Your order has been received");
+                ClientPage clientPage = new ClientPage(user.ID);
+                clientPage.Show();
+                this.Close();
             }
             else MessageBox.Show("Plase select at least one product");
         }

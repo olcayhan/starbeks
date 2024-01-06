@@ -80,5 +80,12 @@ namespace VisualProgrammingProject
                 orderDetailsForm.ShowDialog();
             }
         }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            Auth auth = new Auth();
+            auth.Show();
+            this.Close();
+        }
     }
 }

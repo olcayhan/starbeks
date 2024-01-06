@@ -18,7 +18,7 @@ namespace VisualProgrammingProject
 
     public partial class ClientPage : Form
     {
-    
+
         User user = new User();
 
         public ClientPage(int userID)
@@ -34,14 +34,21 @@ namespace VisualProgrammingProject
 
         private void orderBtn_Click(object sender, EventArgs e)
         {
-            OrderPage order = new OrderPage(user.ID);
-            order.Show();
-            this.Close();
+            if (new Order().getActiveOrders(user.ID).Count > 0)
+            {
+                MessageBox.Show("You have an active order. You can not create a new order.");
+            }
+            else
+            {
+                OrderPage order = new OrderPage(user.ID);
+                order.Show();
+                this.Close();
+            }
         }
 
         private void activeOrderBtn_Click(object sender, EventArgs e)
         {
-            ClientOrdersPage orders = new ClientOrdersPage(user.ID,OrderStatus.Active);
+            ClientOrdersPage orders = new ClientOrdersPage(user.ID, OrderStatus.Active);
             orders.Show();
             this.Close();
         }
