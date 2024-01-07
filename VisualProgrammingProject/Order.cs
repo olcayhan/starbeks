@@ -115,6 +115,22 @@ namespace VisualProgrammingProject
             conn.Close();
             return ordersList;
         }
+        public List<Order> getCompletedOrders()
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            conn.Open();
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM [Order] WHERE Status=@Status", conn);
+            sqlCommand.Parameters.AddWithValue("@Status", Status.Paid.ToString());
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            List<Order> ordersList = new List<Order>();
+            while (reader.Read())
+            {
+                Order order = new Order(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), (Status)Enum.Parse(typeof(Status), reader.GetString(3)), reader.GetInt32(4));
+                ordersList.Add(order);
+            }
+            conn.Close();
+            return ordersList;
+        }
         public List<Order> getCompletedOrders(int userID)
         {
             SqlConnection conn = new SqlConnection(connString);

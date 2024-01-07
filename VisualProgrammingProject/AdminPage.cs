@@ -19,13 +19,13 @@ namespace VisualProgrammingProject
         public AdminPage()
         {
             InitializeComponent();
-            this.Activated += AdminPage_Activated;
         }
 
-        private void AdminPage_Activated(object sender, EventArgs e)
+        private void AdminPage_Load(object sender, EventArgs e)
         {
             updateCategories();
             updateProducts();
+            updatePaidOrders();
         }
 
         public void updateCategories()
@@ -119,6 +119,27 @@ namespace VisualProgrammingProject
             Auth auth = new Auth();
             auth.Show();
             this.Close();
+        }
+
+
+        public void updatePaidOrders()
+        {
+            paidOrderListView.Items.Clear();
+            foreach (Order item in new Order().getCompletedOrders())
+            {
+                ListViewItem listViewItem = new ListViewItem(item.ID.ToString());
+                listViewItem.SubItems.Add(item.Name.ToString());
+                listViewItem.SubItems.Add(item.Time.ToString());
+                listViewItem.SubItems.Add(item.Status.ToString());
+                paidOrderListView.Items.Add(listViewItem);
+            }
+        }
+
+        private void orderDetailsBtn_Click(object sender, EventArgs e)
+        {
+            OrderDetails orderDetails = new OrderDetails(Convert.ToInt32(paidOrderListView.SelectedItems[0].Text));
+            orderDetails.Show();
+
         }
     }
 }
