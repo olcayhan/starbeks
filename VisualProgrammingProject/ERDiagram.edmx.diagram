@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bcf95ebd296e4e4b99906a4478e4006f" Name="Diagram1">
+        <EntityTypeShape EntityType="starbeksModel.C__RefactorLog" Width="1.5" PointX="15.625" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="starbeksModel.Category" Width="1.5" PointX="0.875" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="starbeksModel.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="starbeksModel.OrderProduct" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="starbeksModel.Product" Width="1.5" PointX="3.125" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="starbeksModel.User" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="starbeksModel.FK__Product__Categor__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="starbeksModel.FK__Order__UserID__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="starbeksModel.FK__OrderProd__Order__73BA3083" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
