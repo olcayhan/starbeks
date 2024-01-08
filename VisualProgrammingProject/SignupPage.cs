@@ -33,11 +33,8 @@ namespace VisualProgrammingProject
                 User user = new User();
                 user.Signup(rnd.Next(1000, 9999), name, email, Users.Client, password);
                 MessageBox.Show("You have successfully signed up.");
-                ClientPage clientPage = new ClientPage(user.ID);
-                clientPage.Show();
-                this.Hide();
             }
-
+            routeAuth();
             txtName.Text = "";
             txtemail.Text = "";
             txtpassword.Text = "";
@@ -45,11 +42,15 @@ namespace VisualProgrammingProject
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            routeAuth();
+        }
+
+        public void routeAuth()
+        {
             Auth auth = new Auth();
             auth.Show();
             this.Hide();
         }
-
 
     }
 }
