@@ -49,6 +49,7 @@
             this.columnTime});
             this.listView1.Font = new System.Drawing.Font("Arial", 9.75F);
             this.listView1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(30, 27);
             this.listView1.Name = "listView1";

@@ -23,12 +23,12 @@ namespace VisualProgrammingProject
             double total = 0;
             foreach (OrderProduct coffee in BasketList)
             {
-                total += coffee.Piece * coffee.Price;
+                total +=  coffee.Price;
 
                 ListViewItem item = new ListViewItem(coffee.productID.ToString());
                 item.SubItems.Add(coffee.Name.ToString());
                 item.SubItems.Add(coffee.Piece.ToString());
-                item.SubItems.Add((coffee.Piece * coffee.Price).ToString());
+                item.SubItems.Add((coffee.Price).ToString());
                 LstVwOrder.Items.Add(item);
             }
 
@@ -54,7 +54,7 @@ namespace VisualProgrammingProject
                 {
                     Random rnd = new Random();
                     Product prd = new Product().getProduct(productID);
-                    OrderProduct newProd = new OrderProduct(rnd.Next(10000, 99999), productID, prd.Name, piece, prd.Price, 0);
+                    OrderProduct newProd = new OrderProduct(rnd.Next(10000, 99999), productID, prd.Name, piece, prd.Price * piece, 0);
                     BasketList.Add(newProd);
                 }
                 else
